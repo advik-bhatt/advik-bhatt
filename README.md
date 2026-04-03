@@ -1,7 +1,7 @@
 <div align="center">
 
 # Advik Bhatt
-**building systems that force understanding in the age of ai**
+**building ai-native systems that scale productivity**
 
 ![ai_native_systems](https://img.shields.io/badge/ai_native_systems-000000?style=flat-square)
 ![developer_tools](https://img.shields.io/badge/developer_tools-000000?style=flat-square)
