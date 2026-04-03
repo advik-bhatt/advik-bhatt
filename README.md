@@ -1,7 +1,7 @@
 <div align="center">
 
 # Advik Bhatt
-**building practical systems for an ai-native world**
+**building systems that force understanding in the age of ai**
 
 ![ai_native_systems](https://img.shields.io/badge/ai_native_systems-000000?style=flat-square)
 ![developer_tools](https://img.shields.io/badge/developer_tools-000000?style=flat-square)
@@ -38,7 +38,7 @@
 ![CrewCast](https://img.shields.io/badge/CrewCast-event_staffing_marketplace-1f6feb?style=flat-square)
 ![VibeCheck](https://img.shields.io/badge/VibeCheck-ai_code_understanding_gate-8a2be2?style=flat-square)
 ![Neura](https://img.shields.io/badge/Neura-ai_intake_platform-84cc16?style=flat-square)
-![RUWorkingOut](https://img.shields.io/badge/RUWorkingOut-rutgers gym crowd meter-f59e0b?style=flat-square)
+![RUWorkingOut](https://img.shields.io/badge/RUWorkingOut-campus_gym_comparison_app-f59e0b?style=flat-square)
 
 ![student_builder](https://img.shields.io/badge/student_builder-000000?style=flat-square)
 ![shipping_fast](https://img.shields.io/badge/shipping_fast-000000?style=flat-square)
