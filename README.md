@@ -4,9 +4,11 @@
 
 </div>
 
-I build fullstack products, backend systems, data workflows, and AI-powered features that are meant to be used by real users, not just demoed.
+Building AI systems that have to survive real operating conditions: orchestration, evaluation, routing, and product workflows where humans stay in the loop.
 
-**Visual Map**
+I build fullstack products with real users, backend systems that move data reliably, and AI features that fit into actual product workflows instead of demo-only interfaces.
+
+**Signal**
 
 - `react / frontend product work` `node / backend APIs` `auth and multi-user systems` `etl and analytics pipelines` `llm-powered product features` `developer tooling`
 
@@ -17,7 +19,7 @@ I build fullstack products, backend systems, data workflows, and AI-powered feat
 - `Neura` - intake platform combining structured form flows, backend routing, and AI-assisted processing
 - `RUWorkingOut` - consumer-facing campus product built around useful data, repeat usage, and clear UX
 
-**How That Shows Up**
+**Operating Areas**
 
 - Fullstack product development across frontend, backend, auth, and database layers
 - Data workflows, ETL, analytics, and systems that turn raw inputs into usable product data
