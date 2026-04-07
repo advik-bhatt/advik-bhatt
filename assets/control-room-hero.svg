@@ -1,149 +1,145 @@
 <svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="90" y1="48" x2="1140" y2="650" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#04050B"/>
-      <stop offset="0.5" stop-color="#090E1D"/>
-      <stop offset="1" stop-color="#020308"/>
+    <linearGradient id="bg" x1="88" y1="56" x2="1120" y2="660" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#04060D"/>
+      <stop offset="0.48" stop-color="#091224"/>
+      <stop offset="1" stop-color="#03050A"/>
     </linearGradient>
-    <linearGradient id="cyanGlow" x1="176" y1="172" x2="1028" y2="172" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#5AF2FF" stop-opacity="0"/>
-      <stop offset="0.2" stop-color="#5AF2FF" stop-opacity="0.9"/>
-      <stop offset="0.7" stop-color="#6E8BFF" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#CB4DFF" stop-opacity="0"/>
+    <linearGradient id="trace" x1="178" y1="0" x2="1108" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#54F0FF" stop-opacity="0"/>
+      <stop offset="0.2" stop-color="#54F0FF" stop-opacity="0.9"/>
+      <stop offset="0.68" stop-color="#69A9FF" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#D54BFF" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="violetGlow" x1="230" y1="0" x2="1120" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#63E6FF" stop-opacity="0"/>
-      <stop offset="0.45" stop-color="#63E6FF" stop-opacity="0.55"/>
-      <stop offset="1" stop-color="#C445FF" stop-opacity="0.85"/>
+    <linearGradient id="wash" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#4FE9FF" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#BE4BFF" stop-opacity="0.12"/>
     </linearGradient>
     <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feGaussianBlur stdDeviation="7" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
     <filter id="hardGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0 0 1 0 0 0.55 0 0 1 0 1 0 0 0 18 -8 0" result="glow"/>
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0 0 1 0 0 0.6 0 0 1 0 1 0 0 0 20 -8 0" result="glow"/>
       <feMerge>
         <feMergeNode in="glow"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
-      <path d="M56 0H0V56" stroke="#17304A" stroke-opacity="0.65"/>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#17304A" stroke-opacity="0.55"/>
     </pattern>
-    <pattern id="microGrid" width="14" height="14" patternUnits="userSpaceOnUse">
-      <path d="M14 0H0V14" stroke="#16324F" stroke-opacity="0.18"/>
+    <pattern id="microGrid" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M12 0H0V12" stroke="#16324F" stroke-opacity="0.14"/>
     </pattern>
     <clipPath id="screenClip">
-      <rect x="72" y="72" width="1136" height="576" rx="28"/>
+      <rect x="68" y="68" width="1144" height="584" rx="30"/>
     </clipPath>
   </defs>
 
   <rect width="1280" height="720" rx="36" fill="#03050A"/>
   <rect x="20" y="20" width="1240" height="680" rx="28" fill="url(#bg)" stroke="#12304A" stroke-width="2"/>
-  <rect x="72" y="72" width="1136" height="576" rx="28" fill="#060B16" stroke="#20476A" stroke-opacity="0.8"/>
+  <rect x="68" y="68" width="1144" height="584" rx="30" fill="#07101D" stroke="#1C4469"/>
+
   <g clip-path="url(#screenClip)">
-    <rect x="72" y="72" width="1136" height="576" fill="url(#grid)"/>
-    <rect x="72" y="72" width="1136" height="576" fill="url(#microGrid)"/>
+    <rect x="68" y="68" width="1144" height="584" fill="url(#grid)"/>
+    <rect x="68" y="68" width="1144" height="584" fill="url(#microGrid)"/>
+    <rect x="100" y="120" width="420" height="480" fill="url(#wash)" opacity="0.2" transform="skewX(-18)"/>
+    <rect x="882" y="210" width="290" height="400" fill="url(#wash)" opacity="0.24" transform="skewX(-12)"/>
 
-    <g opacity="0.12">
-      <path d="M0 178H1280" stroke="#69EDFF"/>
-      <path d="M0 516H1280" stroke="#69EDFF"/>
-      <animate attributeName="opacity" values="0.08;0.14;0.08" dur="4.8s" repeatCount="indefinite"/>
+    <g opacity="0.2">
+      <path d="M90 170H1190" stroke="#63E6FF"/>
+      <path d="M90 562H1190" stroke="#63E6FF"/>
+      <animate attributeName="opacity" values="0.12;0.22;0.12" dur="4.5s" repeatCount="indefinite"/>
     </g>
 
-    <rect x="-200" y="120" width="280" height="500" fill="url(#violetGlow)" opacity="0.18" transform="rotate(12 -200 120)">
-      <animate attributeName="x" values="-220;1220" dur="9s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="980" y="-160" width="210" height="860" fill="url(#cyanGlow)" opacity="0.12" transform="rotate(18 980 -160)">
-      <animate attributeName="x" values="1080;-260" dur="10s" repeatCount="indefinite"/>
-    </rect>
-
-    <g opacity="0.85" filter="url(#softGlow)">
-      <path d="M158 470H334L420 404H596L684 344H808L912 250H1118" stroke="url(#cyanGlow)" stroke-width="3.5" stroke-dasharray="12 16">
-        <animate attributeName="stroke-dashoffset" values="0;-280" dur="4.8s" repeatCount="indefinite"/>
+    <g opacity="0.9" filter="url(#softGlow)">
+      <path d="M320 286H528L590 250H840" stroke="url(#trace)" stroke-width="3.5" stroke-dasharray="12 14">
+        <animate attributeName="stroke-dashoffset" values="0;-220" dur="4s" repeatCount="indefinite"/>
       </path>
-      <path d="M160 520H314L402 468H558L680 404H824L924 338H1110" stroke="#63E6FF" stroke-opacity="0.65" stroke-width="2.2" stroke-dasharray="8 12">
-        <animate attributeName="stroke-dashoffset" values="0;-220" dur="3.6s" repeatCount="indefinite"/>
+      <path d="M320 442H520L594 478H838" stroke="url(#trace)" stroke-width="3.5" stroke-dasharray="12 14">
+        <animate attributeName="stroke-dashoffset" values="0;-220" dur="5s" repeatCount="indefinite"/>
       </path>
-      <path d="M174 230H320L416 266H582L688 320H822L946 388H1102" stroke="#B456FF" stroke-opacity="0.55" stroke-width="2.4" stroke-dasharray="10 14">
-        <animate attributeName="stroke-dashoffset" values="0;240" dur="5.5s" repeatCount="indefinite"/>
+      <path d="M776 294H958" stroke="#63E6FF" stroke-width="2.4" stroke-dasharray="8 12">
+        <animate attributeName="stroke-dashoffset" values="0;-120" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M776 448H958" stroke="#C650FF" stroke-opacity="0.8" stroke-width="2.4" stroke-dasharray="8 12">
+        <animate attributeName="stroke-dashoffset" values="0;120" dur="3.6s" repeatCount="indefinite"/>
       </path>
     </g>
 
-    <g opacity="0.7" filter="url(#hardGlow)">
-      <circle cx="334" cy="470" r="5" fill="#63E6FF">
+    <g opacity="0.82" filter="url(#hardGlow)">
+      <circle cx="528" cy="286" r="5" fill="#63E6FF">
+        <animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="590" cy="250" r="5" fill="#63E6FF">
+        <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="520" cy="442" r="5" fill="#63E6FF">
+        <animate attributeName="r" values="4;6.5;4" dur="2.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="594" cy="478" r="5" fill="#C650FF">
+        <animate attributeName="opacity" values="0.4;1;0.4" dur="1.9s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="840" cy="250" r="5" fill="#63E6FF">
+        <animate attributeName="r" values="4;7;4" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="838" cy="478" r="5" fill="#C650FF">
         <animate attributeName="r" values="4;7;4" dur="2.8s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="684" cy="344" r="5" fill="#63E6FF">
-        <animate attributeName="r" values="4;8;4" dur="2.2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="912" cy="250" r="6" fill="#C445FF">
-        <animate attributeName="r" values="5;8.5;5" dur="3.2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="402" cy="468" r="4.5" fill="#7AF7FF">
-        <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="946" cy="388" r="4.5" fill="#B456FF">
-        <animate attributeName="opacity" values="0.35;1;0.35" dur="2.6s" repeatCount="indefinite"/>
-      </circle>
     </g>
 
-    <g transform="translate(936 406)" opacity="0.92">
-      <circle r="108" stroke="#234E77" stroke-width="1.4" fill="none"/>
-      <circle r="78" stroke="#69EDFF" stroke-opacity="0.8" stroke-width="1.6" fill="none" stroke-dasharray="16 18" filter="url(#softGlow)">
-        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/>
-      </circle>
-      <circle r="48" stroke="#C445FF" stroke-opacity="0.7" stroke-width="1.4" fill="none" stroke-dasharray="10 10" filter="url(#softGlow)">
-        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="7.5s" repeatCount="indefinite"/>
-      </circle>
-      <path d="M-128 0H128M0 -128V128" stroke="#17354F" stroke-width="1"/>
-      <path d="M-92 0H92M0 -92V92" stroke="#69EDFF" stroke-opacity="0.28" stroke-width="1.2"/>
-      <circle r="10" fill="#63E6FF" filter="url(#hardGlow)">
-        <animate attributeName="r" values="8;12;8" dur="2.2s" repeatCount="indefinite"/>
-      </circle>
-      <circle r="22" stroke="#63E6FF" stroke-opacity="0.45" stroke-width="1.5" fill="none">
-        <animate attributeName="r" values="18;30;18" dur="2.2s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.2;0.65;0.2" dur="2.2s" repeatCount="indefinite"/>
-      </circle>
+    <g>
+      <rect x="136" y="184" width="184" height="108" rx="18" fill="#08131F" stroke="#23486C"/>
+      <text x="160" y="212" fill="#74F6FF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="12" letter-spacing="2">FRONTEND</text>
+      <text x="160" y="246" fill="#F5FBFF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="20" font-weight="700">React UI</text>
+      <text x="160" y="270" fill="#A8BCD4" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="13">product surfaces</text>
+      <text x="160" y="288" fill="#A8BCD4" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="13">interaction flows</text>
     </g>
 
-    <g transform="translate(164 150)" opacity="0.8">
-      <rect x="0" y="0" width="286" height="94" rx="14" fill="#07111F" stroke="#23476C"/>
-      <text x="20" y="28" fill="#6EF2FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="12" letter-spacing="2">ACTIVE SIGNAL</text>
-      <text x="20" y="62" fill="#F3F8FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="24" font-weight="700">FULLSTACK + AI</text>
-      <text x="20" y="80" fill="#8EB5D8" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="12">PRODUCTS / APIS / DATA / LLM FEATURES</text>
+    <g>
+      <rect x="136" y="388" width="184" height="108" rx="18" fill="#08131F" stroke="#23486C"/>
+      <text x="160" y="416" fill="#74F6FF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="12" letter-spacing="2">BACKEND</text>
+      <text x="160" y="450" fill="#F5FBFF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="20" font-weight="700">Node APIs</text>
+      <text x="160" y="474" fill="#A8BCD4" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="13">auth + business logic</text>
+      <text x="160" y="492" fill="#A8BCD4" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="13">multi-user systems</text>
     </g>
 
-    <g opacity="0.78">
-      <rect x="154" y="500" width="430" height="98" rx="16" fill="#08111D" stroke="#1E466A"/>
-      <text x="180" y="530" fill="#7AF7FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="12" letter-spacing="2">OPERATING AREAS</text>
-      <text x="180" y="562" fill="#F3F8FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="18">BACKENDS / DATA FLOWS / PRODUCT SYSTEMS</text>
-      <text x="180" y="586" fill="#A6BAD4" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="13">AUTH / ETL / ANALYTICS / MULTI-USER APPS</text>
+    <g>
+      <rect x="840" y="184" width="300" height="108" rx="18" fill="#08131F" stroke="#23486C"/>
+      <text x="864" y="212" fill="#74F6FF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="12" letter-spacing="2">AI SYSTEMS</text>
+      <text x="864" y="246" fill="#F5FBFF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="20" font-weight="700">LLM Features</text>
+      <text x="864" y="270" fill="#A8BCD4" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="13">structured outputs</text>
+      <text x="864" y="288" fill="#A8BCD4" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="13">workflow integration</text>
     </g>
 
-    <g opacity="0.28">
-      <path d="M108 116H1172" stroke="#63E6FF" stroke-width="1"/>
-      <path d="M108 604H1172" stroke="#63E6FF" stroke-width="1"/>
-      <path d="M108 116V604" stroke="#63E6FF" stroke-width="1"/>
-      <path d="M1172 116V604" stroke="#63E6FF" stroke-width="1"/>
+    <g>
+      <rect x="840" y="388" width="300" height="108" rx="18" fill="#08131F" stroke="#23486C"/>
+      <text x="864" y="416" fill="#74F6FF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="12" letter-spacing="2">DATA</text>
+      <text x="864" y="450" fill="#F5FBFF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="20" font-weight="700">Pipelines + Analytics</text>
+      <text x="864" y="474" fill="#A8BCD4" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="13">etl + transformations</text>
+      <text x="864" y="492" fill="#A8BCD4" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="13">reporting + product data</text>
     </g>
-  </g>
 
-  <g filter="url(#softGlow)">
-    <text x="154" y="314" fill="#F6FBFF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="64" font-weight="700" letter-spacing="8">ADVIK BHATT</text>
-    <text x="158" y="360" fill="#6EF2FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="19" letter-spacing="4">FULLSTACK, AI, AND DATA SYSTEMS WITH REAL USERS</text>
-    <text x="158" y="396" fill="#A7B9D4" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="15" letter-spacing="2">PRODUCT BACKENDS / APIS / PIPELINES / AI FEATURES</text>
-  </g>
+    <g transform="translate(404 170)">
+      <rect x="0" y="0" width="372" height="344" rx="26" fill="#091322" stroke="#295278"/>
+      <rect x="24" y="24" width="324" height="64" rx="14" fill="#0B1728" stroke="#23486C"/>
+      <text x="44" y="50" fill="#74F6FF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="12" letter-spacing="2">PROFILE</text>
+      <text x="44" y="78" fill="#F5FBFF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="26" font-weight="700">ADVIK BHATT</text>
 
-  <g opacity="0.65">
-    <text x="984" y="118" fill="#84F4FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="12" letter-spacing="3">SYSTEM STATUS</text>
-    <text x="1036" y="136" fill="#F0F7FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="11">LIVE</text>
-    <circle cx="1016" cy="132" r="4" fill="#71F6FF" filter="url(#hardGlow)">
-      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.2s" repeatCount="indefinite"/>
-    </circle>
+      <text x="28" y="126" fill="#63E6FF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="14" letter-spacing="2">WHAT I BUILD</text>
+      <text x="28" y="156" fill="#F2F8FF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="18">Fullstack products, AI features,</text>
+      <text x="28" y="180" fill="#F2F8FF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="18">and data workflows with real users.</text>
+
+      <text x="28" y="226" fill="#63E6FF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="14" letter-spacing="2">DELIVERY LAYERS</text>
+      <text x="28" y="256" fill="#A7B9D4" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="16">frontend   backend   data   AI systems</text>
+
+      <text x="28" y="300" fill="#63E6FF" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="14" letter-spacing="2">PRODUCT THEMES</text>
+      <text x="28" y="330" fill="#A7B9D4" font-family="'SFMono-Regular', Consolas, Menlo, monospace" font-size="16">marketplaces   devtools   intake flows</text>
+    </g>
   </g>
 </svg>
