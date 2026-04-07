@@ -112,17 +112,17 @@
     </g>
 
     <g transform="translate(164 150)" opacity="0.8">
-      <rect x="0" y="0" width="238" height="94" rx="14" fill="#07111F" stroke="#23476C"/>
+      <rect x="0" y="0" width="286" height="94" rx="14" fill="#07111F" stroke="#23476C"/>
       <text x="20" y="28" fill="#6EF2FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="12" letter-spacing="2">ACTIVE SIGNAL</text>
-      <text x="20" y="62" fill="#F3F8FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="26" font-weight="700">AGENT SYSTEMS</text>
-      <text x="20" y="80" fill="#8EB5D8" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="12">ORCHESTRATION / EVAL / ROUTING</text>
+      <text x="20" y="62" fill="#F3F8FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="24" font-weight="700">FULLSTACK + AI</text>
+      <text x="20" y="80" fill="#8EB5D8" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="12">PRODUCTS / APIS / DATA / LLM FEATURES</text>
     </g>
 
     <g opacity="0.78">
-      <rect x="154" y="500" width="340" height="98" rx="16" fill="#08111D" stroke="#1E466A"/>
+      <rect x="154" y="500" width="430" height="98" rx="16" fill="#08111D" stroke="#1E466A"/>
       <text x="180" y="530" fill="#7AF7FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="12" letter-spacing="2">OPERATING AREAS</text>
-      <text x="180" y="562" fill="#F3F8FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="18">DEVELOPER TOOLING</text>
-      <text x="180" y="586" fill="#A6BAD4" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="13">WORKFLOW AUTOMATION / MULTI-USER PRODUCTS</text>
+      <text x="180" y="562" fill="#F3F8FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="18">BACKENDS / DATA FLOWS / PRODUCT SYSTEMS</text>
+      <text x="180" y="586" fill="#A6BAD4" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="13">AUTH / ETL / ANALYTICS / MULTI-USER APPS</text>
     </g>
 
     <g opacity="0.28">
@@ -135,8 +135,8 @@
 
   <g filter="url(#softGlow)">
     <text x="154" y="314" fill="#F6FBFF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="64" font-weight="700" letter-spacing="8">ADVIK BHATT</text>
-    <text x="158" y="360" fill="#6EF2FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="19" letter-spacing="4">BUILDING AI SYSTEMS FOR REAL-WORLD WORKFLOWS</text>
-    <text x="158" y="396" fill="#A7B9D4" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="15" letter-spacing="2">CONTROL LAYERS / HUMAN-IN-THE-LOOP / OPERATIONAL SOFTWARE</text>
+    <text x="158" y="360" fill="#6EF2FF" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="19" letter-spacing="4">FULLSTACK, AI, AND DATA SYSTEMS WITH REAL USERS</text>
+    <text x="158" y="396" fill="#A7B9D4" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="15" letter-spacing="2">PRODUCT BACKENDS / APIS / PIPELINES / AI FEATURES</text>
   </g>
 
   <g opacity="0.65">
