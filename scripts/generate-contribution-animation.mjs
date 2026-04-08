@@ -83,12 +83,13 @@ const frameRadius = 18;
 
 const allOrder = [];
 for (let col = 0; col < cols; col += 1) {
+  const rowsForCol = weeks[col].contributionDays.map((day) => day.weekday).sort((a, b) => a - b);
   if (col % 2 === 0) {
-    for (let row = 0; row < rows; row += 1) {
+    for (const row of rowsForCol) {
       allOrder.push(`${col}-${row}`);
     }
   } else {
-    for (let row = rows - 1; row >= 0; row -= 1) {
+    for (const row of [...rowsForCol].reverse()) {
       allOrder.push(`${col}-${row}`);
     }
   }
@@ -176,7 +177,8 @@ const phaseConfig = {
   emptyEat: { start: 14.6, duration: 2.2 },
 };
 
-const initialSnakeLength = 4;
+const initialSnakeLength = 10;
+const traversalStride = 8;
 
 function cellKey(cell) {
   return `${cell.col}-${cell.row}`;
@@ -202,6 +204,7 @@ const activeOrderKeys = allOrder.filter((key) => cellsByKey.get(key)?.active);
 const emptyPatternOrderKeys = allOrder.filter((key) => patternEmptyKeys.has(key));
 const activeOrderMap = new Map(activeOrderKeys.map((key, index) => [key, index]));
 const emptyPatternOrderMap = new Map(emptyPatternOrderKeys.map((key, index) => [key, index]));
+const snakeTraversalKeys = allOrder.filter((key, index) => index % traversalStride === 0 || cellsByKey.get(key)?.active || patternEmptyKeys.has(key));
 
 function buildActiveAnimation(cell, theme) {
   const order = activeOrderMap.get(cellKey(cell));
@@ -248,8 +251,8 @@ function buildOccupancy(orderKeys, growthValues) {
 function buildSnakePhase(orderKeys, growthValues, phase, theme, suffix) {
   const occupancy = buildOccupancy(orderKeys, growthValues);
   const total = orderKeys.length;
-  const bodyInset = 0.8;
-  const headInset = 0.15;
+  const bodyInset = 0.35;
+  const headInset = 0.05;
 
   const bodyRects = occupancy.map(({ key, index, hideIndex }) => {
     const cell = cellsByKey.get(key);
@@ -260,7 +263,7 @@ function buildSnakePhase(orderKeys, growthValues, phase, theme, suffix) {
       ? phase.start + phase.duration + 0.06
       : phase.start + phase.duration * norm(hideIndex, total);
     const fill = theme.snakePalette[index % theme.snakePalette.length];
-    return `<rect x="${x}" y="${y}" width="${cellSize - bodyInset * 2}" height="${cellSize - bodyInset * 2}" rx="1.8" fill="${fill}" opacity="0" filter="url(#snake-glow)"><animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes([0, headAt, Math.min(hideAt, LOOP_SECONDS - 0.01), Math.min(hideAt + 0.02, LOOP_SECONDS - 0.005), LOOP_SECONDS])}" /></rect>`;
+    return `<rect x="${x}" y="${y}" width="${cellSize - bodyInset * 2}" height="${cellSize - bodyInset * 2}" rx="2.1" fill="${fill}" stroke="${theme.background}" stroke-width="0.55" opacity="0" filter="url(#snake-glow)"><animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes([0, headAt, Math.min(hideAt, LOOP_SECONDS - 0.01), Math.min(hideAt + 0.02, LOOP_SECONDS - 0.005), LOOP_SECONDS])}" /></rect>`;
   }).join('');
 
   const headRects = occupancy.map(({ key, index }) => {
@@ -271,15 +274,21 @@ function buildSnakePhase(orderKeys, growthValues, phase, theme, suffix) {
     const nextAt = index === total - 1
       ? phase.start + phase.duration
       : phase.start + phase.duration * norm(index + 1, total);
-    return `<rect x="${x}" y="${y}" width="${cellSize - headInset * 2}" height="${cellSize - headInset * 2}" rx="2.2" fill="${theme.snakeHead}" opacity="0" filter="url(#snake-glow)"><animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="${formatTimes([0, headAt, Math.min(nextAt, LOOP_SECONDS - 0.01), LOOP_SECONDS])}" /></rect>`;
+    return `<rect x="${x}" y="${y}" width="${cellSize - headInset * 2}" height="${cellSize - headInset * 2}" rx="2.3" fill="${theme.snakeHead}" stroke="${theme.background}" stroke-width="0.65" opacity="0" filter="url(#snake-glow)"><animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="${formatTimes([0, headAt, Math.min(nextAt, LOOP_SECONDS - 0.01), LOOP_SECONDS])}" /></rect>`;
   }).join('');
 
   return `<g id="snake-${suffix}">${bodyRects}${headRects}</g>`;
 }
 
 function buildSvg(theme) {
-  const activeGrowth = activeOrderKeys.map((key) => contributionGrowth[cellsByKey.get(key).contributionLevel] ?? 1);
-  const emptyGrowth = emptyPatternOrderKeys.map(() => 1);
+  const traversalGrowthForActive = snakeTraversalKeys.map((key) => {
+    const cell = cellsByKey.get(key);
+    if (!cell?.active) {
+      return 0;
+    }
+    return contributionGrowth[cell.contributionLevel] ?? 1;
+  });
+  const traversalGrowthForEmptyPattern = snakeTraversalKeys.map((key) => (patternEmptyKeys.has(key) ? 1 : 0));
   const rects = cells
     .map((cell) => {
       const key = cellKey(cell);
@@ -311,9 +320,9 @@ function buildSvg(theme) {
     <animate id="loop" attributeName="opacity" values="0;0" dur="${LOOP_SECONDS}s" repeatCount="indefinite" />
   </rect>
   ${rects}
-  ${buildSnakePhase(activeOrderKeys, activeGrowth, phaseConfig.commitEat, theme, 'eat-commits')}
-  ${buildSnakePhase(activeOrderKeys, activeGrowth, phaseConfig.highlightEat, theme, 'eat-highlights')}
-  ${buildSnakePhase(emptyPatternOrderKeys, emptyGrowth, phaseConfig.emptyEat, theme, 'eat-empty-pattern')}
+  ${buildSnakePhase(snakeTraversalKeys, traversalGrowthForActive, phaseConfig.commitEat, theme, 'eat-commits')}
+  ${buildSnakePhase(snakeTraversalKeys, traversalGrowthForActive, phaseConfig.highlightEat, theme, 'eat-highlights')}
+  ${buildSnakePhase(snakeTraversalKeys, traversalGrowthForEmptyPattern, phaseConfig.emptyEat, theme, 'eat-empty-pattern')}
 </svg>`;
 }
 
