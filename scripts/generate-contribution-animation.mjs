@@ -8,7 +8,7 @@ if (!TOKEN) {
 }
 
 const DAY_MS = 24 * 60 * 60 * 1000;
-const LOOP_SECONDS = 60;
+const LOOP_SECONDS = 26;
 
 const query = `
   query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
@@ -171,12 +171,12 @@ const contributionGrowth = {
 };
 
 const phaseConfig = {
-  commitEat: { start: 0, duration: 20 },
-  highlightShow: { start: 21, duration: 6 },
-  highlightEat: { start: 28, duration: 10 },
-  restoreOriginal: { start: 39, duration: 1 },
-  emptyShow: { start: 41, duration: 6 },
-  emptyEat: { start: 48, duration: 10 },
+  commitEat: { start: 0, duration: 8 },
+  highlightShow: { start: 8.5, duration: 3 },
+  highlightEat: { start: 12, duration: 4.5 },
+  restoreOriginal: { start: 17, duration: 0.5 },
+  emptyShow: { start: 18, duration: 3 },
+  emptyEat: { start: 21.5, duration: 4.5 },
 };
 
 const initialSnakeLength = 12;
@@ -300,26 +300,30 @@ function buildSnakePhase(orderKeys, growthValues, phase, theme, suffix) {
     bodyLengths.push(pathMeta.prelude + growthTotal * (cellSize + gap));
   }
 
-  const targetTimes = orderKeys.map((key, index) => phase.start + phase.duration * norm(index, orderKeys.length));
-  const dashValues = targetTimes.map((_, index) => {
-    const progressLength = pathMeta.targetProgressByKey.get(orderKeys[index]);
-    const visibleLength = Math.min(progressLength, bodyLengths[index]);
-    return `${((visibleLength / pathMeta.totalLength) * 1000).toFixed(2)} 1000`;
+  const targetTimes = orderKeys.map((key) => {
+    const progressLength = pathMeta.targetProgressByKey.get(key);
+    return phase.start + phase.duration * (progressLength / pathMeta.totalLength);
+  });
+  const dashValues = targetTimes.map((_, index) => `${((Math.min(bodyLengths[index], pathMeta.totalLength) / pathMeta.totalLength) * 1000).toFixed(2)} 1000`);
+  const dashOffsets = orderKeys.map((key) => {
+    const progressLength = pathMeta.targetProgressByKey.get(key);
+    return (1000 - ((progressLength / pathMeta.totalLength) * 1000)).toFixed(2);
   });
   const dashKeyTimes = formatTimes([0, ...targetTimes, LOOP_SECONDS]);
   const dashSequence = `${dashValues[0]};${dashValues.join(';')};${dashValues[dashValues.length - 1]}`;
+  const dashOffsetSequence = `${dashOffsets[0]};${dashOffsets.join(';')};${dashOffsets[dashOffsets.length - 1]}`;
   const opacityTimes = [0, phase.start, phase.start + phase.duration, Math.min(phase.start + phase.duration + 0.6, LOOP_SECONDS - 0.01), LOOP_SECONDS];
-
-  const eyePositions = getEyePositions(orderKeys, 0);
 
   return `<g id="snake-${suffix}">
     <path id="${suffix}-path" d="${pathMeta.pathData}" fill="none" stroke="${theme.snakeBodyGlow}" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round" opacity="0" filter="url(#snake-glow)" pathLength="1000">
       <animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes(opacityTimes)}" />
       <animate attributeName="stroke-dasharray" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${dashSequence}" keyTimes="${dashKeyTimes}" />
+      <animate attributeName="stroke-dashoffset" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${dashOffsetSequence}" keyTimes="${dashKeyTimes}" />
     </path>
     <path d="${pathMeta.pathData}" fill="none" stroke="${theme.snakeBody}" stroke-width="6.2" stroke-linecap="round" stroke-linejoin="round" opacity="0" pathLength="1000">
       <animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes(opacityTimes)}" />
       <animate attributeName="stroke-dasharray" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${dashSequence}" keyTimes="${dashKeyTimes}" />
+      <animate attributeName="stroke-dashoffset" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${dashOffsetSequence}" keyTimes="${dashKeyTimes}" />
     </path>
     <g opacity="0">
       <animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes(opacityTimes)}" />
