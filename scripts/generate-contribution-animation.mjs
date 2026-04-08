@@ -137,9 +137,8 @@ const themes = {
     },
     highlightPalette: ['#00bcd4', '#4361ee', '#d63384', '#f59f00'],
     emptyPatternPalette: ['#4cc9f0', '#4895ef', '#b5179e', '#f72585'],
-    snakeBody: '#2563eb',
-    snakeBodyGlow: '#60a5fa',
-    snakeHead: '#f59f00',
+    snakeBody: '#7c3aed',
+    snakeBodyGlow: '#a78bfa',
   },
   dark: {
     background: '#0d1117',
@@ -156,9 +155,8 @@ const themes = {
     },
     highlightPalette: ['#5af2ff', '#7c6dff', '#ff63c3', '#ffd166'],
     emptyPatternPalette: ['#58f0ff', '#70a4ff', '#c650ff', '#ff8fab'],
-    snakeBody: '#58f0ff',
-    snakeBodyGlow: '#7dd3fc',
-    snakeHead: '#ffd166',
+    snakeBody: '#a855f7',
+    snakeBodyGlow: '#c084fc',
   },
 };
 
@@ -325,17 +323,6 @@ function buildSnakePhase(orderKeys, growthValues, phase, theme, suffix) {
       <animate attributeName="stroke-dasharray" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${dashSequence}" keyTimes="${dashKeyTimes}" />
       <animate attributeName="stroke-dashoffset" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${dashOffsetSequence}" keyTimes="${dashKeyTimes}" />
     </path>
-    <g opacity="0">
-      <animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes(opacityTimes)}" />
-      <g>
-        <circle cx="0" cy="0" r="6.2" fill="${theme.snakeHead}" stroke="${theme.background}" stroke-width="0.7" />
-        <circle cx="1.8" cy="-1.55" r="0.9" fill="#0b1020" />
-        <circle cx="1.8" cy="1.55" r="0.9" fill="#0b1020" />
-        <animateMotion dur="${phase.duration}s" repeatCount="indefinite" begin="loop.begin+${phase.start}s" fill="remove" rotate="auto">
-          <mpath href="#${suffix}-path" />
-        </animateMotion>
-      </g>
-    </g>
   </g>`;
 }
 
