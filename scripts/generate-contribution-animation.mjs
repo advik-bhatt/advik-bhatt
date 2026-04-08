@@ -8,7 +8,7 @@ if (!TOKEN) {
 }
 
 const DAY_MS = 24 * 60 * 60 * 1000;
-const LOOP_SECONDS = 20;
+const LOOP_SECONDS = 60;
 
 const query = `
   query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
@@ -169,16 +169,15 @@ const contributionGrowth = {
 };
 
 const phaseConfig = {
-  commitEat: { start: 0, duration: 4.2 },
-  highlightShow: { start: 4.8, duration: 2.8 },
-  highlightEat: { start: 8.0, duration: 2.2 },
-  restoreOriginal: { start: 10.6, duration: 0.5 },
-  emptyShow: { start: 11.4, duration: 2.8 },
-  emptyEat: { start: 14.6, duration: 2.2 },
+  commitEat: { start: 0, duration: 20 },
+  highlightShow: { start: 21, duration: 6 },
+  highlightEat: { start: 28, duration: 10 },
+  restoreOriginal: { start: 39, duration: 1 },
+  emptyShow: { start: 41, duration: 6 },
+  emptyEat: { start: 48, duration: 10 },
 };
 
-const initialSnakeLength = 10;
-const traversalStride = 8;
+const initialSnakeLength = 12;
 
 function cellKey(cell) {
   return `${cell.col}-${cell.row}`;
@@ -204,7 +203,28 @@ const activeOrderKeys = allOrder.filter((key) => cellsByKey.get(key)?.active);
 const emptyPatternOrderKeys = allOrder.filter((key) => patternEmptyKeys.has(key));
 const activeOrderMap = new Map(activeOrderKeys.map((key, index) => [key, index]));
 const emptyPatternOrderMap = new Map(emptyPatternOrderKeys.map((key, index) => [key, index]));
-const snakeTraversalKeys = allOrder.filter((key, index) => index % traversalStride === 0 || cellsByKey.get(key)?.active || patternEmptyKeys.has(key));
+const snakeTraversalKeys = allOrder;
+
+function getEyePositions(orderKeys, index) {
+  const current = cellsByKey.get(orderKeys[index]);
+  const neighbor = cellsByKey.get(orderKeys[index + 1] ?? orderKeys[index - 1] ?? orderKeys[index]);
+  const dx = Math.sign((neighbor?.col ?? current.col) - current.col);
+  const dy = Math.sign((neighbor?.row ?? current.row) - current.row);
+
+  if (dx !== 0) {
+    const x = cellX(current.col) + (dx > 0 ? cellSize - 3.1 : 3.1);
+    return [
+      { cx: x, cy: cellY(current.row) + 3.6 },
+      { cx: x, cy: cellY(current.row) + cellSize - 3.6 },
+    ];
+  }
+
+  const y = cellY(current.row) + (dy > 0 ? cellSize - 3.1 : 3.1);
+  return [
+    { cx: cellX(current.col) + 3.6, cy: y },
+    { cx: cellX(current.col) + cellSize - 3.6, cy: y },
+  ];
+}
 
 function buildActiveAnimation(cell, theme) {
   const order = activeOrderMap.get(cellKey(cell));
@@ -251,8 +271,8 @@ function buildOccupancy(orderKeys, growthValues) {
 function buildSnakePhase(orderKeys, growthValues, phase, theme, suffix) {
   const occupancy = buildOccupancy(orderKeys, growthValues);
   const total = orderKeys.length;
-  const bodyInset = 0.35;
-  const headInset = 0.05;
+  const bodyInset = 0.15;
+  const headInset = 0.02;
 
   const bodyRects = occupancy.map(({ key, index, hideIndex }) => {
     const cell = cellsByKey.get(key);
@@ -263,7 +283,7 @@ function buildSnakePhase(orderKeys, growthValues, phase, theme, suffix) {
       ? phase.start + phase.duration + 0.06
       : phase.start + phase.duration * norm(hideIndex, total);
     const fill = theme.snakePalette[index % theme.snakePalette.length];
-    return `<rect x="${x}" y="${y}" width="${cellSize - bodyInset * 2}" height="${cellSize - bodyInset * 2}" rx="2.1" fill="${fill}" stroke="${theme.background}" stroke-width="0.55" opacity="0" filter="url(#snake-glow)"><animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes([0, headAt, Math.min(hideAt, LOOP_SECONDS - 0.01), Math.min(hideAt + 0.02, LOOP_SECONDS - 0.005), LOOP_SECONDS])}" /></rect>`;
+    return `<rect x="${x}" y="${y}" width="${cellSize - bodyInset * 2}" height="${cellSize - bodyInset * 2}" rx="2.3" fill="${fill}" stroke="${theme.background}" stroke-width="0.4" opacity="0" filter="url(#snake-glow)"><animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes([0, headAt, Math.min(hideAt, LOOP_SECONDS - 0.01), Math.min(hideAt + 0.03, LOOP_SECONDS - 0.005), LOOP_SECONDS])}" /></rect>`;
   }).join('');
 
   const headRects = occupancy.map(({ key, index }) => {
@@ -274,7 +294,10 @@ function buildSnakePhase(orderKeys, growthValues, phase, theme, suffix) {
     const nextAt = index === total - 1
       ? phase.start + phase.duration
       : phase.start + phase.duration * norm(index + 1, total);
-    return `<rect x="${x}" y="${y}" width="${cellSize - headInset * 2}" height="${cellSize - headInset * 2}" rx="2.3" fill="${theme.snakeHead}" stroke="${theme.background}" stroke-width="0.65" opacity="0" filter="url(#snake-glow)"><animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="${formatTimes([0, headAt, Math.min(nextAt, LOOP_SECONDS - 0.01), LOOP_SECONDS])}" /></rect>`;
+    const eyes = getEyePositions(orderKeys, index)
+      .map(({ cx, cy }) => `<circle cx="${cx}" cy="${cy}" r="0.9" fill="#09111f" opacity="0"><animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="${formatTimes([0, headAt, Math.min(nextAt, LOOP_SECONDS - 0.01), LOOP_SECONDS])}" /></circle>`)
+      .join('');
+    return `<g><rect x="${x}" y="${y}" width="${cellSize - headInset * 2}" height="${cellSize - headInset * 2}" rx="2.5" fill="${theme.snakeHead}" stroke="${theme.background}" stroke-width="0.45" opacity="0" filter="url(#snake-glow)"><animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="${formatTimes([0, headAt, Math.min(nextAt, LOOP_SECONDS - 0.01), LOOP_SECONDS])}" /></rect>${eyes}</g>`;
   }).join('');
 
   return `<g id="snake-${suffix}">${bodyRects}${headRects}</g>`;
