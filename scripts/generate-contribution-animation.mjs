@@ -312,25 +312,25 @@ function buildSnakePhase(orderKeys, growthValues, phase, theme, suffix) {
   const dashKeyTimes = formatTimes([0, ...targetTimes, LOOP_SECONDS]);
   const dashSequence = `${dashValues[0]};${dashValues.join(';')};${dashValues[dashValues.length - 1]}`;
   const dashOffsetSequence = `${dashOffsets[0]};${dashOffsets.join(';')};${dashOffsets[dashOffsets.length - 1]}`;
-  const opacityTimes = [0, phase.start, phase.start + phase.duration, Math.min(phase.start + phase.duration + 0.6, LOOP_SECONDS - 0.01), LOOP_SECONDS];
+  const opacityTimes = [0, phase.start, phase.start + phase.duration, Math.min(phase.start + phase.duration + 0.25, LOOP_SECONDS - 0.01), LOOP_SECONDS];
 
   return `<g id="snake-${suffix}">
-    <path id="${suffix}-path" d="${pathMeta.pathData}" fill="none" stroke="${theme.snakeBodyGlow}" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round" opacity="0" filter="url(#snake-glow)" pathLength="1000">
+    <path id="${suffix}-path" d="${pathMeta.pathData}" fill="none" stroke="${theme.snakeBodyGlow}" stroke-width="11.5" stroke-linecap="round" stroke-linejoin="round" opacity="0" filter="url(#snake-glow)" pathLength="1000">
       <animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes(opacityTimes)}" />
-      <animate attributeName="stroke-dasharray" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${dashSequence}" keyTimes="${dashKeyTimes}" />
-      <animate attributeName="stroke-dashoffset" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${dashOffsetSequence}" keyTimes="${dashKeyTimes}" />
+      <animate attributeName="stroke-dasharray" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${dashSequence}" keyTimes="${dashKeyTimes}" />
+      <animate attributeName="stroke-dashoffset" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${dashOffsetSequence}" keyTimes="${dashKeyTimes}" />
     </path>
-    <path d="${pathMeta.pathData}" fill="none" stroke="${theme.snakeBody}" stroke-width="6.2" stroke-linecap="round" stroke-linejoin="round" opacity="0" pathLength="1000">
+    <path d="${pathMeta.pathData}" fill="none" stroke="${theme.snakeBody}" stroke-width="8.8" stroke-linecap="round" stroke-linejoin="round" opacity="0" pathLength="1000">
       <animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes(opacityTimes)}" />
-      <animate attributeName="stroke-dasharray" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${dashSequence}" keyTimes="${dashKeyTimes}" />
-      <animate attributeName="stroke-dashoffset" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${dashOffsetSequence}" keyTimes="${dashKeyTimes}" />
+      <animate attributeName="stroke-dasharray" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${dashSequence}" keyTimes="${dashKeyTimes}" />
+      <animate attributeName="stroke-dashoffset" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${dashOffsetSequence}" keyTimes="${dashKeyTimes}" />
     </path>
     <g opacity="0">
       <animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes(opacityTimes)}" />
       <g>
-        <circle cx="0" cy="0" r="5.1" fill="${theme.snakeHead}" stroke="${theme.background}" stroke-width="0.6" />
-        <circle cx="1.5" cy="-1.35" r="0.8" fill="#0b1020" />
-        <circle cx="1.5" cy="1.35" r="0.8" fill="#0b1020" />
+        <circle cx="0" cy="0" r="6.2" fill="${theme.snakeHead}" stroke="${theme.background}" stroke-width="0.7" />
+        <circle cx="1.8" cy="-1.55" r="0.9" fill="#0b1020" />
+        <circle cx="1.8" cy="1.55" r="0.9" fill="#0b1020" />
         <animateMotion dur="${phase.duration}s" repeatCount="indefinite" begin="loop.begin+${phase.start}s" fill="remove" rotate="auto">
           <mpath href="#${suffix}-path" />
         </animateMotion>
