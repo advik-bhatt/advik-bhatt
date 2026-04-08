@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - .github/workflows/snake.yml
+      - scripts/generate-contribution-animation.mjs
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
@@ -17,13 +18,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate contribution snake
-        uses: Platane/snk@v3
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          github_user_name: advik-bhatt
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          node-version: 20
+
+      - name: Generate contribution animation
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: advik-bhatt
+        run: node scripts/generate-contribution-animation.mjs
 
       - name: Publish generated files
         uses: crazy-max/ghaction-github-pages@v4
