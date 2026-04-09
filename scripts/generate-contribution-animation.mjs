@@ -9,6 +9,9 @@ if (!TOKEN) {
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 const LOOP_SECONDS = 26;
+const snakeStart = 0.8;
+const snakeDuration = 22;
+const initialSnakeLength = 7;
 
 const query = `
   query ContributionCalendar($login: String!, $from: DateTime!, $to: DateTime!) {
@@ -168,17 +171,6 @@ const contributionGrowth = {
   FOURTH_QUARTILE: 4,
 };
 
-const phaseConfig = {
-  commitEat: { start: 0, duration: 8 },
-  highlightShow: { start: 8.5, duration: 3 },
-  highlightEat: { start: 12, duration: 4.5 },
-  restoreOriginal: { start: 17, duration: 0.5 },
-  emptyShow: { start: 18, duration: 3 },
-  emptyEat: { start: 21.5, duration: 4.5 },
-};
-
-const initialSnakeLength = 12;
-
 function cellKey(cell) {
   return `${cell.col}-${cell.row}`;
 }
@@ -200,35 +192,12 @@ function formatTimes(times) {
 }
 
 const activeOrderKeys = allOrder.filter((key) => cellsByKey.get(key)?.active);
-const emptyPatternOrderKeys = allOrder.filter((key) => patternEmptyKeys.has(key));
 const activeOrderMap = new Map(activeOrderKeys.map((key, index) => [key, index]));
-const emptyPatternOrderMap = new Map(emptyPatternOrderKeys.map((key, index) => [key, index]));
 function cellCenter(col, row) {
   return {
     x: cellX(col) + cellSize / 2,
     y: cellY(row) + cellSize / 2,
   };
-}
-
-function getEyePositions(orderKeys, index) {
-  const current = cellsByKey.get(orderKeys[index]);
-  const neighbor = cellsByKey.get(orderKeys[index + 1] ?? orderKeys[index - 1] ?? orderKeys[index]);
-  const dx = Math.sign((neighbor?.col ?? current.col) - current.col);
-  const dy = Math.sign((neighbor?.row ?? current.row) - current.row);
-
-  if (dx !== 0) {
-    const x = cellX(current.col) + (dx > 0 ? cellSize - 3.1 : 3.1);
-    return [
-      { cx: x, cy: cellY(current.row) + 3.6 },
-      { cx: x, cy: cellY(current.row) + cellSize - 3.6 },
-    ];
-  }
-
-  const y = cellY(current.row) + (dy > 0 ? cellSize - 3.1 : 3.1);
-  return [
-    { cx: cellX(current.col) + 3.6, cy: y },
-    { cx: cellX(current.col) + cellSize - 3.6, cy: y },
-  ];
 }
 
 function buildPathMeta(orderKeys) {
@@ -271,25 +240,12 @@ function buildPathMeta(orderKeys) {
 function buildActiveAnimation(cell, theme) {
   const order = activeOrderMap.get(cellKey(cell));
   const progress = norm(order, activeOrderKeys.length);
-  const eatOriginalAt = phaseConfig.commitEat.start + phaseConfig.commitEat.duration * progress;
-  const showHighlightAt = phaseConfig.highlightShow.start + phaseConfig.highlightShow.duration * progress;
-  const eatHighlightAt = phaseConfig.highlightEat.start + phaseConfig.highlightEat.duration * progress;
-  const restoreAt = phaseConfig.restoreOriginal.start + phaseConfig.restoreOriginal.duration * progress;
+  const eatAt = snakeStart + snakeDuration * progress;
   const originalFill = theme.original[cell.contributionLevel];
-  const highlightFill = theme.highlightPalette[(cell.col + cell.row * 2) % theme.highlightPalette.length];
-  return `<animate attributeName="fill" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${originalFill};${theme.grid};${highlightFill};${theme.grid};${originalFill};${originalFill}" keyTimes="${formatTimes([0, eatOriginalAt, showHighlightAt, eatHighlightAt, restoreAt, LOOP_SECONDS])}" />`;
+  return `<animate attributeName="fill" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${originalFill};${originalFill};${theme.grid};${theme.grid};${originalFill}" keyTimes="${formatTimes([0, eatAt, eatAt + 0.001, LOOP_SECONDS - 0.001, LOOP_SECONDS])}" />`;
 }
 
-function buildEmptyPatternAnimation(cell, theme) {
-  const order = emptyPatternOrderMap.get(cellKey(cell));
-  const progress = norm(order, emptyPatternOrderKeys.length);
-  const showAt = phaseConfig.emptyShow.start + phaseConfig.emptyShow.duration * progress;
-  const eatAt = phaseConfig.emptyEat.start + phaseConfig.emptyEat.duration * progress;
-  const patternFill = theme.emptyPatternPalette[(cell.col * 2 + cell.row) % theme.emptyPatternPalette.length];
-  return `<animate attributeName="fill" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${theme.grid};${patternFill};${theme.grid};${theme.grid}" keyTimes="${formatTimes([0, showAt, eatAt, LOOP_SECONDS])}" />`;
-}
-
-function buildSnakePhase(orderKeys, growthValues, phase, theme, suffix) {
+function buildSnakePhase(orderKeys, growthValues, theme, suffix) {
   const pathMeta = buildPathMeta(orderKeys);
   const bodyLengths = [];
   let growthTotal = 0;
@@ -300,7 +256,7 @@ function buildSnakePhase(orderKeys, growthValues, phase, theme, suffix) {
 
   const targetTimes = orderKeys.map((key) => {
     const progressLength = pathMeta.targetProgressByKey.get(key);
-    return phase.start + phase.duration * (progressLength / pathMeta.totalLength);
+    return snakeStart + snakeDuration * (progressLength / pathMeta.totalLength);
   });
   const dashValues = targetTimes.map((_, index) => `${((Math.min(bodyLengths[index], pathMeta.totalLength) / pathMeta.totalLength) * 1000).toFixed(2)} 1000`);
   const dashOffsets = orderKeys.map((key) => {
@@ -310,42 +266,59 @@ function buildSnakePhase(orderKeys, growthValues, phase, theme, suffix) {
   const dashKeyTimes = formatTimes([0, ...targetTimes, LOOP_SECONDS]);
   const dashSequence = `${dashValues[0]};${dashValues.join(';')};${dashValues[dashValues.length - 1]}`;
   const dashOffsetSequence = `${dashOffsets[0]};${dashOffsets.join(';')};${dashOffsets[dashOffsets.length - 1]}`;
-  const opacityTimes = [0, phase.start, phase.start + phase.duration, Math.min(phase.start + phase.duration + 0.25, LOOP_SECONDS - 0.01), LOOP_SECONDS];
+  const opacityTimes = [0, snakeStart, snakeStart + snakeDuration, Math.min(snakeStart + snakeDuration + 0.25, LOOP_SECONDS - 0.01), LOOP_SECONDS];
 
   return `<g id="snake-${suffix}">
-    <path id="${suffix}-path" d="${pathMeta.pathData}" fill="none" stroke="${theme.snakeBodyGlow}" stroke-width="11.5" stroke-linecap="round" stroke-linejoin="round" opacity="0" filter="url(#snake-glow)" pathLength="1000">
+    <path id="${suffix}-path" d="${pathMeta.pathData}" fill="none" stroke="${theme.snakeBodyGlow}" stroke-width="12.5" stroke-linecap="round" stroke-linejoin="round" opacity="0" filter="url(#snake-glow)" pathLength="1000">
       <animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes(opacityTimes)}" />
       <animate attributeName="stroke-dasharray" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${dashSequence}" keyTimes="${dashKeyTimes}" />
       <animate attributeName="stroke-dashoffset" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${dashOffsetSequence}" keyTimes="${dashKeyTimes}" />
     </path>
-    <path d="${pathMeta.pathData}" fill="none" stroke="${theme.snakeBody}" stroke-width="8.8" stroke-linecap="round" stroke-linejoin="round" opacity="0" pathLength="1000">
+    <path d="${pathMeta.pathData}" fill="none" stroke="${theme.snakeBody}" stroke-width="9.6" stroke-linecap="round" stroke-linejoin="round" opacity="0" pathLength="1000">
       <animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes(opacityTimes)}" />
       <animate attributeName="stroke-dasharray" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${dashSequence}" keyTimes="${dashKeyTimes}" />
       <animate attributeName="stroke-dashoffset" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${dashOffsetSequence}" keyTimes="${dashKeyTimes}" />
     </path>
+    <path d="${pathMeta.pathData}" fill="none" stroke="${theme.snakeBodyGlow}" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.95" pathLength="1000">
+      <animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;0.85;0.85;0;0" keyTimes="${formatTimes(opacityTimes)}" />
+      <animate attributeName="stroke-dasharray" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${dashSequence}" keyTimes="${dashKeyTimes}" />
+      <animate attributeName="stroke-dashoffset" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${dashOffsetSequence}" keyTimes="${dashKeyTimes}" />
+    </path>
+    ${buildSnakeSegments(theme, suffix, opacityTimes)}
   </g>`;
 }
 
+function buildSnakeSegments(theme, suffix, opacityTimes) {
+  const motionTimes = formatTimes([0, snakeStart, snakeStart + snakeDuration, LOOP_SECONDS]);
+  const segments = [
+    { delay: 0, markup: `<g filter="url(#snake-glow)"><ellipse cx="0" cy="0" rx="8.6" ry="7.2" fill="${theme.snakeBodyGlow}" /><ellipse cx="0" cy="0" rx="6.8" ry="5.8" fill="${theme.snakeBody}" /><circle cx="2.3" cy="-2.1" r="0.9" fill="#ffffff" /><circle cx="2.3" cy="2.1" r="0.9" fill="#ffffff" /><circle cx="3.2" cy="-2.1" r="0.36" fill="#111827" /><circle cx="3.2" cy="2.1" r="0.36" fill="#111827" /></g>` },
+    { delay: 0.035, markup: `<ellipse cx="0" cy="0" rx="5.9" ry="5.2" fill="${theme.snakeBody}" opacity="0.96" />` },
+    { delay: 0.07, markup: `<ellipse cx="0" cy="0" rx="5.5" ry="4.9" fill="${theme.snakeBody}" opacity="0.92" />` },
+    { delay: 0.105, markup: `<ellipse cx="0" cy="0" rx="5.1" ry="4.6" fill="${theme.snakeBody}" opacity="0.88" />` },
+    { delay: 0.14, markup: `<ellipse cx="0" cy="0" rx="4.7" ry="4.2" fill="${theme.snakeBody}" opacity="0.82" />` },
+    { delay: 0.175, markup: `<ellipse cx="0" cy="0" rx="4.2" ry="3.8" fill="${theme.snakeBody}" opacity="0.76" />` },
+  ];
+
+  return segments.map(({ delay, markup }, index) => {
+    const keyPoints = `0;0;${Math.max(0, 1 - delay).toFixed(4)};${Math.max(0, 1 - delay).toFixed(4)}`;
+    return `<g opacity="0">
+      <animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes(opacityTimes)}" />
+      ${markup}
+      <animateMotion dur="${LOOP_SECONDS}s" repeatCount="indefinite" rotate="auto" keyTimes="${motionTimes}" keyPoints="${keyPoints}">
+        <mpath href="#${suffix}-path" />
+      </animateMotion>
+    </g>`;
+  }).join('');
+}
+
 function buildSvg(theme) {
-  const traversalGrowthForActive = activeOrderKeys.map((key) => {
-    const cell = cellsByKey.get(key);
-    if (!cell?.active) {
-      return 0;
-    }
-    return contributionGrowth[cell.contributionLevel] ?? 1;
-  });
-  const traversalGrowthForEmptyPattern = emptyPatternOrderKeys.map(() => 1);
+  const traversalGrowthForActive = activeOrderKeys.map(() => 1);
   const rects = cells
     .map((cell) => {
-      const key = cellKey(cell);
       const x = cellX(cell.col);
       const y = cellY(cell.row);
       const baseFill = cell.active ? theme.original[cell.contributionLevel] : theme.grid;
-      const animate = cell.active
-        ? buildActiveAnimation(cell, theme)
-        : patternEmptyKeys.has(key)
-          ? buildEmptyPatternAnimation(cell, theme)
-          : '';
+      const animate = cell.active ? buildActiveAnimation(cell, theme) : '';
       return `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" rx="2.4" fill="${baseFill}" stroke="${theme.gridStroke}" stroke-width="0.6">${animate}</rect>`;
     })
     .join('');
@@ -366,9 +339,7 @@ function buildSvg(theme) {
     <animate id="loop" attributeName="opacity" values="0;0" dur="${LOOP_SECONDS}s" repeatCount="indefinite" />
   </rect>
   ${rects}
-  ${buildSnakePhase(activeOrderKeys, traversalGrowthForActive, phaseConfig.commitEat, theme, 'eat-commits')}
-  ${buildSnakePhase(activeOrderKeys, traversalGrowthForActive, phaseConfig.highlightEat, theme, 'eat-highlights')}
-  ${buildSnakePhase(emptyPatternOrderKeys, traversalGrowthForEmptyPattern, phaseConfig.emptyEat, theme, 'eat-empty-pattern')}
+  ${activeOrderKeys.length ? buildSnakePhase(activeOrderKeys, traversalGrowthForActive, theme, 'eat-commits') : ''}
 </svg>`;
 }
 
