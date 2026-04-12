@@ -35,7 +35,7 @@ Shipping systems around `API routes`, `client-server architecture`, `role-based 
 - `AI + Data:` OpenRouter, LangChain, pgvector, vector search, ETL, data analysis
 - `Infra + Workflow:` Git, GitHub, GitHub Actions, Postman, OAuth, RLS, CI/CD
 
-**Signal**
+**Accomplishments**
 
 - `Voya Financial` - Python ETL migration automation reducing manual workload by `70%`
 - Published Python tooling and active fullstack/mobile product builds across AI, staffing, intake, and campus utility systems
