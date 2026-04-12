@@ -733,6 +733,7 @@ function simulate() {
 
 const simulation = simulate();
 const LOOP_SECONDS = simulation.steps.length * stepSeconds;
+const stepTimes = [...simulation.steps.map((step) => timeForStep(step.step)), LOOP_SECONDS];
 
 function timeForStep(step) {
   return Math.min(step * stepSeconds, LOOP_SECONDS);
@@ -755,32 +756,37 @@ function buildContinuousPathData() {
 }
 
 const fullPathData = buildContinuousPathData();
-const headPositions = simulation.steps.map((step) => {
-  const { col, row } = parseKey(step.headKey);
-  return col < 0 ? { x: padX + col * (cellSize + gap) + cellSize / 2, y: cellY(0) + cellSize / 2 } : cellCenter(col, row);
-});
 
-function buildSegmentWindows() {
-  const maxLength = Math.max(...simulation.steps.map((step) => step.bodyKeys.length));
-  const windows = Array.from({ length: maxLength }, (_, index) => ({ start: null, end: null, samples: [] }));
-
-  for (const step of simulation.steps) {
-    for (let index = 0; index < maxLength; index += 1) {
-      const window = windows[index];
-      if (index < step.bodyKeys.length) {
-        if (window.start === null) {
-          window.start = timeForStep(step.step);
-        }
-        window.end = timeForStep(step.step);
-        window.samples.push(index < step.bodyKeys.length ? step.bodyKeys[index] : null);
-      }
-    }
+function positionForKey(key) {
+  const { col, row } = parseKey(key);
+  if (col < 0) {
+    return { x: padX + col * (cellSize + gap) + cellSize / 2, y: cellY(0) + cellSize / 2 };
   }
-
-  return windows;
+  return cellCenter(col, row);
 }
 
-const segmentWindows = buildSegmentWindows();
+function buildSegmentTracks() {
+  const maxLength = Math.max(...simulation.steps.map((step) => step.bodyKeys.length));
+  return Array.from({ length: maxLength }, (_, index) => {
+    const transforms = [];
+    const opacities = [];
+    for (const step of simulation.steps) {
+      const key = step.bodyKeys[index] ?? step.bodyKeys[step.bodyKeys.length - 1] ?? step.headKey;
+      const position = positionForKey(key);
+      transforms.push(`translate(${position.x.toFixed(2)} ${position.y.toFixed(2)})`);
+      opacities.push(index < step.bodyKeys.length ? '1' : '0');
+    }
+    transforms.push(transforms[transforms.length - 1]);
+    opacities.push(opacities[opacities.length - 1]);
+    return {
+      index,
+      transforms,
+      opacities,
+    };
+  });
+}
+
+const segmentTracks = buildSegmentTracks();
 
 function buildCommitEvents() {
   const byKey = new Map(originalCommitKeys.map((key) => [key, []]));
@@ -816,36 +822,21 @@ const patternEvents = buildPatternEvents();
 
 function buildCommitAnimation(cell, theme) {
   const events = commitEvents.get(cellKey(cell)) ?? [];
-  const values = [theme.original[cell.contributionLevel]];
-  const times = [0];
-
-  for (const event of events) {
-    if (event.type === 'eat_commit') {
-      values.push(theme.original[cell.contributionLevel], theme.grid);
-      times.push(timeForStep(event.step), Math.min(timeForStep(event.step) + 0.001, LOOP_SECONDS));
-    } else {
-      values.push(theme.grid, theme.original[cell.contributionLevel]);
-      times.push(timeForStep(event.step), Math.min(timeForStep(event.step) + 0.001, LOOP_SECONDS));
-    }
-  }
-
-  values.push(values[values.length - 1]);
-  times.push(LOOP_SECONDS);
-  return `<animate attributeName="fill" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${values.join(';')}" keyTimes="${formatTimes(times)}" />`;
+  return buildPlacedSquareAnimation(events, theme.original[cell.contributionLevel], cellX(cell.col), cellY(cell.row), true);
 }
 
-function buildPlacedSquareAnimation(events, fill, x, y) {
+function buildPlacedSquareAnimation(events, fill, x, y, initiallyVisible) {
   const tiny = 1.2;
   const centerX = x + cellSize / 2;
   const centerY = y + cellSize / 2;
   const tinyX = centerX - tiny / 2;
   const tinyY = centerY - tiny / 2;
-  const valuesOpacity = ['0'];
-  const valuesX = [`${tinyX}`];
-  const valuesY = [`${tinyY}`];
-  const valuesWidth = [`${tiny}`];
-  const valuesHeight = [`${tiny}`];
-  const valuesRx = ['0.8'];
+  const valuesOpacity = [initiallyVisible ? '1' : '0'];
+  const valuesX = [initiallyVisible ? `${x}` : `${tinyX}`];
+  const valuesY = [initiallyVisible ? `${y}` : `${tinyY}`];
+  const valuesWidth = [initiallyVisible ? `${cellSize}` : `${tiny}`];
+  const valuesHeight = [initiallyVisible ? `${cellSize}` : `${tiny}`];
+  const valuesRx = [initiallyVisible ? '2.4' : '0.8'];
   const times = [0];
 
   for (const event of events) {
@@ -888,6 +879,14 @@ function buildPlacedSquareAnimation(events, fill, x, y) {
   </rect>`;
 }
 
+function buildCommitRects(theme) {
+  return cells.filter((cell) => cell.active).map((cell) => {
+    const fill = theme.original[cell.contributionLevel];
+    const events = commitEvents.get(cellKey(cell)) ?? [];
+    return buildPlacedSquareAnimation(events, fill, cellX(cell.col), cellY(cell.row), true);
+  }).join('');
+}
+
 function buildPatternRects(theme) {
   return patternIds.map((patternId) => {
     const cellsForPattern = buildPatternById(patternId);
@@ -903,29 +902,25 @@ function buildPatternRects(theme) {
   }).join('');
 }
 
-function buildSegmentOpacity(window) {
-  const start = window.start ?? LOOP_SECONDS;
-  const end = window.end ?? LOOP_SECONDS;
-  const fade = Math.min(end + 0.2, LOOP_SECONDS);
-  return `<animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="0;1;1;0;0" keyTimes="${formatTimes([0, start, end, fade, LOOP_SECONDS])}" />`;
-}
-
 function buildSnake(theme) {
   return `<g id="snake">
     <path id="snake-path" d="${fullPathData}" fill="none" stroke="none" />
-    ${segmentWindows.map((window, index) => {
-      const startPoint = Math.max(0, (index * segmentSpacing) / ((simulation.steps.length + enterPaddingSteps) * (cellSize + gap) + 1));
-      const keyPoints = `${startPoint.toFixed(6)};${startPoint.toFixed(6)};1;1`;
-      const scale = Math.max(0.55, 1 - index * 0.018);
-      const markup = index === 0
-        ? `<g filter="url(#snake-glow)"><ellipse cx="0" cy="0" rx="8.6" ry="7.2" fill="${theme.snakeBodyGlow}" /><ellipse cx="0" cy="0" rx="6.8" ry="5.8" fill="${theme.snakeBody}" /><circle cx="2.3" cy="-2.1" r="0.9" fill="#ffffff" /><circle cx="2.3" cy="2.1" r="0.9" fill="#ffffff" /><circle cx="3.2" cy="-2.1" r="0.36" fill="#111827" /><circle cx="3.2" cy="2.1" r="0.36" fill="#111827" /></g>`
-        : `<g opacity="${Math.max(0.55, 0.96 - index * 0.012).toFixed(2)}"><ellipse cx="0" cy="0" rx="${(5.9 * scale).toFixed(2)}" ry="${(5.1 * scale).toFixed(2)}" fill="${theme.snakeBodyGlow}" /><ellipse cx="0" cy="0" rx="${(4.8 * scale).toFixed(2)}" ry="${(4.15 * scale).toFixed(2)}" fill="${theme.snakeBody}" /></g>`;
-      return `<g opacity="0">
-        ${buildSegmentOpacity(window)}
+    ${segmentTracks.map((track) => {
+      const scale = Math.max(0.55, 1 - track.index * 0.018);
+      const markup = track.index === 0
+        ? `      <g>
+        <ellipse cx="0" cy="0" rx="8.6" ry="7.2" fill="${theme.snakeBodyGlow}" />
+        <ellipse cx="0" cy="0" rx="6.8" ry="5.8" fill="${theme.snakeBody}" />
+        <circle cx="2.3" cy="-2.1" r="0.9" fill="#ffffff" />
+        <circle cx="2.3" cy="2.1" r="0.9" fill="#ffffff" />
+        <circle cx="3.2" cy="-2.1" r="0.36" fill="#111827" />
+        <circle cx="3.2" cy="2.1" r="0.36" fill="#111827" />
+      </g>`
+        : `<g opacity="${Math.max(0.55, 0.96 - track.index * 0.012).toFixed(2)}"><ellipse cx="0" cy="0" rx="${(5.9 * scale).toFixed(2)}" ry="${(5.1 * scale).toFixed(2)}" fill="${theme.snakeBodyGlow}" /><ellipse cx="0" cy="0" rx="${(4.8 * scale).toFixed(2)}" ry="${(4.15 * scale).toFixed(2)}" fill="${theme.snakeBody}" /></g>`;
+      return `<g opacity="0" transform="${track.transforms[0]}">
+        <animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${track.opacities.join(';')}" keyTimes="${formatTimes(stepTimes)}" />
+        <animateTransform attributeName="transform" type="translate" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${track.transforms.map((value) => value.replace('translate(', '').replace(')', '')).join(';')}" keyTimes="${formatTimes(stepTimes)}" />
         ${markup}
-        <animateMotion dur="${LOOP_SECONDS}s" repeatCount="indefinite" rotate="auto" keyTimes="0;1" keyPoints="${keyPoints}">
-          <mpath href="#snake-path" />
-        </animateMotion>
       </g>`;
     }).join('')}
   </g>`;
@@ -935,24 +930,18 @@ function buildSvg(theme) {
   const gridRects = cells.map((cell) => {
     const x = cellX(cell.col);
     const y = cellY(cell.row);
-    const fill = cell.active ? theme.original[cell.contributionLevel] : theme.grid;
+    const fill = theme.grid;
     const animation = cell.active ? buildCommitAnimation(cell, theme) : '';
     return `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" rx="2.4" fill="${fill}" stroke="${theme.gridStroke}" stroke-width="0.6">${animation}</rect>`;
   }).join('');
 
   return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated GitHub contribution grid">
   <defs>
-    <filter id="snake-glow" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="2.2" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
   </defs>
   <rect width="${width}" height="${height}" rx="${frameRadius}" fill="${theme.background}" />
   <rect x="0.75" y="0.75" width="${width - 1.5}" height="${height - 1.5}" rx="${frameRadius - 0.75}" stroke="${theme.frame}" stroke-width="1.5" />
   ${gridRects}
+  ${buildCommitRects(theme)}
   ${buildPatternRects(theme)}
   ${buildSnake(theme)}
 </svg>`;

@@ -72,18 +72,18 @@
   <g clip-path="url(#headline-banner-1-clip)">
     <g transform="translate(148 0)">
       <g>
-        <animateTransform attributeName="transform" type="translate" from="0 0" to="-1540 0" dur="22s" begin="-5.4s" repeatCount="indefinite"/>
-        <text x="0" y="405" fill="url(#headline-accent)" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="31" letter-spacing="4">FULLSTACK SYSTEMS  •  AI PRODUCTS  •  MOBILE CLIENTS  •  APIS  •  DATA INFRA</text>
-        <text x="1540" y="405" fill="url(#headline-accent)" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="31" letter-spacing="4">FULLSTACK SYSTEMS  •  AI PRODUCTS  •  MOBILE CLIENTS  •  APIS  •  DATA INFRA</text>
+        <animateTransform attributeName="transform" type="translate" from="0 0" to="-1600 0" dur="22s" begin="-5.4s" repeatCount="indefinite"/>
+        <text x="0" y="405" fill="url(#headline-accent)" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="31" letter-spacing="4" textLength="1600" lengthAdjust="spacing">FULLSTACK SYSTEMS  •  AI PRODUCTS  •  MOBILE CLIENTS  •  APIS  •  DATA INFRA  •  </text>
+        <text x="1600" y="405" fill="url(#headline-accent)" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="31" letter-spacing="4" textLength="1600" lengthAdjust="spacing">FULLSTACK SYSTEMS  •  AI PRODUCTS  •  MOBILE CLIENTS  •  APIS  •  DATA INFRA  •  </text>
       </g>
     </g>
   </g>
   <g clip-path="url(#headline-banner-2-clip)">
     <g transform="translate(148 0)">
       <g>
-        <animateTransform attributeName="transform" type="translate" from="0 0" to="-1360 0" dur="20s" begin="-11.2s" repeatCount="indefinite"/>
-        <text x="0" y="453" fill="#B6C2D9" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="23" letter-spacing="3">OAUTH  •  JWT  •  RLS  •  POSTGRES  •  PGVECTOR  •  ETL  •  WORKFLOW AUTOMATION</text>
-        <text x="1360" y="453" fill="#B6C2D9" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="23" letter-spacing="3">OAUTH  •  JWT  •  RLS  •  POSTGRES  •  PGVECTOR  •  ETL  •  WORKFLOW AUTOMATION</text>
+        <animateTransform attributeName="transform" type="translate" from="0 0" to="-1300 0" dur="20s" begin="-11.2s" repeatCount="indefinite"/>
+        <text x="0" y="453" fill="#B6C2D9" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="23" letter-spacing="3" textLength="1300" lengthAdjust="spacing">OAUTH  •  JWT  •  RLS  •  POSTGRES  •  PGVECTOR  •  ETL  •  WORKFLOW AUTOMATION  •  </text>
+        <text x="1300" y="453" fill="#B6C2D9" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="23" letter-spacing="3" textLength="1300" lengthAdjust="spacing">OAUTH  •  JWT  •  RLS  •  POSTGRES  •  PGVECTOR  •  ETL  •  WORKFLOW AUTOMATION  •  </text>
       </g>
     </g>
   </g>
