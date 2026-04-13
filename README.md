@@ -40,7 +40,7 @@ Shipping systems around `API routes`, `client-server architecture`, `role-based 
 - `Voya Financial` - Python ETL migration automation reducing manual workload by `70%`
 - Published Python tooling and active fullstack/mobile product builds across AI, staffing, intake, and campus utility systems
 
-**Keywords**
+**Technologies**
 
 - `fullstack` `multi-tenant` `client-server` `RESTful APIs` `OAuth` `JWT` `RLS` `RBAC` `typed validation` `retrieval-augmented generation` `structured outputs` `vector embeddings` `pgvector` `workflow automation` `ETL` `PostgreSQL` `Supabase` `mobile` `Expo` `React Query`
 
