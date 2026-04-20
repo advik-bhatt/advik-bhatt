@@ -31,9 +31,10 @@ Shipping systems around `API routes`, `client-server architecture`, `role-based 
 
 - `Languages:` Python, JavaScript, TypeScript, Java, SQL
 - `Frontend:` React, Next.js, React Native, Expo Router
-- `Backend:` Node.js, Express, Supabase, PostgreSQL, Drizzle ORM, Zod, JWT
+- `Backend:` Node.js, Express, Supabase, PostgreSQL, Drizzle ORM, Zod
 - `AI + Data:` OpenRouter, LangChain, pgvector, vector search, ETL, data analysis
-- `Infra + Workflow:` Git, GitHub, GitHub Actions, Postman, OAuth, RLS, CI/CD
+- `Auth + Access:` OAuth, JWT, RLS, RBAC
+- `Infra + Workflow:` Git, GitHub, GitHub Actions, Postman, CI/CD
 
 **Accomplishments**
 
