@@ -827,11 +827,6 @@ function buildPatternEvents() {
 
 const patternEvents = buildPatternEvents();
 
-function buildCommitAnimation(cell, theme) {
-  const events = commitEvents.get(cellKey(cell)) ?? [];
-  return buildPlacedSquareAnimation(events, theme.original[cell.contributionLevel], cellX(cell.col), cellY(cell.row), true);
-}
-
 function buildPlacedSquareAnimation(events, fill, x, y, initiallyVisible) {
   const tiny = 1.2;
   const centerX = x + cellSize / 2;
@@ -938,8 +933,7 @@ function buildSvg(theme) {
     const x = cellX(cell.col);
     const y = cellY(cell.row);
     const fill = theme.grid;
-    const animation = cell.active ? buildCommitAnimation(cell, theme) : '';
-    return `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" rx="2.4" fill="${fill}" stroke="${theme.gridStroke}" stroke-width="0.6">${animation}</rect>`;
+    return `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" rx="2.4" fill="${fill}" stroke="${theme.gridStroke}" stroke-width="0.6" />`;
   }).join('');
 
   return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated GitHub contribution grid">
