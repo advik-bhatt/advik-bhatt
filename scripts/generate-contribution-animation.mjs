@@ -586,7 +586,8 @@ function chooseNextMove(snakeState, boardState, phase) {
   }
 
   const sortedTargets = [...targets].sort((left, right) => manhattan(snakeState.headKey, left) - manhattan(snakeState.headKey, right) || sortKeys(left, right));
-  const legalMoves = neighbors(snakeState.headKey).filter((neighbor) => {
+  const immediateNeighbors = neighbors(snakeState.headKey);
+  const legalMoves = immediateNeighbors.filter((neighbor) => {
     const eventKind = eventKindForMove(neighbor, phase, boardState);
     const allowTail = tailWillVacate(snakeState.currentLength, eventKind);
     const blocked = buildBlockedSet(snakeState.bodyKeys, allowTail);
@@ -594,7 +595,13 @@ function chooseNextMove(snakeState, boardState, phase) {
   });
 
   if (legalMoves.length === 0) {
-    throw new Error(`No legal moves available from ${snakeState.headKey} during ${phase}`);
+    // Keep the generator alive even if the heuristic paints itself into a corner.
+    // This is a rendering fallback, not ideal game logic.
+    return [...immediateNeighbors].sort((left, right) => {
+      const leftScore = sortedTargets.slice(0, 6).reduce((best, target) => Math.min(best, manhattan(left, target)), Number.POSITIVE_INFINITY);
+      const rightScore = sortedTargets.slice(0, 6).reduce((best, target) => Math.min(best, manhattan(right, target)), Number.POSITIVE_INFINITY);
+      return leftScore - rightScore || sortKeys(left, right);
+    })[0];
   }
 
   let bestMove = legalMoves[0];
@@ -871,11 +878,11 @@ function buildPlacedSquareAnimation(events, fill, x, y, initiallyVisible) {
 
   return `<rect x="${tinyX}" y="${tinyY}" width="${tiny}" height="${tiny}" rx="0.8" fill="${fill}" opacity="0">
     <animate attributeName="opacity" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${valuesOpacity.join(';')}" keyTimes="${formatTimes(times)}" />
-    <animate attributeName="x" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${valuesX.join(';')}" keyTimes="${formatTimes(times)}" />
-    <animate attributeName="y" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${valuesY.join(';')}" keyTimes="${formatTimes(times)}" />
-    <animate attributeName="width" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${valuesWidth.join(';')}" keyTimes="${formatTimes(times)}" />
-    <animate attributeName="height" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${valuesHeight.join(';')}" keyTimes="${formatTimes(times)}" />
-    <animate attributeName="rx" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="discrete" values="${valuesRx.join(';')}" keyTimes="${formatTimes(times)}" />
+    <animate attributeName="x" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${valuesX.join(';')}" keyTimes="${formatTimes(times)}" />
+    <animate attributeName="y" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${valuesY.join(';')}" keyTimes="${formatTimes(times)}" />
+    <animate attributeName="width" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${valuesWidth.join(';')}" keyTimes="${formatTimes(times)}" />
+    <animate attributeName="height" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${valuesHeight.join(';')}" keyTimes="${formatTimes(times)}" />
+    <animate attributeName="rx" dur="${LOOP_SECONDS}s" repeatCount="indefinite" calcMode="linear" values="${valuesRx.join(';')}" keyTimes="${formatTimes(times)}" />
   </rect>`;
 }
 
