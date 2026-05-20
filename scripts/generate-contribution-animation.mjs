@@ -937,8 +937,6 @@ function buildSvg(theme) {
   }).join('');
 
   return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated GitHub contribution grid">
-  <defs>
-  </defs>
   <rect width="${width}" height="${height}" rx="${frameRadius}" fill="${theme.background}" />
   <rect x="0.75" y="0.75" width="${width - 1.5}" height="${height - 1.5}" rx="${frameRadius - 0.75}" stroke="${theme.frame}" stroke-width="1.5" />
   ${gridRects}

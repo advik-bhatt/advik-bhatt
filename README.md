@@ -48,6 +48,22 @@ Shipping systems around `API routes`, `client-server architecture`, `role-based 
 <div align="center">
 
 <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=advik-bhatt&show_icons=true&hide_border=true&bg_color=0d1117&text_color=c9d1d9&icon_color=a855f7&title_color=a855f7" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=advik-bhatt&show_icons=true&hide_border=true&icon_color=7c3aed&title_color=7c3aed" />
+  <img alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=advik-bhatt&show_icons=true" height="160" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=advik-bhatt&layout=compact&hide_border=true&bg_color=0d1117&text_color=c9d1d9&icon_color=a855f7&title_color=a855f7" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=advik-bhatt&layout=compact&hide_border=true&icon_color=7c3aed&title_color=7c3aed" />
+  <img alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=advik-bhatt&layout=compact" height="160" />
+</picture>
+
+</div>
+
+<div align="center">
+
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/dist/github-contribution-grid-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/dist/github-contribution-grid-snake.svg" />
   <img alt="GitHub contribution snake animation" src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/dist/github-contribution-grid-snake.svg" />
