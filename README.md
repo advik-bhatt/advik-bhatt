@@ -1,49 +1,108 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/control-room-hero.svg" alt="Animated control room hero describing Advik Bhatt's fullstack, AI, and data systems work" width="100%" />
+<img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/control-room-hero.svg" alt="Animated control room hero describing Advik Bhatt's full-stack, AI, and product engineering work" width="100%" />
 
 </div>
 
-Fullstack + AI engineer building retrieval-backed, auth-heavy, multi-tenant product systems across web, mobile, backend, and data layers.
+Full-stack AI product builder working across recruiting proof systems, startup evaluation tools, technical education, and applied AI products.
 
-`Next.js` `React` `React Native` `Expo Router` `Node.js` `Express` `Supabase` `PostgreSQL` `Drizzle ORM` `Zod` `JWT` `OAuth` `RLS` `OpenRouter` `LangChain` `pgvector` `vector search` `ETL` `REST APIs`
+`Next.js` `React` `TypeScript` `Python` `Supabase` `PostgreSQL` `OpenRouter` `LangChain` `Vector Search` `RLS` `OAuth` `REST APIs` `Multi-Agent Systems` `ETL` `CI/CD`
 
-Shipping systems around `API routes`, `client-server architecture`, `role-based access control`, `retrieval pipelines`, `structured generation`, `workflow automation`, `validation layers`, and `secure persistence`.
+Building products that turn messy context into useful artifacts: proof maps, diligence memos, application strategy, evaluation reports, technical prep, and structured decision support.
 
-**Focus Areas**
+**Current Focus**
 
-- Multi-user application architecture
-- OAuth, JWT, and RLS-based access control
-- API design, backend services, and typed validation
-- OpenRouter and LangChain-based LLM integration
-- PostgreSQL, Supabase, pgvector, and retrieval workflows
+- Founder of `Rolemate`, an AI proof-of-skill engine for technical recruiting and collaboration
+- Building `Frenzy`, a multi-agent startup pressure-test system for founders, hackathon teams, and accelerator applicants
+- Building `PublicWire`, a self-running local newspaper concept powered by civic agents
+- Upcoming Software Developer Intern at `CGI`
+- USACS Tech Director for 2026 to 2027 at Rutgers
+- Co-Director of Competition at Rutgers Data Science Club
+- Building student-facing technical programs around AI tools, full-stack development, evaluation, and applied CS
+
+**Buildboard**
+
+- `Rolemate`  
+  `Next.js` + `React` + `Supabase` + `PostgreSQL` + `RLS` + `OpenRouter` + `Vector Search`  
+  AI proof-of-skill engine that turns resumes, GitHub/projects, job postings, social media, and coding-agent history into role-specific proof maps, gap plans, referral strategy, outreach drafts, and interview prep.
+
+- `Frenzy`  
+  `Next.js` + `React` + `OpenRouter` + `Multi-Agent Evaluation`  
+  Startup pressure-test system that turns an idea into an investor-style memo using evaluator agents, founder Q&A, revised scoring, deliberation, and synthesis.
+
+- `PublicWire`  
+  `Next.js` + `React` + `TypeScript` + `Google GenAI` + `ClickHouse` + `Nimble`  
+  Self-running local newspaper concept where an agent swarm monitors public city sites, county notices, transit alerts, agendas, and event calendars, then publishes short, cited local briefs when something changes for residents.
+
+- `VibeCheck`  
+  `Python` + `OpenRouter` + `LangChain` + `GitHub Actions` + `PyPI`  
+  Published CLI guardrail for AI-assisted coding that checks whether a developer understands AI-generated code before accepting it.
+
+- `Atlas`  
+  `Python` + `Public Clinical Data` + `LLM-Assisted Research`  
+  HackPrinceton Spring 2026 Regeneron track runner-up. Built a clinical trial investigator intelligence system to help compress site and PI research into a decision-ready packet.
+
+- `CrewCast`  
+  `TypeScript` + `React Native` + `Node.js` + `Express` + `Supabase` + `PostgreSQL`  
+  Multi-user staffing coordination system with Google OAuth, JWT auth, role-based access, scheduling, and event crew coordination.
+
+- `RUWorkingOut`  
+  `JavaScript` + `React` + `Node.js` + `Google Maps API`  
+  Campus gym comparison app with location-aware discovery, time-based comparison logic, and multi-user client-server flows.
+
+**Technical Areas**
+
+- Full-stack product engineering
+- AI-assisted product systems
+- Multi-agent evaluation and structured generation
+- Retrieval-backed application logic
+- Auth-heavy, multi-user web apps
+- PostgreSQL, Supabase, RLS, and vector search
+- OAuth, JWT, RBAC, and secure persistence
+- REST APIs and typed validation
 - ETL, analytics, and structured data processing
-
-**Current Buildboard**
-
-- `Rolemate.ai` - `Next.js` + `Supabase` + `PostgreSQL` + `RLS` + `OpenRouter` + `vector search`; AI career copilot with personalized retrieval, job-posting ingestion, application-state persistence, outreach generation, interview prep, and role-specific recommendation workflows
-- `CrewCast` - `TypeScript` + `React Native` + `Node.js` + `Express` + `Supabase` + `PostgreSQL`; multi-user staffing system with Google OAuth, Expo Router, React Query, Zod validation, JWT auth, RBAC, scheduling, and escrow-oriented coordination flows
-- `VibeCheck` - `Python` + `OpenRouter` + `LangChain` + `GitHub Actions` + `PyPI`; published CLI guardrail for AI-assisted coding with structured gating, adaptive QA, concept-graph tracking, and planned PostgreSQL/pgvector-backed longitudinal retrieval
-- `Neura` - `JavaScript` + `React` + `Node.js`; AI-assisted intake platform with questionnaire orchestration, backend-connected form processing, response normalization, and summary generation pipelines
-- `RUWorkingOut` - `JavaScript` + `React` + `Node.js` + `Google Maps API`; location-aware gym comparison app with multi-user client-server flows, time-based comparison logic, and map-backed campus discovery
+- Technical event design and starter-repo based education
 
 **Stack**
 
-- `Languages:` Python, JavaScript, TypeScript, Java, SQL
+- `Languages:` Python, TypeScript, JavaScript, Java, SQL
 - `Frontend:` React, Next.js, React Native, Expo Router
-- `Backend:` Node.js, Express, Supabase, PostgreSQL, Drizzle ORM, Zod
-- `AI + Data:` OpenRouter, LangChain, pgvector, vector search, ETL, data analysis
+- `Backend:` Node.js, Express, Supabase, PostgreSQL
+- `AI + Data:` OpenRouter, LangChain, vector search, structured outputs, ETL
 - `Auth + Access:` OAuth, JWT, RLS, RBAC
-- `Infra + Workflow:` Git, GitHub, GitHub Actions, Postman, CI/CD
+- `Infra:` Git, GitHub, GitHub Actions, Vercel, Postman, CI/CD
 
-**Accomplishments**
+**Experience + Leadership**
 
-- `Voya Financial` - Python ETL migration automation reducing manual workload by `70%`
-- Published Python tooling and active fullstack/mobile product builds across AI, staffing, intake, and campus utility systems
+- `CGI`  
+  Upcoming Software Developer Intern.
 
-**Technologies**
+- `USACS Tech Director`  
+  Leading technical programming for Rutgers’ undergraduate CS community, with a focus on project-oriented workshops, starter repositories, technical collaborations, and UHACCS 2027.
 
-- `fullstack` `multi-tenant` `client-server` `RESTful APIs` `OAuth` `JWT` `RLS` `RBAC` `typed validation` `retrieval-augmented generation` `structured outputs` `vector embeddings` `pgvector` `workflow automation` `ETL` `PostgreSQL` `Supabase` `mobile` `Expo` `React Query`
+- `Rutgers Data Science Club`  
+  Co-Director of Competition, planning datathons around sponsor sourcing, problem design, datasets, judging, logistics, and technical programming.
+
+- `Grey Matter Society Venture Lab`  
+  Co-designed the curriculum and operating structure for a 4-week student-run health-tech accelerator guiding 8 teams from idea validation to functional MVP, monetization strategy, and demo readiness.
+
+- `Voya Financial`  
+  Built Python ETL automation for a large-scale data migration project, reducing manual workload by 70%. Created Power BI reporting and contributed to internal AI education resources.
+
+**What I care about**
+
+- Making technical proof easier to see
+- Turning AI output into accountable systems
+- Building products that create useful artifacts
+- Helping students ship real code, not just attend technical talks
+- Using Rutgers, NYC, hackathons, and student orgs as distribution for real product testing
+- Combining engineering, product taste, jazz, and systems thinking into work that feels alive
+
+**Links**
+
+- `LinkedIn:` linkedin.com/in/advik-bhatt
+- `GitHub:` github.com/advik-bhatt
+- `Email:` advik.bhatt.work@gmail.com
 
 <div align="center">
 
