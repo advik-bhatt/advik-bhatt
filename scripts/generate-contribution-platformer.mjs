@@ -1,1 +1,1 @@
-console.log('platformer generator placeholder');
+Platformer generator pending.
