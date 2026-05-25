@@ -1,1 +1,1 @@
-Platformer generator pending.
+console.log('ok');
