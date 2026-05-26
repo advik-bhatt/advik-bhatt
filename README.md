@@ -107,10 +107,12 @@ Building products that turn messy context into useful artifacts: proof maps, dil
 
 <div align="center">
 
+<h3>Changing the world, one commit at a time.</h3>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/output/github-contribution-grid-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/output/github-contribution-grid-snake.svg" />
-  <img alt="GitHub contribution animation" src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/output/github-contribution-grid-snake.svg" />
+  <img alt="GitHub contribution world map animation" src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/output/github-contribution-grid-snake.svg" />
 </picture>
 
 </div>
