@@ -6,7 +6,7 @@
 
 Full-stack AI product builder working across recruiting proof systems, startup evaluation tools, technical education, and applied AI products.
 
-`Next.js` `React` `TypeScript` `Python` `Supabase` `PostgreSQL` `OpenRouter` `LangChain` `Vector Search` `RLS` `OAuth` `REST APIs` `Multi-Agent Systems` `ETL` `CI/CD`
+`Next.js` `React` `TypeScript` `Python` `Clerk` `Supabase` `PostgreSQL` `Gemini API` `OpenAI API` `Vector Search` `RLS` `OAuth` `REST APIs` `Multi-Agent Systems` `ETL` `CI/CD`
 
 Building products that turn messy context into useful artifacts: proof maps, diligence memos, application strategy, evaluation reports, technical prep, and structured decision support.
 
@@ -23,11 +23,11 @@ Building products that turn messy context into useful artifacts: proof maps, dil
 **Buildboard**
 
 - `Rolemate`  
-  `Next.js` + `React` + `Supabase` + `PostgreSQL` + `RLS` + `OpenRouter` + `Vector Search`  
+  `Next.js` + `React` + `Clerk` + `Supabase` + `PostgreSQL` + `RLS` + `Gemini API` + `Vector Search`  
   AI proof-of-skill engine that turns resumes, GitHub/projects, job postings, social media, and coding-agent history into role-specific proof maps, gap plans, referral strategy, outreach drafts, and interview prep.
 
 - `Frenzy`  
-  `Next.js` + `React` + `OpenRouter` + `Multi-Agent Evaluation`  
+  `Next.js` + `React` + `Clerk` + `OpenAI API` + `Multi-Agent Evaluation`  
   Startup pressure-test system that turns an idea into an investor-style memo using evaluator agents, founder Q&A, revised scoring, deliberation, and synthesis.
 
 - `PublicWire`  
@@ -68,8 +68,8 @@ Building products that turn messy context into useful artifacts: proof maps, dil
 - `Languages:` Python, TypeScript, JavaScript, Java, SQL
 - `Frontend:` React, Next.js, React Native, Expo Router
 - `Backend:` Node.js, Express, Supabase, PostgreSQL
-- `AI + Data:` OpenRouter, LangChain, vector search, structured outputs, ETL
-- `Auth + Access:` OAuth, JWT, RLS, RBAC
+- `AI + Data:` Gemini API, OpenAI API, LangChain, vector search, structured outputs, ETL
+- `Auth + Access:` Clerk, OAuth, JWT, RLS, RBAC
 - `Infra:` Git, GitHub, GitHub Actions, Vercel, Postman, CI/CD
 
 **Experience + Leadership**
@@ -102,14 +102,15 @@ Building products that turn messy context into useful artifacts: proof maps, dil
 
 - `LinkedIn:` linkedin.com/in/advik-bhatt
 - `GitHub:` github.com/advik-bhatt
+- `GitCity:` gitcity.io/advik-bhatt
 - `Email:` advik.bhatt.work@gmail.com
 
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/dist/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/dist/github-contribution-grid-snake.svg" />
-  <img alt="GitHub contribution animation" src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/dist/github-contribution-grid-snake.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/output/github-contribution-grid-snake.svg" />
+  <img alt="GitHub contribution animation" src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/output/github-contribution-grid-snake.svg" />
 </picture>
 
 </div>
