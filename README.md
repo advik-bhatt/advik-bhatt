@@ -6,14 +6,14 @@
 
 Full-stack AI product builder working across recruiting proof systems, startup evaluation tools, technical education, and applied AI products.
 
-`Next.js` `React` `TypeScript` `Python` `Clerk` `Supabase` `PostgreSQL` `Gemini API` `OpenAI API` `Vector Search` `RLS` `OAuth` `REST APIs` `Multi-Agent Systems` `ETL` `CI/CD`
+`Next.js` `React` `TypeScript` `Python` `Clerk` `Supabase` `PostgreSQL` `AI APIs` `Vector Search` `RLS` `OAuth` `REST APIs` `Multi-Agent Systems` `ETL` `CI/CD`
 
 Building products that turn messy context into useful artifacts: proof maps, diligence memos, application strategy, evaluation reports, technical prep, and structured decision support.
 
 **Current Focus**
 
-- Founder of `Rolemate`, an AI proof-of-skill engine for technical recruiting and collaboration
-- Building `Frenzy`, a multi-agent startup pressure-test system for founders, hackathon teams, and accelerator applicants
+- Founder of `Rolemate`, an AI product for technical recruiting and candidate signal
+- Building `Frenzy`, an AI product for startup evaluation and founder decision-making
 - Building `PublicWire`, a self-running local newspaper concept powered by civic agents
 - Upcoming Software Developer Intern at `CGI`
 - USACS Tech Director for 2026 to 2027 at Rutgers
@@ -23,12 +23,12 @@ Building products that turn messy context into useful artifacts: proof maps, dil
 **Buildboard**
 
 - `Rolemate`  
-  `Next.js` + `React` + `Clerk` + `Supabase` + `PostgreSQL` + `RLS` + `Gemini API` + `Vector Search`  
-  AI proof-of-skill engine that turns resumes, GitHub/projects, job postings, social media, and coding-agent history into role-specific proof maps, gap plans, referral strategy, outreach drafts, and interview prep.
+  `Next.js` + `React` + `Clerk` + `Supabase` + `PostgreSQL` + `AI APIs`  
+  Building a more credible way for technical candidates and hiring teams to understand fit, signal, and readiness.
 
 - `Frenzy`  
-  `Next.js` + `React` + `Clerk` + `OpenAI API` + `Multi-Agent Evaluation`  
-  Startup pressure-test system that turns an idea into an investor-style memo using evaluator agents, founder Q&A, revised scoring, deliberation, and synthesis.
+  `Next.js` + `React` + `Clerk` + `AI APIs`  
+  Building an AI product for founders to pressure-test startup ideas before committing more time, money, or momentum.
 
 - `PublicWire`  
   `Next.js` + `React` + `TypeScript` + `Google GenAI` + `ClickHouse` + `Nimble`  
@@ -68,7 +68,7 @@ Building products that turn messy context into useful artifacts: proof maps, dil
 - `Languages:` Python, TypeScript, JavaScript, Java, SQL
 - `Frontend:` React, Next.js, React Native, Expo Router
 - `Backend:` Node.js, Express, Supabase, PostgreSQL
-- `AI + Data:` Gemini API, OpenAI API, LangChain, vector search, structured outputs, ETL
+- `AI + Data:` AI APIs, LangChain, vector search, structured outputs, ETL
 - `Auth + Access:` Clerk, OAuth, JWT, RLS, RBAC
 - `Infra:` Git, GitHub, GitHub Actions, Vercel, Postman, CI/CD
 
