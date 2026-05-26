@@ -39,8 +39,8 @@ Building products that turn messy context into useful artifacts: proof maps, dil
   Published CLI guardrail for AI-assisted coding that checks whether a developer understands AI-generated code before accepting it.
 
 - `Atlas`  
-  `Python` + `Public Clinical Data` + `LLM-Assisted Research`  
-  HackPrinceton Spring 2026 Regeneron track runner-up. Built a clinical trial investigator intelligence system to help compress site and PI research into a decision-ready packet.
+  `Python` + `ClinicalTrials.gov` + `PubMed` + `NPI Registry` + `CMS Open Payments` + `FDA Warning Letters`  
+  HackPrinceton Spring 2026 Regeneron track runner-up. AI clinical-trial investigator selection platform that cross-references fragmented public healthcare and research datasets to identify stronger principal-investigator and trial-site candidates.
 
 - `CrewCast`  
   `TypeScript` + `React Native` + `Node.js` + `Express` + `Supabase` + `PostgreSQL`  
@@ -109,7 +109,7 @@ Building products that turn messy context into useful artifacts: proof maps, dil
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/dist/github-contribution-grid-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/dist/github-contribution-grid-snake.svg" />
-  <img alt="GitHub contribution snake animation" src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/dist/github-contribution-grid-snake.svg" />
+  <img alt="GitHub contribution animation" src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/dist/github-contribution-grid-snake.svg" />
 </picture>
 
 </div>
