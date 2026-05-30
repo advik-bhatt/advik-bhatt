@@ -56,6 +56,26 @@ const fixed = (n) => Number(n).toFixed(4).replace(/0+$/,'').replace(/\.$/,'');
 const kt = (...seconds) => seconds.map((s) => fixed(s / LOOP)).join(';');
 const rect = (x, y, w, h, fill, extra = '') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${fill}" ${extra}/>`;
 
+function stableHash(input) {
+  let hash = 2166136261;
+  for (let i = 0; i < input.length; i += 1) {
+    hash ^= input.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+function makeRng(seed) {
+  let state = seed >>> 0;
+  return () => {
+    state += 0x6d2b79f5;
+    let t = state;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
 function isLand(lon, lat) {
   const e = (cx, cy, rx, ry) => ((lon - cx) / rx) ** 2 + ((lat - cy) / ry) ** 2 <= 1;
   return (
@@ -68,43 +88,54 @@ function isLand(lon, lat) {
   );
 }
 
-function project(lon, lat) {
+function project(lon, lat, jitterX = 0, jitterY = 0) {
   return {
-    x: Math.round(72 + ((lon + 180) / 360) * 700),
-    y: Math.round(40 + ((78 - lat) / 138) * 170),
+    x: Math.round(72 + ((lon + 180) / 360) * 700 + jitterX),
+    y: Math.round(40 + ((78 - lat) / 138) * 170 + jitterY),
     lon,
     lat,
   };
 }
 
 function buildMapPoints() {
-  const all = [];
-  for (let lat = 74; lat >= -55; lat -= 7.5) {
-    for (let lon = -172; lon <= 178; lon += 9.5) {
-      if (!isLand(lon, lat)) continue;
-      const neighbors = [
-        isLand(lon + 9.5, lat),
-        isLand(lon - 9.5, lat),
-        isLand(lon, lat + 7.5),
-        isLand(lon, lat - 7.5),
-      ];
-      const coastline = neighbors.some((value) => !value);
-      const interiorTexture = ((Math.round(lon * 10) + Math.round(lat * 10)) % 5 === 0);
-      if (coastline || interiorTexture) all.push(project(lon, lat));
-    }
+  const rng = makeRng(0xA9D1C0DE);
+  const points = [];
+  let guard = 0;
+
+  while (points.length < 900 && guard < 24000) {
+    guard += 1;
+    const lon = -172 + rng() * 350;
+    const lat = -55 + rng() * 129;
+    if (!isLand(lon, lat)) continue;
+
+    const edgeProbe = 5.8;
+    const coastline = !isLand(lon + edgeProbe, lat) || !isLand(lon - edgeProbe, lat) || !isLand(lon, lat + edgeProbe) || !isLand(lon, lat - edgeProbe);
+    const texture = rng() < 0.23;
+    if (!coastline && !texture) continue;
+
+    const jitterX = (rng() - 0.5) * 5.5;
+    const jitterY = (rng() - 0.5) * 5.5;
+    const point = project(lon, lat, jitterX, jitterY);
+
+    const tooClose = points.some((other) => Math.abs(other.x - point.x) < 7 && Math.abs(other.y - point.y) < 7);
+    if (!tooClose) points.push(point);
   }
-  all.sort((a, b) => a.x - b.x || a.y - b.y);
-  return all;
+
+  return points.sort((a, b) => stableHash(`${a.x},${a.y}`) - stableHash(`${b.x},${b.y}`));
 }
 const mapPoints = buildMapPoints();
 
 function chooseTargets(count) {
   if (count === 0 || mapPoints.length === 0) return [];
   const targets = [];
+  const stride = Math.max(1, Math.floor(mapPoints.length / Math.max(1, count)));
+  let index = stableHash(`${USER}-${count}`) % mapPoints.length;
+
   for (let i = 0; i < count; i += 1) {
-    const index = count === 1 ? 0 : Math.round((i / (count - 1)) * (mapPoints.length - 1));
-    targets.push(mapPoints[index]);
+    targets.push(mapPoints[index % mapPoints.length]);
+    index += stride + 17;
   }
+
   return targets;
 }
 const targets = chooseTargets(active.length);
@@ -133,4 +164,4 @@ function svg(theme) {
 await mkdir('dist', { recursive: true });
 await writeFile('dist/github-contribution-grid-snake.svg', svg(palettes.light));
 await writeFile('dist/github-contribution-grid-snake-dark.svg', svg(palettes.dark));
-console.log(`Generated clean world-map contribution animation from ${active.length} active commits and ${mapPoints.length} map targets.`);
+console.log(`Generated organic world-map contribution animation from ${active.length} active commits and ${mapPoints.length} organic map targets.`);
