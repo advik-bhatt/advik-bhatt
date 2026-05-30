@@ -42,12 +42,10 @@ const active = cells.filter((c) => c.count > 0);
 const palettes = {
   light: {
     bg: '#f8fafc', frame: '#cbd5e1', gridEmpty: '#ebedf0', gridStroke: '#d8dee4', ocean1: '#eefaff', ocean2: '#dff5ff',
-    landBase: '#30a14e', landOpacity: '.22',
     levels: { NONE: '#ebedf0', FIRST_QUARTILE: '#9be9a8', SECOND_QUARTILE: '#40c463', THIRD_QUARTILE: '#30a14e', FOURTH_QUARTILE: '#216e39' },
   },
   dark: {
     bg: '#070b12', frame: '#30363d', gridEmpty: '#161b22', gridStroke: '#21262d', ocean1: '#07111f', ocean2: '#0f1f33',
-    landBase: '#26a641', landOpacity: '.26',
     levels: { NONE: '#161b22', FIRST_QUARTILE: '#0e4429', SECOND_QUARTILE: '#006d32', THIRD_QUARTILE: '#26a641', FOURTH_QUARTILE: '#39d353' },
   },
 };
@@ -70,49 +68,55 @@ function isLand(lon, lat) {
   );
 }
 
-function buildLandPoints() {
-  const points = [];
+function project(lon, lat) {
+  return {
+    x: Math.round(72 + ((lon + 180) / 360) * 700),
+    y: Math.round(40 + ((78 - lat) / 138) * 170),
+    lon,
+    lat,
+  };
+}
+
+function buildMapPoints() {
+  const all = [];
   for (let lat = 74; lat >= -55; lat -= 7.5) {
     for (let lon = -172; lon <= 178; lon += 9.5) {
       if (!isLand(lon, lat)) continue;
-      const x = 72 + ((lon + 180) / 360) * 700;
-      const y = 40 + ((78 - lat) / 138) * 170;
-      points.push({ x: Math.round(x), y: Math.round(y), lon, lat });
+      const neighbors = [
+        isLand(lon + 9.5, lat),
+        isLand(lon - 9.5, lat),
+        isLand(lon, lat + 7.5),
+        isLand(lon, lat - 7.5),
+      ];
+      const coastline = neighbors.some((value) => !value);
+      const interiorTexture = ((Math.round(lon * 10) + Math.round(lat * 10)) % 5 === 0);
+      if (coastline || interiorTexture) all.push(project(lon, lat));
     }
   }
-  points.sort((a, b) => a.x - b.x || a.y - b.y);
-  return points;
+  all.sort((a, b) => a.x - b.x || a.y - b.y);
+  return all;
 }
-const land = buildLandPoints();
+const mapPoints = buildMapPoints();
 
-function stableHash(input) {
-  let hash = 2166136261;
-  for (let i = 0; i < input.length; i += 1) {
-    hash ^= input.charCodeAt(i);
-    hash = Math.imul(hash, 16777619);
+function chooseTargets(count) {
+  if (count === 0 || mapPoints.length === 0) return [];
+  const targets = [];
+  for (let i = 0; i < count; i += 1) {
+    const index = count === 1 ? 0 : Math.round((i / (count - 1)) * (mapPoints.length - 1));
+    targets.push(mapPoints[index]);
   }
-  return hash >>> 0;
+  return targets;
 }
-
-function targetForCell(cell) {
-  if (land.length === 0) return { x: graphX(cell.col), y: graphY(cell.row) };
-  const seed = `${cell.date}-${cell.col}-${cell.row}`;
-  return land[stableHash(seed) % land.length];
-}
+const targets = chooseTargets(active.length);
 
 function grid(theme) {
   const empty = cells.map((c) => rect(graphX(c.col), graphY(c.row), DOT, DOT, theme.gridEmpty, `rx="2.4" stroke="${theme.gridStroke}" stroke-width=".6" shape-rendering="geometricPrecision"`)).join('');
-  return `<g><animate attributeName="opacity" values="1;1;.13;.13;1" keyTimes="${kt(0,HOLD,FLY_END,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>${empty}</g>`;
-}
-
-function worldMapScaffold(theme) {
-  const scaffold = land.map((point) => rect(point.x, point.y, MAP_DOT, MAP_DOT, theme.landBase, `rx="1.8" opacity="${theme.landOpacity}" shape-rendering="geometricPrecision"`)).join('');
-  return `<g><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="${kt(0,HOLD,FLY_END,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>${scaffold}</g>`;
+  return `<g><animate attributeName="opacity" values="1;1;.15;.15;1" keyTimes="${kt(0,HOLD,FLY_END,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>${empty}</g>`;
 }
 
 function movingCommits(theme) {
   return active.map((cell, i) => {
-    const target = targetForCell(cell);
+    const target = targets[i] || { x: graphX(cell.col), y: graphY(cell.row) };
     const sx = graphX(cell.col);
     const sy = graphY(cell.row);
     const delay = HOLD + (i % 38) * 0.045;
@@ -123,10 +127,10 @@ function movingCommits(theme) {
 }
 
 function svg(theme) {
-  return `<svg width="${WIDTH}" height="${HEIGHT}" viewBox="0 0 ${WIDTH} ${HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GitHub contribution calendar animating into a stable world map"><defs><linearGradient id="ocean" x1="0" y1="0" x2="0" y2="${HEIGHT}"><stop stop-color="${theme.ocean1}"/><stop offset="1" stop-color="${theme.ocean2}"/></linearGradient></defs><rect width="${WIDTH}" height="${HEIGHT}" rx="24" fill="${theme.bg}"/><rect x="1" y="1" width="${WIDTH - 2}" height="${HEIGHT - 2}" rx="23" stroke="${theme.frame}" stroke-width="2"/><rect x="14" y="14" width="${WIDTH - 28}" height="${HEIGHT - 28}" rx="16" fill="url(#ocean)"/>${grid(theme)}${worldMapScaffold(theme)}${movingCommits(theme)}</svg>`;
+  return `<svg width="${WIDTH}" height="${HEIGHT}" viewBox="0 0 ${WIDTH} ${HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GitHub contribution calendar animating into a world map"><defs><linearGradient id="ocean" x1="0" y1="0" x2="0" y2="${HEIGHT}"><stop stop-color="${theme.ocean1}"/><stop offset="1" stop-color="${theme.ocean2}"/></linearGradient></defs><rect width="${WIDTH}" height="${HEIGHT}" rx="24" fill="${theme.bg}"/><rect x="1" y="1" width="${WIDTH - 2}" height="${HEIGHT - 2}" rx="23" stroke="${theme.frame}" stroke-width="2"/><rect x="14" y="14" width="${WIDTH - 28}" height="${HEIGHT - 28}" rx="16" fill="url(#ocean)"/>${grid(theme)}${movingCommits(theme)}</svg>`;
 }
 
 await mkdir('dist', { recursive: true });
 await writeFile('dist/github-contribution-grid-snake.svg', svg(palettes.light));
 await writeFile('dist/github-contribution-grid-snake-dark.svg', svg(palettes.dark));
-console.log(`Generated stable world-map contribution animation from ${active.length} active commits and ${land.length} fixed land targets.`);
+console.log(`Generated clean world-map contribution animation from ${active.length} active commits and ${mapPoints.length} map targets.`);
