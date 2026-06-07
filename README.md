@@ -75,7 +75,7 @@ Building products that turn messy context into useful artifacts: proof maps, dil
 **Experience + Leadership**
 
 - `CGI`  
-  Upcoming Software Developer Intern.
+  Current Software Developer Intern.
 
 - `USACS Tech Director`  
   Leading technical programming for Rutgers’ undergraduate CS community, with a focus on project-oriented workshops, starter repositories, technical collaborations, and UHACCS 2027.
