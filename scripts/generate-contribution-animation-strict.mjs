@@ -7,21 +7,15 @@ if (!TOKEN) throw new Error('GITHUB_TOKEN is required');
 // === CANVAS ===
 const W = 847, H = 260;
 const DOT = 11, STEP = 15, PAD_X = 28, GRID_Y = 72;
-const MAP_DOT = 5;
+const MAP_DOT = 5;  // dot size in the world map
 const MAP_X = 58, MAP_Y = 26, MAP_W = 730, MAP_H = 204;
 
-// === TIMING (seconds within a 24s loop) ===
-// 0            grid shown
-// GRID_HOLD    commits start flying
-// FLY_END      all commits arrived at map positions
-// WIRE_END     all border circuit traces fully drawn
-// MAP_HOLD     map held; then everything fades back to grid
-// LOOP         reset
+// === TIMING (24s loop) ===
 const LOOP      = 24;
-const GRID_HOLD = 4.5;
-const FLY_END   = 9.2;
-const WIRE_END  = 12.4;
-const MAP_HOLD  = 20.0;
+const GRID_HOLD = 4.5;   // grid shown solid
+const FLY_END   = 9.2;   // last commit arrives
+const MAP_HOLD  = 20.0;  // map held until reset
+const COMMIT_FADE = FLY_END + 1.6;  // commits absorbed into map layer
 const DAY = 86400000;
 
 // === GITHUB DATA ===
@@ -50,7 +44,7 @@ function proj(lon, lat) {
   };
 }
 
-// === LAND MASK (improved continental coverage) ===
+// === LAND MASK ===
 function isLand(lon, lat) {
   const e = (cx, cy, rx, ry) => ((lon - cx) / rx) ** 2 + ((lat - cy) / ry) ** 2 <= 1;
   if (e(-150, 63, 22, 11)) return true;  // Alaska
@@ -59,8 +53,8 @@ function isLand(lon, lat) {
   if (e(-85, 42, 22, 12)) return true;   // E USA / SE Canada
   if (e(-88, 33, 12, 8))  return true;   // SE USA
   if (e(-102, 22, 14, 12)) return true;  // Mexico
-  if (lon > -91 && lon < -77 && lat > 8 && lat < 18 && e(-84, 13, 10, 7)) return true;  // C. America
-  if (e(-68, 8, 18, 8))   return true;   // Caribbean / N. S. America
+  if (lon > -91 && lon < -77 && lat > 8 && lat < 18 && e(-84, 13, 10, 7)) return true;
+  if (e(-68, 8, 18, 8))   return true;   // N South America
   if (e(-60, -12, 28, 44)) return true;  // South America main
   if (e(-65, -40, 10, 16)) return true;  // Patagonia
   if (e(8, 50, 22, 12))   return true;   // W Europe
@@ -86,7 +80,7 @@ function isLand(lon, lat) {
   if (e(104, 36, 30, 18)) return true;   // China
   if (e(122, 38, 10, 10)) return true;   // NE China / Korea
   if (e(104, 16, 18, 14)) return true;   // SE Asia mainland
-  if (e(108, -2, 18, 6))  return true;   // Indonesia / Borneo
+  if (e(108, -2, 18, 6))  return true;   // Indonesia
   if (e(137, 37, 4, 8))   return true;   // Japan
   if (e(134, -25, 24, 15)) return true;  // Australia
   if (e(-42, 72, 22, 12)) return true;   // Greenland
@@ -94,18 +88,18 @@ function isLand(lon, lat) {
   return false;
 }
 
-// === LAND SAMPLE GRID ===
-const landGrid = [];
-for (let lat = 73; lat >= -52; lat -= 7) {
-  for (let lon = -174; lon <= 175; lon += 9) {
+// === DENSE LAND DOT GRID (the world map is made of these) ===
+// 5° lat × 6° lon step → ~380 land dots filling all continents
+const landDots = [];
+for (let lat = 71; lat >= -52; lat -= 5) {
+  for (let lon = -173; lon <= 174; lon += 6) {
     if (!isLand(lon, lat)) continue;
     const p = proj(lon, lat);
-    landGrid.push({ x: p.x, y: p.y });
+    landDots.push({ cx: p.x, cy: p.y });
   }
 }
 
-// === SEEDED SHUFFLE (breaks row/column visual artifact) ===
-// Without this, sorted commits map to sorted land points, creating visible grid bands.
+// === SEEDED RNG + SHUFFLE ===
 function mulberry32(seed) {
   let s = seed >>> 0;
   return () => {
@@ -127,7 +121,8 @@ function shuffle(arr, rng) {
 
 const seed = active.reduce((s, c) => (s + c.count * (c.col + 3) * 7 + c.row * 13) | 0, 42);
 const rng = mulberry32(seed);
-const shuffledLand = shuffle(landGrid, rng);
+// Shuffle so commits don't map to land dots in sorted order (prevents row/column bands)
+const shuffledLand = shuffle(landDots, rng);
 
 function getTargets(count) {
   if (!count || !shuffledLand.length) return [];
@@ -138,127 +133,6 @@ function getTargets(count) {
 }
 const targets = getTargets(active.length);
 
-// === WORLD MAP GEOGRAPHIC BORDER DATA ===
-// Simplified Natural Earth polylines at ~3-5 degree precision.
-// Each array is a [lon, lat] sequence forming a coastline or border segment.
-const GEO_LINES = [
-  // North America west coast
-  [[-168,71],[-155,59],[-152,58],[-145,60],[-135,57],[-127,50],[-124,49],[-117,32],[-110,23]],
-  // North America east coast
-  [[-80,25],[-80,31],[-76,35],[-75,40],[-70,44],[-67,47],[-64,44],[-60,47],[-54,47]],
-  // Canada arctic / Great Lakes top
-  [[-60,47],[-65,44],[-70,47],[-75,45],[-79,44],[-83,46],[-87,45],[-87,42],[-95,47],[-100,49],[-110,49],[-120,49],[-127,50]],
-  // US-Canada 49th parallel
-  [[-123,49],[-110,49],[-100,49],[-95,49],[-88,49],[-83,46],[-76,44]],
-  // US-Mexico border
-  [[-117,32],[-110,31],[-105,30],[-100,29],[-97,26]],
-  // Mexico & Central America
-  [[-97,26],[-92,20],[-90,18],[-87,16],[-84,10],[-80,8]],
-  // Gulf coast
-  [[-97,26],[-90,30],[-83,30],[-82,29],[-80,27],[-80,25]],
-  // Greenland
-  [[-55,83],[-22,76],[-18,70],[-25,63],[-45,59],[-55,63],[-65,70],[-72,76],[-55,83]],
-  // Iceland
-  [[-25,64],[-22,64],[-13,65],[-14,67],[-22,66],[-25,64]],
-  // South America north coast
-  [[-80,8],[-75,11],[-62,11],[-51,4],[-50,-1],[-45,-1],[-35,-5]],
-  // South America east coast
-  [[-35,-5],[-35,-8],[-38,-13],[-40,-19],[-43,-23],[-48,-26],[-50,-29],[-53,-33],[-58,-38],[-63,-42],[-65,-46],[-66,-55]],
-  // South America west coast
-  [[-80,8],[-80,-2],[-74,-10],[-70,-18],[-70,-30],[-72,-38],[-74,-45],[-66,-55]],
-  // Andes border (interior)
-  [[-70,-18],[-68,-22],[-65,-22],[-62,-22],[-58,-20],[-58,-33]],
-  // Amazon
-  [[-73,-5],[-68,-4],[-60,-2],[-50,-1]],
-  // Europe Atlantic coast
-  [[-10,36],[-9,39],[-8,44],[-3,44],[3,44],[5,48],[8,47],[12,46],[14,46],[16,47]],
-  // Europe east / Baltic
-  [[16,47],[19,48],[22,48],[25,46],[28,46],[30,45],[30,42]],
-  // UK & Ireland
-  [[-10,52],[-8,52],[-5,50],[-3,51],[2,53],[2,55],[0,57],[-3,58],[-5,56],[-4,52],[-3,51],[-5,50]],
-  // Scandinavia
-  [[5,58],[8,58],[14,57],[18,57],[20,59],[25,60],[28,60],[30,65],[25,71],[17,70],[15,65],[13,63],[8,63],[5,59]],
-  // Iberian Peninsula
-  [[-9,44],[-9,36],[-6,36],[-5,36],[-2,37],[0,38],[3,41],[3,44],[-3,44],[-8,44],[-9,44]],
-  // France-Germany-Alps
-  [[3,44],[5,44],[8,47],[10,48],[15,50],[14,51],[14,54],[10,55],[8,55],[8,47]],
-  // Italy
-  [[8,44],[10,44],[12,44],[14,40],[16,38],[15,38],[14,40],[12,44]],
-  // Balkans / Greece
-  [[16,47],[18,46],[20,42],[22,40],[24,38],[26,39],[28,40],[30,42],[28,46]],
-  // Black Sea / Turkey
-  [[28,42],[36,37],[42,37],[44,40],[42,42],[36,43],[30,43],[28,43]],
-  // Africa north coast
-  [[-6,36],[3,37],[10,37],[16,37],[25,35],[32,31],[36,30],[37,22],[43,12]],
-  // Africa west coast
-  [[-16,15],[-14,11],[-10,8],[-8,5],[-2,5],[3,5],[10,4]],
-  // Africa central / SE
-  [[10,4],[14,-2],[15,-10],[18,-17],[22,-18],[28,-20],[32,-18],[34,-12]],
-  // Africa south coast
-  [[34,-12],[36,-20],[34,-26],[30,-30],[18,-34],[16,-35],[14,-33],[18,-34],[28,-33],[32,-24],[34,-12]],
-  // Africa Horn / east coast
-  [[36,30],[37,22],[43,12],[45,10],[44,12],[37,15],[37,12],[32,10],[30,12],[25,20]],
-  // Sahel line
-  [[-16,15],[0,14],[10,13],[22,13],[30,12],[37,12]],
-  // Nile
-  [[32,30],[32,22],[34,12],[36,6],[37,4],[40,-2]],
-  // Congo river
-  [[15,-5],[18,-5],[24,-5],[28,-2],[30,0]],
-  // Arabia / Middle East
-  [[37,30],[37,22],[44,22],[50,24],[56,24],[58,22],[56,14],[44,12],[37,12]],
-  // Iraq / Iran
-  [[37,37],[44,37],[47,38],[48,30],[56,26],[60,24],[62,26]],
-  // India west coast
-  [[60,24],[68,24],[73,8],[76,8],[80,8]],
-  // India east coast
-  [[80,8],[82,14],[80,22],[78,28],[74,34],[70,36]],
-  // India-Pakistan border
-  [[60,24],[62,26],[66,28],[70,30],[74,34]],
-  // Russia north coast
-  [[32,70],[40,69],[55,68],[72,68],[90,72],[105,72],[120,73],[130,68],[140,60]],
-  // Russia Pacific coast
-  [[140,60],[135,47],[135,43],[140,45],[143,50],[148,55],[155,55],[162,60],[170,65],[175,68]],
-  // Russia-Europe Urals
-  [[60,54],[60,62],[62,68],[68,70],[72,68]],
-  // Kazakhstan
-  [[52,42],[52,52],[58,54],[68,54],[80,50],[80,42],[70,38],[56,38],[52,42]],
-  // China south
-  [[74,34],[78,34],[86,28],[92,28],[100,22],[104,18],[110,20],[116,24]],
-  // China east coast
-  [[116,24],[121,24],[122,32],[121,38],[120,40],[122,48],[128,50],[130,47],[135,47]],
-  // China north / Mongolia
-  [[74,36],[86,42],[92,46],[100,50],[110,50],[114,48],[120,42],[130,42],[135,47]],
-  // Korea
-  [[124,38],[126,34],[129,35],[129,38],[126,38],[124,38]],
-  // Japan (Honshu + Hokkaido)
-  [[130,32],[135,34],[138,36],[140,38],[142,40],[145,44],[141,43],[140,40],[140,36],[137,35],[135,35],[132,34],[130,32]],
-  // SE Asia mainland
-  [[100,4],[104,0],[104,-2],[108,-2],[115,0],[118,4],[120,10],[120,20],[116,24]],
-  // Indonesia / Borneo
-  [[105,-6],[108,-7],[112,-8],[115,-8],[117,-5],[120,-4],[118,4],[115,5],[110,2],[108,-2],[105,-4],[105,-6]],
-  // Mekong
-  [[100,28],[100,22],[102,18],[104,14],[104,10],[104,4]],
-  // Yangtze
-  [[90,28],[96,32],[100,30],[106,30],[110,30],[116,30],[121,32]],
-  // Mississippi
-  [[-90,47],[-92,42],[-90,36],[-89,32],[-90,30]],
-  // Australia north
-  [[114,-22],[122,-18],[128,-14],[136,-12],[140,-11],[142,-11],[146,-18],[150,-22],[152,-24],[154,-28]],
-  // Australia south
-  [[154,-28],[152,-32],[150,-38],[148,-40],[142,-38],[140,-36],[136,-35],[130,-32],[116,-32],[114,-26],[114,-22]],
-  // New Zealand
-  [[172,-34],[170,-37],[168,-43],[170,-46],[172,-44],[174,-42],[176,-38],[178,-38],[176,-37],[174,-36],[172,-34]],
-  // Madagascar
-  [[44,-12],[47,-14],[50,-16],[50,-22],[46,-25],[44,-20],[44,-12]],
-];
-
-const borderPaths = GEO_LINES.map(coords =>
-  coords.map((p, i) => {
-    const { x, y } = proj(p[0], p[1]);
-    return `${i === 0 ? 'M' : 'L'}${x.toFixed(1)},${y.toFixed(1)}`;
-  }).join(' ')
-);
-
 // === SVG HELPERS ===
 const gx = col => PAD_X + col * STEP;
 const gy = row => GRID_Y + row * STEP;
@@ -266,71 +140,86 @@ const kt = (...ts) => ts.map(t => Math.max(0, Math.min(1, t / LOOP)).toFixed(5))
 
 // === BUILD SVG ===
 function buildSvg(theme) {
-  const { id, bg, frame, ocean, gridEmpty, gridStroke, levels, traceColor, glowColor } = theme;
+  const { id, bg, frame, ocean, gridEmpty, gridStroke, levels, baseLand } = theme;
 
+  // --- Grid (fades to ghost while map is shown) ---
   const gridCells = cells.map(c =>
     `<rect x="${gx(c.col)}" y="${gy(c.row)}" width="${DOT}" height="${DOT}" rx="2.4" fill="${gridEmpty}" stroke="${gridStroke}" stroke-width=".6"/>`
   ).join('');
-
   const gridGroup = `<g>
-    <animate attributeName="opacity" values="1;1;0.07;0.07;1" keyTimes="${kt(0, GRID_HOLD, FLY_END, MAP_HOLD, LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;1;0.07;0.07;1" keyTimes="${kt(0,GRID_HOLD,FLY_END,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>
     ${gridCells}
   </g>`;
 
+  // --- Map layer: dense land dots colored by nearest paint-drop commit (Voronoi) ---
+  // Each land dot takes the color of whichever commit landed closest to it.
+  // Dots beyond PAINT_RADIUS of any commit use baseLand (faint base).
+  const PAINT_RADIUS = 82;
+  const drops = targets.map((t, i) => ({
+    cx: t.cx, cy: t.cy,
+    color: levels[active[i].level] || levels.SECOND_QUARTILE,
+  }));
+
+  const colorGroups = new Map();
+  for (const dot of landDots) {
+    let minD2 = Infinity;
+    let color = baseLand;
+    for (const drop of drops) {
+      const d2 = (dot.cx - drop.cx) ** 2 + (dot.cy - drop.cy) ** 2;
+      if (d2 < minD2) { minD2 = d2; color = drop.color; }
+    }
+    if (minD2 > PAINT_RADIUS * PAINT_RADIUS) color = baseLand;
+    if (!colorGroups.has(color)) colorGroups.set(color, []);
+    colorGroups.get(color).push(dot);
+  }
+
+  // Each color group fades in together when commits have landed.
+  // Using slightly different timing per group creates a subtle wave as the map solidifies.
+  const colorList = [...colorGroups.keys()];
+  const mapLayer = colorList.map((color, gi) => {
+    const rects = colorGroups.get(color).map(d =>
+      `<rect x="${(d.cx - MAP_DOT / 2).toFixed(1)}" y="${(d.cy - MAP_DOT / 2).toFixed(1)}" width="${MAP_DOT}" height="${MAP_DOT}" rx="1.2"/>`
+    ).join('');
+    const appear = +(FLY_END - 0.4 + gi * 0.1).toFixed(2);
+    const solid  = +(appear + 0.6).toFixed(2);
+    const opacity = color === baseLand ? '0.45' : '0.9';
+    return `<g fill="${color}">
+      <animate attributeName="opacity" values="0;0;${opacity};${opacity};0" keyTimes="${kt(0,appear,solid,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>
+      ${rects}
+    </g>`;
+  }).join('');
+
+  // --- Commit squares: fly as paint drops from grid → map, collapse on landing ---
   const commitSquares = active.map((cell, i) => {
-    const t = targets[i] || { x: gx(cell.col), y: gy(cell.row) };
-    const sx = gx(cell.col);
-    const sy = gy(cell.row);
-    const tx = +t.x.toFixed(2);
-    const ty = +t.y.toFixed(2);
-    const depart = +(GRID_HOLD + (i / Math.max(active.length - 1, 1)) * 1.8).toFixed(3);
-    const arrive = +Math.min(depart + 2.8, FLY_END + 0.5).toFixed(3);
-    const pop    = +(arrive + 0.10).toFixed(3);
-    const color  = levels[cell.level] || levels.SECOND_QUARTILE;
+    const t = targets[i] || { cx: gx(cell.col), cy: gy(cell.row) };
+    const sx  = gx(cell.col);
+    const sy  = gy(cell.row);
+    // Center-aligned coordinates at each phase
+    const fax = +(t.cx - DOT / 2).toFixed(2);      // x at arrive (DOT size, centered on target)
+    const fay = +(t.cy - DOT / 2).toFixed(2);
+    const mx  = +(t.cx - MAP_DOT / 2).toFixed(2);  // x at map (MAP_DOT size)
+    const my  = +(t.cy - MAP_DOT / 2).toFixed(2);
+
+    // Stagger: spread all departures across 1.8s
+    const depart  = +(GRID_HOLD + (i / Math.max(active.length - 1, 1)) * 1.8).toFixed(3);
+    const arrive  = +Math.min(depart + 2.8, FLY_END + 0.5).toFixed(3);
+    const snap    = +(arrive + 0.08).toFixed(3);  // snap to MAP_DOT
+    const color   = levels[cell.level] || levels.SECOND_QUARTILE;
+
+    // x, y: 6 keyframes: sit → depart → arrive (DOT-centered) → snap (MAP_DOT) → hold → reset
+    // width/height: 6 matching keyframes
+    // opacity: blink flash at landing, then fade out as map layer takes over
     return `<rect x="${sx}" y="${sy}" width="${DOT}" height="${DOT}" rx="2.4" fill="${color}">
-      <animate attributeName="x" values="${sx};${sx};${tx};${tx};${sx}" keyTimes="${kt(0,depart,arrive,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite" calcMode="linear"/>
-      <animate attributeName="y" values="${sy};${sy};${ty};${ty};${sy}" keyTimes="${kt(0,depart,arrive,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite" calcMode="linear"/>
-      <animate attributeName="width" values="${DOT};${DOT};${MAP_DOT};${MAP_DOT};${DOT}" keyTimes="${kt(0,depart,arrive,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>
-      <animate attributeName="height" values="${DOT};${DOT};${MAP_DOT};${MAP_DOT};${DOT}" keyTimes="${kt(0,depart,arrive,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>
-      <animate attributeName="rx" values="2.4;2.4;1.5;1.5;2.4" keyTimes="${kt(0,depart,arrive,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="1;1;0.3;1;0.8;0" keyTimes="${kt(0,depart,arrive,pop,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>
+      <animate attributeName="x" values="${sx};${sx};${fax};${mx};${mx};${sx}" keyTimes="${kt(0,depart,arrive,snap,COMMIT_FADE,LOOP)}" dur="${LOOP}s" repeatCount="indefinite" calcMode="linear"/>
+      <animate attributeName="y" values="${sy};${sy};${fay};${my};${my};${sy}" keyTimes="${kt(0,depart,arrive,snap,COMMIT_FADE,LOOP)}" dur="${LOOP}s" repeatCount="indefinite" calcMode="linear"/>
+      <animate attributeName="width" values="${DOT};${DOT};${DOT};${MAP_DOT};${MAP_DOT};${DOT}" keyTimes="${kt(0,depart,arrive,snap,COMMIT_FADE,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="${DOT};${DOT};${DOT};${MAP_DOT};${MAP_DOT};${DOT}" keyTimes="${kt(0,depart,arrive,snap,COMMIT_FADE,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>
+      <animate attributeName="rx" values="2.4;2.4;2.4;1.5;1.5;2.4" keyTimes="${kt(0,depart,arrive,snap,COMMIT_FADE,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;1;0.3;1;0;0" keyTimes="${kt(0,depart,arrive,snap,COMMIT_FADE,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>
     </rect>`;
   }).join('');
 
-  const glowLayer = borderPaths.map((d, i) => {
-    const spread = (i / borderPaths.length) * 2.6;
-    const drawS  = +(FLY_END + spread * 0.36).toFixed(3);
-    const drawE  = +Math.min(drawS + 1.6, WIRE_END).toFixed(3);
-    return `<path d="${d}" stroke="${glowColor}" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1200" stroke-dashoffset="1200">
-      <animate attributeName="stroke-dashoffset" values="1200;1200;0;0;1200" keyTimes="${kt(0,drawS,drawE,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite" calcMode="linear"/>
-      <animate attributeName="opacity" values="0;0;0.20;0.12;0" keyTimes="${kt(0,drawS,drawE,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>
-    </path>`;
-  }).join('');
-
-  const traceLayer = borderPaths.map((d, i) => {
-    const spread = (i / borderPaths.length) * 2.6;
-    const drawS  = +(FLY_END + spread * 0.36).toFixed(3);
-    const drawE  = +Math.min(drawS + 1.6, WIRE_END).toFixed(3);
-    return `<path d="${d}" stroke="${traceColor}" stroke-width="0.85" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1200" stroke-dashoffset="1200">
-      <animate attributeName="stroke-dashoffset" values="1200;1200;0;0;1200" keyTimes="${kt(0,drawS,drawE,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite" calcMode="linear"/>
-      <animate attributeName="opacity" values="0;0;0.72;0.52;0" keyTimes="${kt(0,drawS,drawE,MAP_HOLD,LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>
-    </path>`;
-  }).join('');
-
-  const hLines = Array.from({ length: 13 }, (_, i) => {
-    const y = (MAP_Y + (i / 12) * MAP_H).toFixed(1);
-    return `<line x1="${MAP_X}" y1="${y}" x2="${MAP_X + MAP_W}" y2="${y}" stroke="${traceColor}" stroke-width="0.35"/>`;
-  }).join('');
-  const vLines = Array.from({ length: 21 }, (_, i) => {
-    const x = (MAP_X + (i / 20) * MAP_W).toFixed(1);
-    return `<line x1="${x}" y1="${MAP_Y}" x2="${x}" y2="${MAP_Y + MAP_H}" stroke="${traceColor}" stroke-width="0.35"/>`;
-  }).join('');
-  const gridOverlay = `<g>
-    <animate attributeName="opacity" values="0;0;0.04;0.025;0" keyTimes="${kt(0, FLY_END, WIRE_END, MAP_HOLD, LOOP)}" dur="${LOOP}s" repeatCount="indefinite"/>
-    ${hLines}${vLines}
-  </g>`;
-
-  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GitHub contributions animating into a world circuit map">
+  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GitHub contributions animating into a world map">
   <defs>
     <linearGradient id="ocean-${id}" x1="0" y1="0" x2="0" y2="1">
       <stop stop-color="${ocean[0]}"/>
@@ -340,16 +229,13 @@ function buildSvg(theme) {
   <rect width="${W}" height="${H}" rx="20" fill="${bg}"/>
   <rect x="1" y="1" width="${W - 2}" height="${H - 2}" rx="19" stroke="${frame}" stroke-width="1.5"/>
   <rect x="10" y="10" width="${W - 20}" height="${H - 20}" rx="13" fill="url(#ocean-${id})"/>
-  ${gridOverlay}
   ${gridGroup}
+  ${mapLayer}
   ${commitSquares}
-  <g>${glowLayer}</g>
-  <g>${traceLayer}</g>
 </svg>`;
 }
 
-// Dark  — "Cyber Atlas": deep navy ocean, GitHub green nodes, cyan circuit traces
-// Light — "Blueprint":   soft blue ocean, forest green nodes, indigo circuit traces
+// === THEMES ===
 const themes = {
   dark: {
     id: 'dark',
@@ -358,6 +244,7 @@ const themes = {
     ocean: ['#070f1e', '#0a1628'],
     gridEmpty: '#0d1a2e',
     gridStroke: '#162338',
+    baseLand: '#0a2a18',  // dark green for unpainted land
     levels: {
       NONE:            '#0d1a2e',
       FIRST_QUARTILE:  '#0e4429',
@@ -365,8 +252,6 @@ const themes = {
       THIRD_QUARTILE:  '#26a641',
       FOURTH_QUARTILE: '#39d353',
     },
-    traceColor: '#0891b2',
-    glowColor:  '#22d3ee',
   },
   light: {
     id: 'light',
@@ -375,6 +260,7 @@ const themes = {
     ocean: ['#dbeafe', '#bfdbfe'],
     gridEmpty: '#ebedf0',
     gridStroke: '#d1d5db',
+    baseLand: '#c6efce',  // faint green for unpainted land
     levels: {
       NONE:            '#ebedf0',
       FIRST_QUARTILE:  '#9be9a8',
@@ -382,12 +268,10 @@ const themes = {
       THIRD_QUARTILE:  '#30a14e',
       FOURTH_QUARTILE: '#216e39',
     },
-    traceColor: '#1e40af',
-    glowColor:  '#3b82f6',
   },
 };
 
 await mkdir('dist', { recursive: true });
 await writeFile('dist/github-contribution-grid-snake-dark.svg', buildSvg(themes.dark));
 await writeFile('dist/github-contribution-grid-snake.svg', buildSvg(themes.light));
-console.log(`Cyber Atlas: ${active.length} commits, ${shuffledLand.length} land targets, ${borderPaths.length} border traces.`);
+console.log(`Paint-drop world map: ${active.length} commits, ${landDots.length} land dots.`);
