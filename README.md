@@ -4,11 +4,9 @@
 
 </div>
 
-Full-stack AI product builder working across recruiting proof systems, startup evaluation tools, technical education, and applied AI products.
+Full-stack AI product builder. CS + DS @ Rutgers. Building products that turn messy context into useful, high-signal artifacts.
 
-[`Next.js`](https://nextjs.org/) [`React`](https://react.dev/) [`TypeScript`](https://www.typescriptlang.org/) [`Python`](https://www.python.org/) [`Clerk`](https://clerk.com/) [`Supabase`](https://supabase.com/) [`PostgreSQL`](https://www.postgresql.org/) `AI APIs` `Vector Search` `RLS` `OAuth` `REST APIs` `Multi-Agent Systems` `ETL` `CI/CD`
-
-Building products that turn messy context into useful artifacts: proof maps, diligence memos, application strategy, evaluation reports, technical prep, and structured decision support.
+[`Python`](https://www.python.org/) [`TypeScript`](https://www.typescriptlang.org/) [`JavaScript`](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [`Java`](https://dev.java/) [`SQL`](https://www.postgresql.org/docs/current/sql.html) [`Next.js`](https://nextjs.org/) [`React`](https://react.dev/) [`Node.js`](https://nodejs.org/) [`FastAPI`](https://fastapi.tiangolo.com/) [`PostgreSQL`](https://www.postgresql.org/) [`Supabase`](https://supabase.com/) [`Redis`](https://redis.io/) [`LangChain`](https://www.langchain.com/) [`HuggingFace`](https://huggingface.co/) [`Clerk`](https://clerk.com/) [`Vercel`](https://vercel.com/) [`GitHub Actions`](https://github.com/features/actions)
 
 **Recognition**
 
@@ -30,11 +28,11 @@ Building products that turn messy context into useful artifacts: proof maps, dil
 **Buildboard**
 
 - [`Rolemate`](https://github.com/advik-bhatt/rolemate) — [rolemateapp.com](https://rolemateapp.com)  
-  [`Next.js`](https://nextjs.org/) + [`React`](https://react.dev/) + [`Clerk`](https://clerk.com/) + [`Supabase`](https://supabase.com/) + [`PostgreSQL`](https://www.postgresql.org/) + `AI APIs`  
+  [`Next.js`](https://nextjs.org/) + [`React`](https://react.dev/) + [`Clerk`](https://clerk.com/) + [`Supabase`](https://supabase.com/) + [`PostgreSQL`](https://www.postgresql.org/) + `Anthropic API`  
   Building a more credible way for technical candidates and hiring teams to understand fit, signal, and readiness.
 
 - [`Frenzy`](https://github.com/advik-bhatt/frenzy)  
-  [`Next.js`](https://nextjs.org/) + [`React`](https://react.dev/) + [`Clerk`](https://clerk.com/) + `AI APIs`  
+  [`Next.js`](https://nextjs.org/) + [`React`](https://react.dev/) + [`Clerk`](https://clerk.com/) + `OpenAI API`  
   Building an AI product for founders to pressure-test startup ideas before committing more time, money, or momentum.
 
 - [`PublicWire`](https://github.com/advik-bhatt/public-wire)  
@@ -46,7 +44,7 @@ Building products that turn messy context into useful artifacts: proof maps, dil
   Published CLI guardrail for AI-assisted coding that checks whether a developer understands AI-generated code before accepting it.
 
 - [`QuantumTrack`](https://github.com/advik-bhatt/quantumtrack-ai-roi)  
-  [`TanStack Start`](https://tanstack.com/start) + [`React`](https://react.dev/) + [`TypeScript`](https://www.typescriptlang.org/) + `SEC EDGAR` + [`Recharts`](https://recharts.org/)  
+  [`TanStack Start`](https://tanstack.com/start) + [`React`](https://react.dev/) + [`TypeScript`](https://www.typescriptlang.org/) + `SEC EDGAR API` + [`Recharts`](https://recharts.org/) + `Anthropic API`  
   Enterprise AI ROI audit platform. Type any US-listed ticker and it analyzes the company's actual SEC 10-K filing — separating AI narrative from real AI investment, scored and traceable to the source filing. Runs at $0 per audit on public SEC data.
 
 - [`MirrorMatch`](https://github.com/advik-bhatt/mirror-match) — Hackathon winner (ElevenLabs track)  
@@ -54,7 +52,7 @@ Building products that turn messy context into useful artifacts: proof maps, dil
   Adversarial simulation platform that red-teams AI voice agents using synthetic callers with calibrated frustration arcs. Scores agents on de-escalation, empathy, and resolution — an Emotional IQ score before you ship.
 
 - `Atlas` — HackPrinceton Spring 2026, Regeneron track runner-up  
-  [`Python`](https://www.python.org/) + `ClinicalTrials.gov` + `PubMed` + `NPI Registry` + `CMS Open Payments` + `FDA Warning Letters`  
+  [`Python`](https://www.python.org/) + `ClinicalTrials.gov API` + `PubMed API` + `NPI Registry` + `CMS Open Payments` + `FDA Warning Letters`  
   AI clinical-trial investigator selection platform that cross-references fragmented public healthcare and research datasets to identify stronger principal-investigator and trial-site candidates.
 
 - [`WasteZero`](https://github.com/advik-bhatt/waste-zero) — Rutgers ISE Pitch Competition  
@@ -69,42 +67,37 @@ Building products that turn messy context into useful artifacts: proof maps, dil
   [`JavaScript`](https://developer.mozilla.org/en-US/docs/Web/JavaScript) + [`React`](https://react.dev/) + [`Node.js`](https://nodejs.org/) + `Google Maps API`  
   Campus gym comparison app with location-aware discovery, time-based comparison logic, and multi-user client-server flows.
 
-**Technical Areas**
-
-- Full-stack product engineering
-- AI-assisted product systems
-- Multi-agent evaluation and structured generation
-- Retrieval-backed application logic
-- Auth-heavy, multi-user web apps
-- [PostgreSQL](https://www.postgresql.org/), [Supabase](https://supabase.com/), RLS, and vector search
-- OAuth, JWT, RBAC, and secure persistence
-- REST APIs and typed validation
-- ETL, analytics, and structured data processing
-- Technical event design and starter-repo based education
-
 **Stack**
 
-- `Languages:` [Python](https://www.python.org/), [TypeScript](https://www.typescriptlang.org/), JavaScript, Java, SQL
-- `Frontend:` [React](https://react.dev/), [Next.js](https://nextjs.org/), [React Native](https://reactnative.dev/), [Expo Router](https://expo.dev/router)
-- `Backend:` [Node.js](https://nodejs.org/), Express, [Supabase](https://supabase.com/), [PostgreSQL](https://www.postgresql.org/)
-- `AI + Data:` AI APIs, [LangChain](https://www.langchain.com/), vector search, structured outputs, ETL
-- `Auth + Access:` [Clerk](https://clerk.com/), OAuth, JWT, RLS, RBAC
-- `Infra:` Git, GitHub, [GitHub Actions](https://github.com/features/actions), [Vercel](https://vercel.com/), Postman, CI/CD
+- `Languages:` [Python](https://www.python.org/), [TypeScript](https://www.typescriptlang.org/), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), Java, SQL
+- `Frontend:` [React](https://react.dev/), [Next.js](https://nextjs.org/), [React Native](https://reactnative.dev/), [TanStack Start](https://tanstack.com/start), [Expo Router](https://expo.dev/router)
+- `Backend:` [Node.js](https://nodejs.org/), [FastAPI](https://fastapi.tiangolo.com/), Express, [Supabase](https://supabase.com/), [PostgreSQL](https://www.postgresql.org/)
+- `AI + ML:` [LangChain](https://www.langchain.com/), [HuggingFace](https://huggingface.co/), [OpenRouter](https://openrouter.ai/), [Anthropic API](https://www.anthropic.com/), [ElevenLabs](https://elevenlabs.io/), [Tavus](https://www.tavus.io/), [Roboflow](https://roboflow.com/)
+- `Databases:` [PostgreSQL](https://www.postgresql.org/), [Supabase](https://supabase.com/), [Redis](https://redis.io/), [ClickHouse](https://clickhouse.com/), [Neon](https://neon.tech/)
+- `Auth:` [Clerk](https://clerk.com/), OAuth, JWT
+- `Infra:` [GitHub Actions](https://github.com/features/actions), [Vercel](https://vercel.com/), Postman
 
 **Experience + Leadership**
 
-- [`CGI`](https://www.cgi.com/) — Current Software Developer Intern, Financial District, Manhattan.
+- [`CGI`](https://www.cgi.com/) — Software Developer Intern, Financial District, Manhattan. May 2026–present.
+
+- [NSF I-Corps](https://new.nsf.gov/funding/initiatives/i-corps) — Co-Entrepreneurial Lead. May 2026–present.  
+  20+ customer discovery interviews validating the broken hiring pipeline for Rolemate.
 
 - [`USACS`](https://usacs.rutgers.edu/) Tech Director  
   Leading technical programming for Rutgers' undergraduate CS community, with a focus on project-oriented workshops, starter repositories, technical collaborations, and UHACCS 2027.
 
-- [Rutgers Data Science Club](https://rutgersdsc.com/) — Co-Director of Competition, planning datathons around sponsor sourcing, problem design, datasets, judging, logistics, and technical programming.
+- [Rutgers Data Science Club](https://rutgersdsc.com/) — Co-Director of Competition  
+  Planning datathons around sponsor sourcing, problem design, datasets, judging, logistics, and technical programming.
 
-- Grey Matter Society Venture Lab  
+- [Grey Matter Society](https://gms-site-ivory.vercel.app/) — Admin & Venture Lab, Board Member  
   Co-designed the curriculum and operating structure for a 4-week student-run health-tech accelerator guiding 8 teams from idea validation to functional MVP, monetization strategy, and demo readiness.
 
-- [`Voya Financial`](https://www.voya.com/)  
-  Built Python ETL automation for a large-scale data migration project, reducing manual workload by 70%. Created Power BI reporting and contributed to internal AI education resources.
+- [`Voya Financial`](https://www.voya.com/) — IT Intern, Manhattan. Jun–Aug 2025.  
+  Python ETL automation for large-scale data migration, reducing manual workload by 30% and improving accuracy by 100%. Power BI reporting. Led internal Microsoft Copilot agentic AI integration.
+
+- Autonomous Motorsports Purdue — Software and Electrical Team. Jan–Aug 2025.  
+  Designed and built a more efficient Lithium-Ion battery. Trained a kart vision model using [Roboflow](https://roboflow.com/) on a larger, more variable dataset to improve trajectory and speed optimization.
 
 **What I care about**
 
