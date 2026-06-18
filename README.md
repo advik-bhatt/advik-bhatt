@@ -6,48 +6,67 @@
 
 Full-stack AI product builder working across recruiting proof systems, startup evaluation tools, technical education, and applied AI products.
 
-`Next.js` `React` `TypeScript` `Python` `Clerk` `Supabase` `PostgreSQL` `AI APIs` `Vector Search` `RLS` `OAuth` `REST APIs` `Multi-Agent Systems` `ETL` `CI/CD`
+[`Next.js`](https://nextjs.org/) [`React`](https://react.dev/) [`TypeScript`](https://www.typescriptlang.org/) [`Python`](https://www.python.org/) [`Clerk`](https://clerk.com/) [`Supabase`](https://supabase.com/) [`PostgreSQL`](https://www.postgresql.org/) `AI APIs` `Vector Search` `RLS` `OAuth` `REST APIs` `Multi-Agent Systems` `ETL` `CI/CD`
 
 Building products that turn messy context into useful artifacts: proof maps, diligence memos, application strategy, evaluation reports, technical prep, and structured decision support.
 
+**Recognition**
+
+- 4x Hackathon Winner — Google DeepMind, Datadog, McKinsey, Regeneron, and ElevenLabs tracks
+- [NSF I-Corps](https://new.nsf.gov/funding/initiatives/i-corps) Co-Entrepreneurial Lead — National Science Foundation customer discovery fellowship, 20+ interviews on the broken hiring pipeline
+- [Diamond Challenge](https://www.diamondchallenge.org/) State Qualifier — University of Delaware entrepreneurship competition
+- FBLA National Qualifier — 2nd Place (SQL Database Design) and 4th Place (Computer Applications) at State Leadership Conference
+
 **Current Focus**
 
-- Founder of `Rolemate`, an AI product for technical recruiting and candidate signal
-- Building `Frenzy`, an AI product for startup evaluation and founder decision-making
-- Building `PublicWire`, a self-running local newspaper concept powered by civic agents
-- Upcoming Software Developer Intern at `CGI`
-- USACS Tech Director for 2026 to 2027 at Rutgers
-- Co-Director of Competition at Rutgers Data Science Club
+- Founder of [`Rolemate`](https://rolemateapp.com), an AI product for technical recruiting and candidate signal
+- Building [`Frenzy`](https://github.com/advik-bhatt/frenzy), an AI product for startup evaluation and founder decision-making
+- Building [`PublicWire`](https://github.com/advik-bhatt/public-wire), a self-running local newspaper concept powered by civic agents
+- Software Developer Intern at [`CGI`](https://www.cgi.com/)
+- [`USACS`](https://usacs.rutgers.edu/) Tech Director for 2026 to 2027 at Rutgers
+- Co-Director of Competition at [Rutgers Data Science Club](https://rutgersdsc.com/)
 - Building student-facing technical programs around AI tools, full-stack development, evaluation, and applied CS
 
 **Buildboard**
 
-- `Rolemate`  
-  `Next.js` + `React` + `Clerk` + `Supabase` + `PostgreSQL` + `AI APIs`  
+- [`Rolemate`](https://github.com/advik-bhatt/rolemate) — [rolemateapp.com](https://rolemateapp.com)  
+  [`Next.js`](https://nextjs.org/) + [`React`](https://react.dev/) + [`Clerk`](https://clerk.com/) + [`Supabase`](https://supabase.com/) + [`PostgreSQL`](https://www.postgresql.org/) + `AI APIs`  
   Building a more credible way for technical candidates and hiring teams to understand fit, signal, and readiness.
 
-- `Frenzy`  
-  `Next.js` + `React` + `Clerk` + `AI APIs`  
+- [`Frenzy`](https://github.com/advik-bhatt/frenzy)  
+  [`Next.js`](https://nextjs.org/) + [`React`](https://react.dev/) + [`Clerk`](https://clerk.com/) + `AI APIs`  
   Building an AI product for founders to pressure-test startup ideas before committing more time, money, or momentum.
 
-- `PublicWire`  
-  `Next.js` + `React` + `TypeScript` + `Google GenAI` + `ClickHouse` + `Nimble`  
+- [`PublicWire`](https://github.com/advik-bhatt/public-wire)  
+  [`Next.js`](https://nextjs.org/) + [`React`](https://react.dev/) + [`TypeScript`](https://www.typescriptlang.org/) + `Google GenAI` + [`ClickHouse`](https://clickhouse.com/) + `Nimble`  
   Self-running local newspaper concept where an agent swarm monitors public city sites, county notices, transit alerts, agendas, and event calendars, then publishes short, cited local briefs when something changes for residents.
 
-- `VibeCheck`  
-  `Python` + `OpenRouter` + `LangChain` + `GitHub Actions` + `PyPI`  
+- [`VibeCheck`](https://github.com/team-vibecheck/vibecheck)  
+  [`Python`](https://www.python.org/) + [`OpenRouter`](https://openrouter.ai/) + [`LangChain`](https://www.langchain.com/) + [`GitHub Actions`](https://github.com/features/actions) + `PyPI`  
   Published CLI guardrail for AI-assisted coding that checks whether a developer understands AI-generated code before accepting it.
 
-- `Atlas`  
-  `Python` + `ClinicalTrials.gov` + `PubMed` + `NPI Registry` + `CMS Open Payments` + `FDA Warning Letters`  
-  HackPrinceton Spring 2026 Regeneron track runner-up. AI clinical-trial investigator selection platform that cross-references fragmented public healthcare and research datasets to identify stronger principal-investigator and trial-site candidates.
+- [`QuantumTrack`](https://github.com/advik-bhatt/quantumtrack-ai-roi)  
+  [`TanStack Start`](https://tanstack.com/start) + [`React`](https://react.dev/) + [`TypeScript`](https://www.typescriptlang.org/) + `SEC EDGAR` + [`Recharts`](https://recharts.org/)  
+  Enterprise AI ROI audit platform. Type any US-listed ticker and it analyzes the company's actual SEC 10-K filing — separating AI narrative from real AI investment, scored and traceable to the source filing. Runs at $0 per audit on public SEC data.
+
+- [`MirrorMatch`](https://github.com/advik-bhatt/mirror-match) — Hackathon winner (ElevenLabs track)  
+  [`FastAPI`](https://fastapi.tiangolo.com/) + [`Next.js`](https://nextjs.org/) + [`ElevenLabs`](https://elevenlabs.io/) + [`Tavus`](https://www.tavus.io/) + [`Redis`](https://redis.io/) + [`HuggingFace`](https://huggingface.co/)  
+  Adversarial simulation platform that red-teams AI voice agents using synthetic callers with calibrated frustration arcs. Scores agents on de-escalation, empathy, and resolution — an Emotional IQ score before you ship.
+
+- `Atlas` — HackPrinceton Spring 2026, Regeneron track runner-up  
+  [`Python`](https://www.python.org/) + `ClinicalTrials.gov` + `PubMed` + `NPI Registry` + `CMS Open Payments` + `FDA Warning Letters`  
+  AI clinical-trial investigator selection platform that cross-references fragmented public healthcare and research datasets to identify stronger principal-investigator and trial-site candidates.
+
+- [`WasteZero`](https://github.com/advik-bhatt/waste-zero) — Rutgers ISE Pitch Competition  
+  [`Next.js`](https://nextjs.org/) + [`React`](https://react.dev/) + [`TypeScript`](https://www.typescriptlang.org/)  
+  Kitchen operations OS for fast-casual restaurants. Eliminates duplicate food orders through ID-tapped atomic ticket claiming, role-aware station delegation, and a live 3D restaurant simulation. Targeting $22K/yr in per-location remake waste savings.
 
 - `CrewCast`  
-  `TypeScript` + `React Native` + `Node.js` + `Express` + `Supabase` + `PostgreSQL`  
+  [`TypeScript`](https://www.typescriptlang.org/) + [`React Native`](https://reactnative.dev/) + [`Node.js`](https://nodejs.org/) + `Express` + [`Supabase`](https://supabase.com/) + [`PostgreSQL`](https://www.postgresql.org/)  
   Multi-user staffing coordination system with Google OAuth, JWT auth, role-based access, scheduling, and event crew coordination.
 
 - `RUWorkingOut`  
-  `JavaScript` + `React` + `Node.js` + `Google Maps API`  
+  [`JavaScript`](https://developer.mozilla.org/en-US/docs/Web/JavaScript) + [`React`](https://react.dev/) + [`Node.js`](https://nodejs.org/) + `Google Maps API`  
   Campus gym comparison app with location-aware discovery, time-based comparison logic, and multi-user client-server flows.
 
 **Technical Areas**
@@ -57,7 +76,7 @@ Building products that turn messy context into useful artifacts: proof maps, dil
 - Multi-agent evaluation and structured generation
 - Retrieval-backed application logic
 - Auth-heavy, multi-user web apps
-- PostgreSQL, Supabase, RLS, and vector search
+- [PostgreSQL](https://www.postgresql.org/), [Supabase](https://supabase.com/), RLS, and vector search
 - OAuth, JWT, RBAC, and secure persistence
 - REST APIs and typed validation
 - ETL, analytics, and structured data processing
@@ -65,28 +84,26 @@ Building products that turn messy context into useful artifacts: proof maps, dil
 
 **Stack**
 
-- `Languages:` Python, TypeScript, JavaScript, Java, SQL
-- `Frontend:` React, Next.js, React Native, Expo Router
-- `Backend:` Node.js, Express, Supabase, PostgreSQL
-- `AI + Data:` AI APIs, LangChain, vector search, structured outputs, ETL
-- `Auth + Access:` Clerk, OAuth, JWT, RLS, RBAC
-- `Infra:` Git, GitHub, GitHub Actions, Vercel, Postman, CI/CD
+- `Languages:` [Python](https://www.python.org/), [TypeScript](https://www.typescriptlang.org/), JavaScript, Java, SQL
+- `Frontend:` [React](https://react.dev/), [Next.js](https://nextjs.org/), [React Native](https://reactnative.dev/), [Expo Router](https://expo.dev/router)
+- `Backend:` [Node.js](https://nodejs.org/), Express, [Supabase](https://supabase.com/), [PostgreSQL](https://www.postgresql.org/)
+- `AI + Data:` AI APIs, [LangChain](https://www.langchain.com/), vector search, structured outputs, ETL
+- `Auth + Access:` [Clerk](https://clerk.com/), OAuth, JWT, RLS, RBAC
+- `Infra:` Git, GitHub, [GitHub Actions](https://github.com/features/actions), [Vercel](https://vercel.com/), Postman, CI/CD
 
 **Experience + Leadership**
 
-- `CGI`  
-  Current Software Developer Intern.
+- [`CGI`](https://www.cgi.com/) — Current Software Developer Intern, Financial District, Manhattan.
 
-- `USACS Tech Director`  
-  Leading technical programming for Rutgers’ undergraduate CS community, with a focus on project-oriented workshops, starter repositories, technical collaborations, and UHACCS 2027.
+- [`USACS`](https://usacs.rutgers.edu/) Tech Director  
+  Leading technical programming for Rutgers' undergraduate CS community, with a focus on project-oriented workshops, starter repositories, technical collaborations, and UHACCS 2027.
 
-- `Rutgers Data Science Club`  
-  Co-Director of Competition, planning datathons around sponsor sourcing, problem design, datasets, judging, logistics, and technical programming.
+- [Rutgers Data Science Club](https://rutgersdsc.com/) — Co-Director of Competition, planning datathons around sponsor sourcing, problem design, datasets, judging, logistics, and technical programming.
 
-- `Grey Matter Society Venture Lab`  
+- Grey Matter Society Venture Lab  
   Co-designed the curriculum and operating structure for a 4-week student-run health-tech accelerator guiding 8 teams from idea validation to functional MVP, monetization strategy, and demo readiness.
 
-- `Voya Financial`  
+- [`Voya Financial`](https://www.voya.com/)  
   Built Python ETL automation for a large-scale data migration project, reducing manual workload by 70%. Created Power BI reporting and contributed to internal AI education resources.
 
 **What I care about**
@@ -100,9 +117,9 @@ Building products that turn messy context into useful artifacts: proof maps, dil
 
 **Links**
 
-- `LinkedIn:` linkedin.com/in/advik-bhatt
-- `GitHub:` github.com/advik-bhatt
-- `GitCity:` gitcity.io/advik-bhatt
+- `LinkedIn:` [linkedin.com/in/advik-bhatt](https://www.linkedin.com/in/advik-bhatt)
+- `GitHub:` [github.com/advik-bhatt](https://github.com/advik-bhatt)
+- `GitCity:` [gitcity.io/advik-bhatt](https://gitcity.io/advik-bhatt)
 - `Email:` advik.bhatt.work@gmail.com
 
 <div align="center">
