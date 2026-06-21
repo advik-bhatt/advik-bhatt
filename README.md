@@ -6,29 +6,29 @@
 
 Full-stack AI product builder. CS + DS @ Rutgers. Building products that turn messy context into useful, high-signal artifacts.
 
-[`Python`](https://www.python.org/) [`TypeScript`](https://www.typescriptlang.org/) [`JavaScript`](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [`Java`](https://dev.java/) `SQL` [`Next.js`](https://nextjs.org/) [`React`](https://react.dev/) [`React Native`](https://reactnative.dev/) [`Node.js`](https://nodejs.org/) [`FastAPI`](https://fastapi.tiangolo.com/) [`Express`](https://expressjs.com/) [`PostgreSQL`](https://www.postgresql.org/) [`Redis`](https://redis.io/) [`ClickHouse`](https://clickhouse.com/) [`LangChain`](https://www.langchain.com/) [`Transformers`](https://github.com/huggingface/transformers) [`OAuth 2.0`](https://oauth.net/2/) [`JWT`](https://jwt.io/) [`Docker`](https://www.docker.com/)
+[`Python`](https://www.python.org/) [`TypeScript`](https://www.typescriptlang.org/) [`JavaScript`](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [`Java`](https://dev.java/) [`SQL`](https://en.wikipedia.org/wiki/SQL) [`Next.js`](https://nextjs.org/) [`React`](https://react.dev/) [`React Native`](https://reactnative.dev/) [`Node.js`](https://nodejs.org/) [`FastAPI`](https://fastapi.tiangolo.com/) [`Express`](https://expressjs.com/) [`PostgreSQL`](https://www.postgresql.org/) [`Redis`](https://redis.io/) [`ClickHouse`](https://clickhouse.com/) [`LangChain`](https://www.langchain.com/) [`Transformers`](https://github.com/huggingface/transformers) [`OAuth 2.0`](https://oauth.net/2/) [`JWT`](https://jwt.io/) [`Docker`](https://www.docker.com/)
 
 **Recognition**
 
 - 4x Hackathon Winner — Google DeepMind, Datadog, McKinsey, Regeneron, and ElevenLabs tracks
-- [NSF I-Corps](https://new.nsf.gov/funding/initiatives/i-corps) Co-Entrepreneurial Lead — National Science Foundation customer discovery fellowship, 20+ interviews on the broken hiring pipeline
-- [Diamond Challenge](https://www.diamondchallenge.org/) State Qualifier — University of Delaware entrepreneurship competition
+- [`NSF I-Corps`](https://new.nsf.gov/funding/initiatives/i-corps) Co-Entrepreneurial Lead — National Science Foundation customer discovery fellowship, 20+ interviews on the broken hiring pipeline
+- [`Diamond Challenge`](https://www.diamondchallenge.org/) State Qualifier — University of Delaware entrepreneurship competition
 - FBLA National Qualifier — 2nd Place (SQL Database Design) and 4th Place (Computer Applications) at State Leadership Conference
 
 **Current Focus**
 
-- Founder of [`Rolemate`](https://rolemateapp.com), an AI product for technical recruiting and candidate signal
+- Founder of [`Rolemate`](https://rolemateapp.com) ([`@rolemateapp`](https://www.instagram.com/rolemateapp/)), an AI product for technical recruiting and candidate signal
 - Building [`Frenzy`](https://github.com/advik-bhatt/frenzy), an AI product for startup evaluation and founder decision-making
 - Building [`PublicWire`](https://github.com/advik-bhatt/public-wire), a self-running local newspaper concept powered by civic agents
 - Software Developer Intern at [`CGI`](https://www.cgi.com/)
 - [`USACS`](https://usacs.rutgers.edu/) Tech Director for 2026 to 2027 at Rutgers
-- Co-Director of Competition at [Rutgers Data Science Club](https://rutgersdsc.com/)
+- Co-Director of Competition at [`Rutgers Data Science Club`](https://rutgersdsc.com/)
 - Building student-facing technical programs around AI tools, full-stack development, evaluation, and applied CS
 
 **Buildboard**
 
-- [`Rolemate`](https://github.com/advik-bhatt/rolemate) — [rolemateapp.com](https://rolemateapp.com)  
-  [`Next.js`](https://nextjs.org/) + [`React`](https://react.dev/) + [`Clerk`](https://clerk.com/) + [`Supabase`](https://supabase.com/) + [`PostgreSQL`](https://www.postgresql.org/) + `Anthropic API`  
+- [`Rolemate`](https://github.com/advik-bhatt/rolemate) — [rolemateapp.com](https://rolemateapp.com) — [`@rolemateapp`](https://www.instagram.com/rolemateapp/)  
+  [`Next.js`](https://nextjs.org/) + [`React`](https://react.dev/) + [`Clerk`](https://clerk.com/) + [`Supabase`](https://supabase.com/) + `Anthropic API`  
   Building a more credible way for technical candidates and hiring teams to understand fit, signal, and readiness.
 
 - [`Frenzy`](https://github.com/advik-bhatt/frenzy)  
@@ -44,7 +44,7 @@ Full-stack AI product builder. CS + DS @ Rutgers. Building products that turn me
   Published CLI guardrail for AI-assisted coding that checks whether a developer understands AI-generated code before accepting it.
 
 - [`QuantumTrack`](https://github.com/advik-bhatt/quantumtrack-ai-roi)  
-  [`TanStack Start`](https://tanstack.com/start) + [`React`](https://react.dev/) + [`TypeScript`](https://www.typescriptlang.org/) + `SEC EDGAR API` + [`Recharts`](https://recharts.org/) + `Anthropic API`  
+  [`TanStack Start`](https://tanstack.com/start) + [`React`](https://react.dev/) + [`TypeScript`](https://www.typescriptlang.org/) + `SEC EDGAR API` + [`Recharts`](https://recharts.org/)  
   Enterprise AI ROI audit platform. Type any US-listed ticker and it analyzes the company's actual SEC 10-K filing — separating AI narrative from real AI investment, scored and traceable to the source filing. Runs at $0 per audit on public SEC data.
 
 - [`MirrorMatch`](https://github.com/advik-bhatt/mirror-match) — Hackathon winner (ElevenLabs track)  
@@ -60,7 +60,7 @@ Full-stack AI product builder. CS + DS @ Rutgers. Building products that turn me
   Kitchen operations OS for fast-casual restaurants. Eliminates duplicate food orders through ID-tapped atomic ticket claiming, role-aware station delegation, and a live 3D restaurant simulation. Targeting $22K/yr in per-location remake waste savings.
 
 - `CrewCast`  
-  [`TypeScript`](https://www.typescriptlang.org/) + [`React Native`](https://reactnative.dev/) + [`Node.js`](https://nodejs.org/) + [`Express`](https://expressjs.com/) + [`Supabase`](https://supabase.com/) + [`PostgreSQL`](https://www.postgresql.org/)  
+  [`TypeScript`](https://www.typescriptlang.org/) + [`React Native`](https://reactnative.dev/) + [`Node.js`](https://nodejs.org/) + [`Express`](https://expressjs.com/) + [`Supabase`](https://supabase.com/)  
   Multi-user staffing coordination system with Google OAuth, JWT auth, role-based access, scheduling, and event crew coordination.
 
 - `RUWorkingOut`  
@@ -69,34 +69,34 @@ Full-stack AI product builder. CS + DS @ Rutgers. Building products that turn me
 
 **Stack**
 
-- `Languages:` [Python](https://www.python.org/), [TypeScript](https://www.typescriptlang.org/), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), Java, SQL
+- `Languages:` [Python](https://www.python.org/), [TypeScript](https://www.typescriptlang.org/), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [Java](https://dev.java/), [SQL](https://en.wikipedia.org/wiki/SQL)
 - `Frontend:` [React](https://react.dev/), [Next.js](https://nextjs.org/), [React Native](https://reactnative.dev/), [TanStack Start](https://tanstack.com/start), [Expo Router](https://expo.dev/router)
 - `Backend:` [Node.js](https://nodejs.org/), [FastAPI](https://fastapi.tiangolo.com/), [Express](https://expressjs.com/)
 - `Databases:` [PostgreSQL](https://www.postgresql.org/), [Redis](https://redis.io/), [ClickHouse](https://clickhouse.com/), [Neon](https://neon.tech/), [Supabase](https://supabase.com/)
 - `AI + ML:` [LangChain](https://www.langchain.com/), [Transformers](https://github.com/huggingface/transformers), [OpenRouter](https://openrouter.ai/), [ElevenLabs](https://elevenlabs.io/), [Tavus](https://www.tavus.io/), [Roboflow](https://roboflow.com/)
 - `Auth:` [OAuth 2.0](https://oauth.net/2/), [JWT](https://jwt.io/), [Clerk](https://clerk.com/)
-- `Infra:` [Docker](https://www.docker.com/), [GitHub Actions](https://github.com/features/actions), [Vercel](https://vercel.com/), Postman
+- `Infra:` [Docker](https://www.docker.com/), [GitHub Actions](https://github.com/features/actions), [Vercel](https://vercel.com/), [Postman](https://www.postman.com/)
 
 **Experience + Leadership**
 
 - [`CGI`](https://www.cgi.com/) — Software Developer Intern, Financial District, Manhattan. May 2026–present.
 
-- [NSF I-Corps](https://new.nsf.gov/funding/initiatives/i-corps) — Co-Entrepreneurial Lead. May 2026–present.  
+- [`NSF I-Corps`](https://new.nsf.gov/funding/initiatives/i-corps) — Co-Entrepreneurial Lead. May 2026–present.  
   20+ customer discovery interviews validating the broken hiring pipeline for Rolemate.
 
-- [`USACS`](https://usacs.rutgers.edu/) Tech Director  
+- [`USACS`](https://usacs.rutgers.edu/) — [`@rutgers_usacs`](https://www.instagram.com/rutgers_usacs/) — Tech Director  
   Leading technical programming for Rutgers' undergraduate CS community, with a focus on project-oriented workshops, starter repositories, technical collaborations, and UHACCS 2027.
 
-- [Rutgers Data Science Club](https://rutgersdsc.com/) — Co-Director of Competition  
+- [`Rutgers Data Science Club`](https://rutgersdsc.com/) — [`@rutgersdatascience`](https://www.instagram.com/rutgersdatascience/) — Co-Director of Competition  
   Planning datathons around sponsor sourcing, problem design, datasets, judging, logistics, and technical programming.
 
-- [Grey Matter Society](https://gms-site-ivory.vercel.app/) — Admin & Venture Lab, Board Member  
+- [`Grey Matter Society`](https://gms-site-ivory.vercel.app/) — [`@greymatteratru`](https://www.instagram.com/greymatteratru/) — Admin & Venture Lab, Board Member  
   Co-designed the curriculum and operating structure for a 4-week student-run health-tech accelerator guiding 8 teams from idea validation to functional MVP, monetization strategy, and demo readiness.
 
 - [`Voya Financial`](https://www.voya.com/) — IT Intern, Manhattan. Jun–Aug 2025.  
   Python ETL automation for large-scale data migration, reducing manual workload by 30% and improving accuracy by 100%. Power BI reporting. Led internal Microsoft Copilot agentic AI integration.
 
-- Autonomous Motorsports Purdue — Software and Electrical Team. Jan–Aug 2025.  
+- [`Autonomous Motorsports Purdue`](https://engineering.purdue.edu/AMP/) — [`@amppurdue`](https://www.instagram.com/amppurdue/) — Software and Electrical Team. Jan–Aug 2025.  
   Designed and built a more efficient Lithium-Ion battery. Trained a kart vision model using [Roboflow](https://roboflow.com/) on a larger, more variable dataset to improve trajectory and speed optimization.
 
 **What I care about**
