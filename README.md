@@ -6,7 +6,7 @@
 
 Full-stack AI product builder. CS + DS @ Rutgers. Building products that turn messy context into useful, high-signal artifacts.
 
-[`Python`](https://www.python.org/) [`TypeScript`](https://www.typescriptlang.org/) [`JavaScript`](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [`Java`](https://dev.java/) [`SQL`](https://www.postgresql.org/docs/current/sql.html) [`Next.js`](https://nextjs.org/) [`React`](https://react.dev/) [`Node.js`](https://nodejs.org/) [`FastAPI`](https://fastapi.tiangolo.com/) [`PostgreSQL`](https://www.postgresql.org/) [`Supabase`](https://supabase.com/) [`Redis`](https://redis.io/) [`LangChain`](https://www.langchain.com/) [`HuggingFace`](https://huggingface.co/) [`Clerk`](https://clerk.com/) [`Vercel`](https://vercel.com/) [`GitHub Actions`](https://github.com/features/actions)
+[`Python`](https://www.python.org/) [`TypeScript`](https://www.typescriptlang.org/) [`JavaScript`](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [`Java`](https://dev.java/) `SQL` [`Next.js`](https://nextjs.org/) [`React`](https://react.dev/) [`React Native`](https://reactnative.dev/) [`Node.js`](https://nodejs.org/) [`FastAPI`](https://fastapi.tiangolo.com/) [`Express`](https://expressjs.com/) [`PostgreSQL`](https://www.postgresql.org/) [`Redis`](https://redis.io/) [`ClickHouse`](https://clickhouse.com/) [`LangChain`](https://www.langchain.com/) [`Transformers`](https://github.com/huggingface/transformers) [`OAuth 2.0`](https://oauth.net/2/) [`JWT`](https://jwt.io/) [`Docker`](https://www.docker.com/)
 
 **Recognition**
 
@@ -60,7 +60,7 @@ Full-stack AI product builder. CS + DS @ Rutgers. Building products that turn me
   Kitchen operations OS for fast-casual restaurants. Eliminates duplicate food orders through ID-tapped atomic ticket claiming, role-aware station delegation, and a live 3D restaurant simulation. Targeting $22K/yr in per-location remake waste savings.
 
 - `CrewCast`  
-  [`TypeScript`](https://www.typescriptlang.org/) + [`React Native`](https://reactnative.dev/) + [`Node.js`](https://nodejs.org/) + `Express` + [`Supabase`](https://supabase.com/) + [`PostgreSQL`](https://www.postgresql.org/)  
+  [`TypeScript`](https://www.typescriptlang.org/) + [`React Native`](https://reactnative.dev/) + [`Node.js`](https://nodejs.org/) + [`Express`](https://expressjs.com/) + [`Supabase`](https://supabase.com/) + [`PostgreSQL`](https://www.postgresql.org/)  
   Multi-user staffing coordination system with Google OAuth, JWT auth, role-based access, scheduling, and event crew coordination.
 
 - `RUWorkingOut`  
@@ -71,11 +71,11 @@ Full-stack AI product builder. CS + DS @ Rutgers. Building products that turn me
 
 - `Languages:` [Python](https://www.python.org/), [TypeScript](https://www.typescriptlang.org/), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), Java, SQL
 - `Frontend:` [React](https://react.dev/), [Next.js](https://nextjs.org/), [React Native](https://reactnative.dev/), [TanStack Start](https://tanstack.com/start), [Expo Router](https://expo.dev/router)
-- `Backend:` [Node.js](https://nodejs.org/), [FastAPI](https://fastapi.tiangolo.com/), Express, [Supabase](https://supabase.com/), [PostgreSQL](https://www.postgresql.org/)
-- `AI + ML:` [LangChain](https://www.langchain.com/), [HuggingFace](https://huggingface.co/), [OpenRouter](https://openrouter.ai/), [Anthropic API](https://www.anthropic.com/), [ElevenLabs](https://elevenlabs.io/), [Tavus](https://www.tavus.io/), [Roboflow](https://roboflow.com/)
-- `Databases:` [PostgreSQL](https://www.postgresql.org/), [Supabase](https://supabase.com/), [Redis](https://redis.io/), [ClickHouse](https://clickhouse.com/), [Neon](https://neon.tech/)
-- `Auth:` [Clerk](https://clerk.com/), OAuth, JWT
-- `Infra:` [GitHub Actions](https://github.com/features/actions), [Vercel](https://vercel.com/), Postman
+- `Backend:` [Node.js](https://nodejs.org/), [FastAPI](https://fastapi.tiangolo.com/), [Express](https://expressjs.com/)
+- `Databases:` [PostgreSQL](https://www.postgresql.org/), [Redis](https://redis.io/), [ClickHouse](https://clickhouse.com/), [Neon](https://neon.tech/), [Supabase](https://supabase.com/)
+- `AI + ML:` [LangChain](https://www.langchain.com/), [Transformers](https://github.com/huggingface/transformers), [OpenRouter](https://openrouter.ai/), [ElevenLabs](https://elevenlabs.io/), [Tavus](https://www.tavus.io/), [Roboflow](https://roboflow.com/)
+- `Auth:` [OAuth 2.0](https://oauth.net/2/), [JWT](https://jwt.io/), [Clerk](https://clerk.com/)
+- `Infra:` [Docker](https://www.docker.com/), [GitHub Actions](https://github.com/features/actions), [Vercel](https://vercel.com/), Postman
 
 **Experience + Leadership**
 
