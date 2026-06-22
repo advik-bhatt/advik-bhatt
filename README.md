@@ -10,7 +10,7 @@ Full-stack AI product builder. CS + DS @ Rutgers. Building products that leverag
 
 **Recognition**
 
-- 4x Hackathon Winner — Google DeepMind, Datadog, McKinsey, Regeneron, and ElevenLabs tracks
+- 4x Hackathon Winner — [Google DeepMind]((https://deepmind.google/)), [Datadog]([(https://www.datadoghq.com/dg/monitor/free-trial/?utm_source=google&utm_medium=paid-search&utm_campaign=dg-coreplatform-multi-ww-en-brand&utm_keyword=datadog&utm_matchtype=e&igaag=198192973844&igaat=&igacm=23852702120&igacr=808951976826&igakw=datadog&igamt=e&igant=g&utm_campaignid=23852702120&utm_adgroupid=198192973844&gad_source=1&gad_campaignid=23852702120&gbraid=0AAAAADFY9Nlcam7lK5sIbLAvyVlpGzrK3&gclid=CjwKCAjwuuPRBhAnEiwA2Ji8eps6859HnALcIhp_FuP8O28GlUmRz2RjcLrXpawrU99XVQIij_tgIBoC0vQQAvD_BwE)), McKinsey, Regeneron, and ElevenLabs tracks
 - [`NSF I-Corps`](https://new.nsf.gov/funding/initiatives/i-corps) Co-Entrepreneurial Lead — National Science Foundation customer discovery fellowship, 20+ interviews on the broken hiring pipeline
 
 **Current Focus**
