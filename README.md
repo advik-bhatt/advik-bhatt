@@ -12,8 +12,6 @@ Full-stack AI product builder. CS + DS @ Rutgers. Building products that turn me
 
 - 4x Hackathon Winner — Google DeepMind, Datadog, McKinsey, Regeneron, and ElevenLabs tracks
 - [`NSF I-Corps`](https://new.nsf.gov/funding/initiatives/i-corps) Co-Entrepreneurial Lead — National Science Foundation customer discovery fellowship, 20+ interviews on the broken hiring pipeline
-- [`Diamond Challenge`](https://www.diamondchallenge.org/) State Qualifier — University of Delaware entrepreneurship competition
-- FBLA National Qualifier — 2nd Place (SQL Database Design) and 4th Place (Computer Applications) at State Leadership Conference
 
 **Current Focus**
 
