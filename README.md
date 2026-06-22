@@ -53,7 +53,7 @@ Full-stack AI product builder. CS + DS @ Rutgers. Building products that turn me
   [`Python`](https://www.python.org/) + `ClinicalTrials.gov API` + `PubMed API` + `NPI Registry` + `CMS Open Payments` + `FDA Warning Letters`  
   AI clinical-trial investigator selection platform that cross-references fragmented public healthcare and research datasets to identify stronger principal-investigator and trial-site candidates.
 
-- [`WasteZero`](https://github.com/advik-bhatt/waste-zero) — Rutgers ISE Pitch Competition  
+- [`WasteZero`](https://github.com/advik-bhatt/waste-zero) — Rutgers ISE Innovation Relay Competition  
   [`Next.js`](https://nextjs.org/) + [`React`](https://react.dev/) + [`TypeScript`](https://www.typescriptlang.org/)  
   Kitchen operations OS for fast-casual restaurants. Eliminates duplicate food orders through ID-tapped atomic ticket claiming, role-aware station delegation, and a live 3D restaurant simulation. Targeting $22K/yr in per-location remake waste savings.
 
