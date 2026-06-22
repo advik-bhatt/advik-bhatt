@@ -97,8 +97,7 @@ Full-stack AI product builder. CS + DS @ Rutgers. Building products that leverag
 - [`Autonomous Motorsports Purdue`](https://engineering.purdue.edu/AMP/) — [`@amppurdue`](https://www.instagram.com/amppurdue/) — Software and Electrical Team. Jan–Aug 2025.  
   Designed and built a more efficient Lithium-Ion battery. Trained a kart vision model using [Roboflow](https://roboflow.com/) on a larger, more variable dataset to improve trajectory and speed optimization.
 
-**What I care about**
-
+**I'm passionate about:**
 - Making technical proof easier to see
 - Turning AI output into accountable systems
 - Building products that create useful artifacts
@@ -106,7 +105,7 @@ Full-stack AI product builder. CS + DS @ Rutgers. Building products that leverag
 - Using Rutgers, NYC, hackathons, and student orgs as distribution for real product testing
 - Combining engineering, product taste, jazz, and systems thinking into work that feels alive
 
-**Links**
+**Socials:**
 
 - `LinkedIn:` [linkedin.com/in/advik-bhatt](https://www.linkedin.com/in/advik-bhatt)
 - `GitHub:` [github.com/advik-bhatt](https://github.com/advik-bhatt)
