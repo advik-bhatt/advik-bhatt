@@ -10,7 +10,7 @@ Full-stack AI product builder. CS + DS @ Rutgers. Building products that leverag
 
 **Recognition**
 
-- 4x Hackathon Winner — [Google DeepMind]((https://deepmind.google/)), [Datadog]([(https://www.datadoghq.com/dg/monitor/free-trial/?utm_source=google&utm_medium=paid-search&utm_campaign=dg-coreplatform-multi-ww-en-brand&utm_keyword=datadog&utm_matchtype=e&igaag=198192973844&igaat=&igacm=23852702120&igacr=808951976826&igakw=datadog&igamt=e&igant=g&utm_campaignid=23852702120&utm_adgroupid=198192973844&gad_source=1&gad_campaignid=23852702120&gbraid=0AAAAADFY9Nlcam7lK5sIbLAvyVlpGzrK3&gclid=CjwKCAjwuuPRBhAnEiwA2Ji8eps6859HnALcIhp_FuP8O28GlUmRz2RjcLrXpawrU99XVQIij_tgIBoC0vQQAvD_BwE)), McKinsey, Regeneron, and ElevenLabs tracks
+- 4x Hackathon Winner — [Google DeepMind](https://deepmind.google/), [Datadog](https://www.datadoghq.com), McKinsey, Regeneron, and ElevenLabs tracks
 - [`NSF I-Corps`](https://new.nsf.gov/funding/initiatives/i-corps) Co-Entrepreneurial Lead — National Science Foundation customer discovery fellowship, 20+ interviews on the broken hiring pipeline
 
 **Current Focus**
@@ -97,13 +97,9 @@ Full-stack AI product builder. CS + DS @ Rutgers. Building products that leverag
 - [`Autonomous Motorsports Purdue`](https://engineering.purdue.edu/AMP/) — [`@amppurdue`](https://www.instagram.com/amppurdue/) — Software and Electrical Team. Jan–Aug 2025.  
   Designed and built a more efficient Lithium-Ion battery. Trained a kart vision model using [Roboflow](https://roboflow.com/) on a larger, more variable dataset to improve trajectory and speed optimization.
 
-**I'm passionate about:**
-- Making technical proof easier to see
-- Turning AI output into accountable systems
-- Building products that create useful artifacts
-- Helping students ship real code, not just attend technical talks
-- Using Rutgers, NYC, hackathons, and student orgs as distribution for real product testing
-- Combining engineering, product taste, jazz, and systems thinking into work that feels alive
+**I'm passionate about/bothered by:**
+- Reducing busy work/people optimizing for outdated systems and blindly following protocol without understanding the "why"
+- Leveraging technology to increase human autonomy/people losing the plot about what makes a sucessful business (solving a problem that **people** face)
 
 **Socials:**
 
