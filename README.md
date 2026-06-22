@@ -4,7 +4,7 @@
 
 </div>
 
-Full-stack AI product builder. CS + DS @ Rutgers. Building products that turn messy context into useful, high-signal artifacts.
+Full-stack AI product builder. CS + DS @ Rutgers. Building products that leverage technology to improve human autonomy.
 
 [`Python`](https://www.python.org/) [`TypeScript`](https://www.typescriptlang.org/) [`JavaScript`](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [`Java`](https://dev.java/) [`SQL`](https://en.wikipedia.org/wiki/SQL) [`Next.js`](https://nextjs.org/) [`React`](https://react.dev/) [`React Native`](https://reactnative.dev/) [`Node.js`](https://nodejs.org/) [`FastAPI`](https://fastapi.tiangolo.com/) [`Express`](https://expressjs.com/) [`PostgreSQL`](https://www.postgresql.org/) [`Redis`](https://redis.io/) [`ClickHouse`](https://clickhouse.com/) [`LangChain`](https://www.langchain.com/) [`Transformers`](https://github.com/huggingface/transformers) [`OAuth 2.0`](https://oauth.net/2/) [`JWT`](https://jwt.io/) [`Docker`](https://www.docker.com/)
 
