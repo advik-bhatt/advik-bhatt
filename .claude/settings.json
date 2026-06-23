@@ -1,0 +1,71 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -c 'for d in \"$SECOND_BRAIN_KB\" \"$CLAUDE_PROJECT_DIR\" \"$CLAUDE_PROJECT_DIR/../knowledge-base\" \"$HOME/knowledge-base\" \"$HOME/code/knowledge-base\"; do if [ -n \"$d\" ] && [ -x \"$d/second-brain\" ]; then export SECOND_BRAIN_KB=\"$d\"; exec \"$d/second-brain\" hook session-start; fi; done; exit 0'",
+            "timeout": 60
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -c 'for d in \"$SECOND_BRAIN_KB\" \"$CLAUDE_PROJECT_DIR\" \"$CLAUDE_PROJECT_DIR/../knowledge-base\" \"$HOME/knowledge-base\" \"$HOME/code/knowledge-base\"; do if [ -n \"$d\" ] && [ -x \"$d/second-brain\" ]; then export SECOND_BRAIN_KB=\"$d\"; exec \"$d/second-brain\" hook user-prompt-submit; fi; done; exit 0'",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -c 'for d in \"$SECOND_BRAIN_KB\" \"$CLAUDE_PROJECT_DIR\" \"$CLAUDE_PROJECT_DIR/../knowledge-base\" \"$HOME/knowledge-base\" \"$HOME/code/knowledge-base\"; do if [ -n \"$d\" ] && [ -x \"$d/second-brain\" ]; then export SECOND_BRAIN_KB=\"$d\"; exec \"$d/second-brain\" hook post-tool-use; fi; done; exit 0'",
+            "timeout": 20
+          }
+        ],
+        "matcher": "Edit|Write|MultiEdit|NotebookEdit|Bash"
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -c 'for d in \"$SECOND_BRAIN_KB\" \"$CLAUDE_PROJECT_DIR\" \"$CLAUDE_PROJECT_DIR/../knowledge-base\" \"$HOME/knowledge-base\" \"$HOME/code/knowledge-base\"; do if [ -n \"$d\" ] && [ -x \"$d/second-brain\" ]; then export SECOND_BRAIN_KB=\"$d\"; exec \"$d/second-brain\" hook stop; fi; done; exit 0'",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -c 'for d in \"$SECOND_BRAIN_KB\" \"$CLAUDE_PROJECT_DIR\" \"$CLAUDE_PROJECT_DIR/../knowledge-base\" \"$HOME/knowledge-base\" \"$HOME/code/knowledge-base\"; do if [ -n \"$d\" ] && [ -x \"$d/second-brain\" ]; then export SECOND_BRAIN_KB=\"$d\"; exec \"$d/second-brain\" hook pre-compact; fi; done; exit 0'",
+            "timeout": 90
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -c 'for d in \"$SECOND_BRAIN_KB\" \"$CLAUDE_PROJECT_DIR\" \"$CLAUDE_PROJECT_DIR/../knowledge-base\" \"$HOME/knowledge-base\" \"$HOME/code/knowledge-base\"; do if [ -n \"$d\" ] && [ -x \"$d/second-brain\" ]; then export SECOND_BRAIN_KB=\"$d\"; exec \"$d/second-brain\" hook session-end; fi; done; exit 0'",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}
