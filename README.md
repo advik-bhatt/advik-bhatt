@@ -12,12 +12,8 @@ I build AI products around the problems I care about most: the broken hiring fun
 
 **Recognition**
 
-- [`MirrorMatch`](https://github.com/advik-bhatt/mirror-match): ElevenLabs track winner
-- Atlas: Regeneron track runner-up, HackPrinceton Spring 2026
-- Google DeepMind track winner
-- Datadog track winner
-- McKinsey track winner
-- [`NSF I-Corps`](https://new.nsf.gov/funding/initiatives/i-corps) Co-Entrepreneurial Lead
+- 4x hackathon winner: Google DeepMind, Datadog, McKinsey, ElevenLabs ([`MirrorMatch`](https://github.com/advik-bhatt/mirror-match)) tracks
+- Regeneron track runner-up: Atlas at HackPrinceton Spring 2026
 - [`WasteZero`](https://github.com/advik-bhatt/waste-zero): Rutgers ISE Pitch Competition
 
 **Current Focus**
@@ -25,9 +21,6 @@ I build AI products around the problems I care about most: the broken hiring fun
 - Founder, [`Rolemate`](https://rolemateapp.com) ([`@rolemateapp`](https://www.instagram.com/rolemateapp/)): verified signal layer for technical hiring
 - Building [`Frenzy`](https://github.com/advik-bhatt/frenzy): AI pressure-tester for startup ideas before founders commit
 - Building [`PublicWire`](https://github.com/advik-bhatt/public-wire): civic agent swarm that turns public data into local journalism automatically
-- Software Developer Intern, [`CGI`](https://www.cgi.com/), Manhattan
-- Tech Director, [`USACS`](https://usacs.rutgers.edu/) ([`@rutgers_usacs`](https://www.instagram.com/rutgers_usacs/)): building workshops where students ship working code
-- Co-Director of Competition, [`Rutgers Data Science Club`](https://rutgersdsc.com/) ([`@rutgersdatascience`](https://www.instagram.com/rutgersdatascience/))
 
 **Buildboard**
 
@@ -76,7 +69,7 @@ I build AI products around the problems I care about most: the broken hiring fun
 - `Languages:` [Python](https://www.python.org/), [TypeScript](https://www.typescriptlang.org/), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [Java](https://dev.java/), [SQL](https://en.wikipedia.org/wiki/SQL)
 - `Frontend:` [React](https://react.dev/), [Next.js](https://nextjs.org/), [React Native](https://reactnative.dev/), [TanStack Start](https://tanstack.com/start), [Expo Router](https://expo.dev/router)
 - `Backend:` [Node.js](https://nodejs.org/), [FastAPI](https://fastapi.tiangolo.com/), [Express](https://expressjs.com/)
-- `Databases:` [PostgreSQL](https://www.postgresql.org/), [Redis](https://redis.io/), [ClickHouse](https://clickhouse.com/), [Neon](https://neon.tech/), [Supabase](https://supabase.com/)
+- `Databases:` [PostgreSQL](https://www.postgresql.org/), [Redis](https://redis.io/), [ClickHouse`](https://clickhouse.com/), [Neon](https://neon.tech/), [Supabase](https://supabase.com/)
 - `AI + ML:` [LangChain](https://www.langchain.com/), [Transformers](https://github.com/huggingface/transformers), [ElevenLabs](https://elevenlabs.io/), [Tavus](https://www.tavus.io/), [Roboflow](https://roboflow.com/)
 - `Auth:` [OAuth 2.0](https://oauth.net/2/), [JWT](https://jwt.io/), [Clerk](https://clerk.com/)
 - `Infra:` [Docker](https://www.docker.com/), [GitHub Actions](https://github.com/features/actions), [Vercel](https://vercel.com/), [Postman](https://www.postman.com/)
