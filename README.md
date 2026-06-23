@@ -37,7 +37,7 @@ Five specialized agents tear the idea apart: market, product, GTM, technical, an
 Agent swarm that watches public city sites, county notices, transit alerts, and civic agendas around the clock. When something changes that matters to residents, it writes and publishes a cited brief.
 
 ### [`VibeCheck`](https://github.com/team-vibecheck/vibecheck)
-Published on PyPI  
+Packaged as an installable CLI  
 `Python` `AI` `LangChain` `GitHub Actions`
 
 Intercepts AI-generated code before it gets merged and surfaces the understanding gap. Can the developer explain what they are accepting? Turns AI assistance into a learning loop.
@@ -77,7 +77,7 @@ Shows which Rutgers gym is least crowded right now. Location-aware, time-aware, 
 
 ---
 
-[`Python`](https://www.python.org/) [`TypeScript`](https://www.typescriptlang.org/) [`JavaScript`](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [`Java`](https://dev.java/) [`SQL`](https://en.wikipedia.org/wiki/SQL) [`Next.js`](https://nextjs.org/) [`React`](https://react.dev/) [`React Native`](https://reactnative.dev/) [`Node.js`](https://nodejs.org/) [`FastAPI`](https://fastapi.tiangolo.com/) [`Express`](https://expressjs.com/) [`PostgreSQL`](https://www.postgresql.org/) [`Redis`](https://redis.io/) [`ClickHouse`](https://clickhouse.com/) [`LangChain`](https://www.langchain.com/) [`Transformers`](https://github.com/huggingface/transformers) [`OAuth 2.0`](https://oauth.net/2/) [`JWT`](https://jwt.io/) [`Docker`](https://www.docker.com/)
+[`Python`](https://www.python.org/) [`TypeScript`](https://www.typescriptlang.org/) [`JavaScript`](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [`Java`](https://dev.java/) [`SQL`](https://en.wikipedia.org/wiki/SQL) [`Next.js`](https://nextjs.org/) [`React`](https://react.dev/) [`React Native`](https://reactnative.dev/) [`Node.js`](https://nodejs.org/) [`FastAPI`](https://fastapi.tiangolo.com/) [`Express`](https://expressjs.com/) [`PostgreSQL`](https://www.postgresql.org/) [`Redis`](https://redis.io/) [`ClickHouse`](https://clickhouse.com/) [`LangChain`](https://www.langchain.com/) [`HuggingFace`](https://huggingface.co/) [`OAuth 2.0`](https://oauth.net/2/) [`JWT`](https://jwt.io/) [`Docker`](https://www.docker.com/)
 
 ## Stack
 
@@ -85,7 +85,7 @@ Shows which Rutgers gym is least crowded right now. Location-aware, time-aware, 
 - `Frontend:` [React](https://react.dev/), [Next.js](https://nextjs.org/), [React Native](https://reactnative.dev/), [TanStack Start](https://tanstack.com/start), [Expo Router](https://expo.dev/router)
 - `Backend:` [Node.js](https://nodejs.org/), [FastAPI](https://fastapi.tiangolo.com/), [Express](https://expressjs.com/)
 - `Databases:` [PostgreSQL](https://www.postgresql.org/), [Redis](https://redis.io/), [ClickHouse](https://clickhouse.com/), [Neon](https://neon.tech/), [Supabase](https://supabase.com/)
-- `AI + ML:` [LangChain](https://www.langchain.com/), [Transformers](https://github.com/huggingface/transformers), [ElevenLabs](https://elevenlabs.io/), [Tavus](https://www.tavus.io/), [Roboflow](https://roboflow.com/)
+- `AI + ML:` [LangChain](https://www.langchain.com/), [HuggingFace](https://huggingface.co/), [ElevenLabs](https://elevenlabs.io/), [Tavus](https://www.tavus.io/)
 - `Auth:` [OAuth 2.0](https://oauth.net/2/), [JWT](https://jwt.io/), [Clerk](https://clerk.com/)
 - `Infra:` [Docker](https://www.docker.com/), [GitHub Actions](https://github.com/features/actions), [Vercel](https://vercel.com/), [Postman](https://www.postman.com/)
 
