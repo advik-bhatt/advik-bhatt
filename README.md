@@ -24,7 +24,7 @@ Also building [`Frenzy`](https://github.com/advik-bhatt/frenzy) (AI pressure-tes
 [rolemateapp.com](https://rolemateapp.com), [`@rolemateapp`](https://www.instagram.com/rolemateapp/)  
 `Next.js` `React` `Clerk` `Supabase` `multi-agent AI`
 
-95 applications per role, a hiring funnel buried in AI-polished noise, and real work getting lost. Rolemate is the verified trust layer that surfaces proof of what candidates have actually built.
+1000+ applications per role, a hiring funnel buried in AI-polished noise, and real work getting lost. Rolemate is the verified trust layer that surfaces proof of what candidates have actually built.
 
 ### [`Frenzy`](https://github.com/advik-bhatt/frenzy)
 `Next.js` `React` `Clerk` `multi-agent AI`
