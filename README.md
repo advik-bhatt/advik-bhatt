@@ -1,8 +1,23 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/control-room-hero.svg" alt="Animated control room hero describing Advik Bhatt's full-stack, AI, and product engineering work" width="100%" />
+<a href="https://rolemateapp.com"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/rolemate.svg" alt="Rolemate — the verified trust layer for technical hiring. Live at rolemateapp.com" width="98%" /></a>
 
 </div>
+
+<table>
+  <tr>
+    <td width="50%"><a href="https://github.com/advik-bhatt/frenzy"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/frenzy.svg" alt="Frenzy — five AI agents pressure-test your startup idea before you commit" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/public-wire"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/publicwire.svg" alt="PublicWire — civic agent swarm that turns public data into cited local news" width="100%" /></a></td>
+  </tr>
+  <tr>
+    <td width="50%"><a href="https://github.com/advik-bhatt/quantumtrack-ai-roi"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/quantumtrack.svg" alt="QuantumTrack — audit real AI ROI inside any US-listed SEC 10-K filing" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/mirror-match"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/mirrormatch.svg" alt="MirrorMatch — red-teams AI voice agents before they go live (ElevenLabs track winner)" width="100%" /></a></td>
+  </tr>
+  <tr>
+    <td width="50%"><a href="https://github.com/team-vibecheck/vibecheck"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/vibecheck.svg" alt="VibeCheck — closes the understanding gap in AI-generated code before it merges" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/waste-zero"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/wastezero.svg" alt="WasteZero — kitchen ops that kills fast-casual remake waste (Rutgers ISE)" width="100%" /></a></td>
+  </tr>
+</table>
 
 Founder of [Rolemate](https://rolemateapp.com). 4x hackathon winner. CS + Data Science at Rutgers. Jazz saxophone when not shipping.
 
