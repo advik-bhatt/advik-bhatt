@@ -115,8 +115,7 @@ Shows which Rutgers gym is least crowded right now. Location-aware, time-aware, 
 
 - Proof as the only signal that doesn't lie. Real commits, real deployments, real results.
 - Students who walk out of workshops with something shipped
-- Jazz, saxophone, drums, and voice: the one domain with no accountability metric
-
+- Jazz, saxophone, drums, and voice: another medium to build and create things that both I and others can enjoy.
 ## Links
 
 - `LinkedIn:` [linkedin.com/in/advik-bhatt](https://www.linkedin.com/in/advik-bhatt)
