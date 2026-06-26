@@ -56,9 +56,13 @@ Shows which Rutgers gym is least crowded right now. Location-aware, time-aware, 
 
 <a href="https://www.python.org/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/python.svg" alt="Python" height="34" /></a>&nbsp;<a href="https://www.typescriptlang.org/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/typescript.svg" alt="TypeScript" height="34" /></a>&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/javascript.svg" alt="JavaScript" height="34" /></a>&nbsp;<a href="https://dev.java/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/java.svg" alt="Java" height="34" /></a>&nbsp;<a href="https://en.wikipedia.org/wiki/SQL"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/sql.svg" alt="SQL" height="34" /></a>
 
-**Frontend**
+**Web**
 
-<a href="https://react.dev/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/react.svg" alt="React" height="34" /></a>&nbsp;<a href="https://nextjs.org/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/nextjs.svg" alt="Next.js" height="34" /></a>&nbsp;<a href="https://reactnative.dev/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/react-native.svg" alt="React Native" height="34" /></a>&nbsp;<a href="https://tanstack.com/start"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/tanstack.svg" alt="TanStack" height="34" /></a>&nbsp;<a href="https://expo.dev/router"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/expo.svg" alt="Expo Router" height="34" /></a>
+<a href="https://react.dev/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/react.svg" alt="React" height="34" /></a>&nbsp;<a href="https://nextjs.org/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/nextjs.svg" alt="Next.js" height="34" /></a>&nbsp;<a href="https://tanstack.com/start"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/tanstack.svg" alt="TanStack Start" height="34" /></a>
+
+**Mobile**
+
+<a href="https://reactnative.dev/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/react-native.svg" alt="React Native" height="34" /></a>&nbsp;<a href="https://expo.dev/router"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/expo.svg" alt="Expo Router" height="34" /></a>
 
 **Backend**
 
@@ -72,7 +76,7 @@ Shows which Rutgers gym is least crowded right now. Location-aware, time-aware, 
 
 <a href="https://www.langchain.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/langchain.svg" alt="LangChain" height="34" /></a>&nbsp;<a href="https://huggingface.co/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/huggingface.svg" alt="HuggingFace" height="34" /></a>&nbsp;<a href="https://elevenlabs.io/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/elevenlabs.svg" alt="ElevenLabs" height="34" /></a>&nbsp;<a href="https://www.tavus.io/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/tavus.svg" alt="Tavus" height="34" /></a>
 
-**Auth + Infra**
+**Infra + Tools**
 
 <a href="https://clerk.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/clerk.svg" alt="Clerk" height="34" /></a>&nbsp;<a href="https://www.docker.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/docker.svg" alt="Docker" height="34" /></a>&nbsp;<a href="https://github.com/features/actions"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/github-actions.svg" alt="GitHub Actions" height="34" /></a>&nbsp;<a href="https://vercel.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/vercel.svg" alt="Vercel" height="34" /></a>&nbsp;<a href="https://www.postman.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/postman.svg" alt="Postman" height="34" /></a>
 
