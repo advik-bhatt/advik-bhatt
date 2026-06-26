@@ -41,7 +41,7 @@ Cross-references ClinicalTrials.gov, PubMed, NPI Registry, CMS Open Payments, an
 ### CrewCast
 `TypeScript` `React Native` `Node.js` `Express` `Supabase`
 
-Staffing coordination for event crews. Google OAuth, role-based permissions, real-time scheduling, and coordination across concurrent events.
+Staffing coordination for event crews. Google OAuth, role-based permissions, real-time scheduling, and coordination across concurrent events. Competed at RES TechStart 2026.
 
 ### RUWorkingOut
 `JavaScript` `React` `Node.js` `Google Maps API`
