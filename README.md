@@ -25,7 +25,7 @@ I got tired of watching real builders lose to AI-polished noise, so I built Role
 
 ## Recognition
 
-Atlas was runner-up in the Regeneron track at HackPrinceton Spring 2026, built on five federal databases no one had thought to connect. [`MirrorMatch`](https://github.com/advik-bhatt/mirror-match) won the ElevenLabs track. Four wins total: Google DeepMind, Datadog, McKinsey, ElevenLabs. [`WasteZero`](https://github.com/advik-bhatt/waste-zero) pitched at the Rutgers ISE Competition.
+Atlas was runner-up in the Regeneron track at HackPrinceton Spring 2026, built on five federal databases no one had thought to connect. [`MirrorMatch`](https://github.com/advik-bhatt/mirror-match) took 2nd place overall at the a16z Tech Week ElevenLabs Hackathon. Plus wins at Google DeepMind, Datadog, and McKinsey. [`WasteZero`](https://github.com/advik-bhatt/waste-zero) pitched at the Rutgers ISE Competition.
 
 ## Current Focus
 
