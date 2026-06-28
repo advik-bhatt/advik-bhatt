@@ -11,7 +11,7 @@
   </tr>
   <tr>
     <td width="50%"><a href="https://github.com/advik-bhatt/quantumtrack-ai-roi"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/quantumtrack.svg" alt="QuantumTrack" width="100%" /></a></td>
-    <td width="50%"><a href="https://github.com/advik-bhatt/mirror-match"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/mirrormatch.svg" alt="MirrorMatch" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/mirror-match"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/mirrormatch.svg?v=2" alt="MirrorMatch" width="100%" /></a></td>
   </tr>
   <tr>
     <td width="50%"><a href="https://github.com/team-vibecheck/vibecheck"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/vibecheck.svg" alt="VibeCheck" width="100%" /></a></td>
