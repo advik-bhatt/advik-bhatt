@@ -19,13 +19,13 @@
   </tr>
 </table>
 
-Founder of [Rolemate](https://rolemateapp.com). 4x hackathon winner. CS + Data Science at Rutgers. Jazz saxophone when not shipping.
+Founder of [Rolemate](https://rolemateapp.com). 5x hackathon winner. CS + Data Science at Rutgers. Jazz saxophone when not shipping.
 
 I got tired of watching real builders lose to AI-polished noise, so I built Rolemate to make proof the only thing that counts. NSF I-Corps fellow. Everything I build ships.
 
 ## Recognition
 
-Atlas was runner-up in the Regeneron track at HackPrinceton Spring 2026, built on five federal databases no one had thought to connect. [`MirrorMatch`](https://github.com/advik-bhatt/mirror-match) took 2nd place overall at the a16z Tech Week ElevenLabs Hackathon. Plus wins at Google DeepMind, Datadog, and McKinsey. [`WasteZero`](https://github.com/advik-bhatt/waste-zero) pitched at the Rutgers ISE Competition.
+First place at the JPMorganChase x Replit x Campfire finance hackathon in NYC, building a cost estimator for micro data centers on private estates and maritime platforms. [`MirrorMatch`](https://github.com/advik-bhatt/mirror-match) took 2nd place overall at the a16z Tech Week ElevenLabs Hackathon. Atlas was runner-up in the Regeneron track at HackPrinceton Spring 2026, built on five federal databases no one had thought to connect. Plus wins at Google DeepMind, Datadog, and McKinsey QuantumBlack. [`WasteZero`](https://github.com/advik-bhatt/waste-zero) pitched at the Rutgers ISE Competition.
 
 ## Current Focus
 
