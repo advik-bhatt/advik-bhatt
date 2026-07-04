@@ -25,11 +25,11 @@ I got tired of watching real builders lose to AI-polished noise, so I built Role
 
 ## Recognition
 
-First place at the JPMorganChase x Replit x Campfire finance hackathon in NYC, building a cost estimator for micro data centers on private estates and maritime platforms. [`MirrorMatch`](https://github.com/advik-bhatt/mirror-match) took 2nd place overall at the a16z Tech Week ElevenLabs Hackathon. Atlas was runner-up in the Regeneron track at HackPrinceton Spring 2026, built on five federal databases no one had thought to connect. Plus wins at Google DeepMind, Datadog, and McKinsey QuantumBlack. [`WasteZero`](https://github.com/advik-bhatt/waste-zero) pitched at the Rutgers ISE Competition.
+First place at the JPMorganChase x Replit x Campfire finance hackathon in NYC, building a cost estimator for micro data centers on private estates and maritime platforms. [`MirrorMatch`](https://github.com/advik-bhatt/mirror-match) took 2nd place overall at the a16z Tech Week ElevenLabs Hackathon. Atlas was runner-up in the Regeneron track at HackPrinceton Spring 2026, built on five federal databases no one had thought to connect. Plus wins at Google DeepMind, Datadog, and McKinsey QuantumBlack. Rolemate placed 3rd at ClickHouse's NYC demo night, ahead of teams from Google, Docker, and RedHat, voted by 200+ VCs, angels, and founders in the room. [`WasteZero`](https://github.com/advik-bhatt/waste-zero) pitched at the Rutgers ISE Competition.
 
 ## Current Focus
 
-Founder, [`Rolemate`](https://rolemateapp.com) — the verified trust layer for technical hiring. Live and in active development. Also building [`Frenzy`](https://github.com/advik-bhatt/frenzy) and [`PublicWire`](https://github.com/advik-bhatt/public-wire).
+Founder, [`Rolemate`](https://rolemateapp.com) — the verified trust layer for technical hiring. Live and in active development. Presented at a16z Tech Week's StartupGrind. Also building [`Frenzy`](https://github.com/advik-bhatt/frenzy) and [`PublicWire`](https://github.com/advik-bhatt/public-wire).
 
 ## Other Projects
 
