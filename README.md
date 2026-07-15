@@ -7,10 +7,10 @@
 <table>
   <tr>
     <td width="50%"><a href="https://github.com/advik-bhatt/frenzy"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/frenzy.svg" alt="Frenzy" width="100%" /></a></td>
-    <td width="50%"><a href="https://github.com/advik-bhatt/public-wire"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/publicwire.svg" alt="PublicWire" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/public-wire"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/publicwire.svg?v=2" alt="PublicWire — Top 10 Finalist, Datadog x Google DeepMind hackathon" width="100%" /></a></td>
   </tr>
   <tr>
-    <td width="50%"><a href="https://github.com/advik-bhatt/quantumtrack-ai-roi"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/quantumtrack.svg" alt="QuantumTrack" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/quantumtrack-ai-roi"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/quantumtrack.svg?v=2" alt="QuantumTrack — 3rd Place, McKinsey QuantumBlack finance hackathon" width="100%" /></a></td>
     <td width="50%"><a href="https://github.com/advik-bhatt/mirror-match"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/mirrormatch.svg?v=2" alt="MirrorMatch" width="100%" /></a></td>
   </tr>
   <tr>
