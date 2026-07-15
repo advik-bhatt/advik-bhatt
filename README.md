@@ -1,16 +1,16 @@
 <div align="center">
 
-<a href="https://rolemateapp.com"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/rolemate.svg" alt="Rolemate — the verified trust layer for technical hiring. Live at rolemateapp.com" width="98%" /></a>
+<a href="https://rolemateapp.com"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/rolemate.svg" alt="Rolemate: the verified trust layer for technical hiring. Live at rolemateapp.com" width="98%" /></a>
 
 </div>
 
 <table>
   <tr>
     <td width="50%"><a href="https://github.com/advik-bhatt/frenzy"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/frenzy.svg" alt="Frenzy" width="100%" /></a></td>
-    <td width="50%"><a href="https://github.com/advik-bhatt/public-wire"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/publicwire.svg?v=2" alt="PublicWire — Top 10 Finalist, Datadog x Google DeepMind hackathon" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/public-wire"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/publicwire.svg?v=2" alt="PublicWire: Top 10 Finalist, Datadog x Google DeepMind hackathon" width="100%" /></a></td>
   </tr>
   <tr>
-    <td width="50%"><a href="https://github.com/advik-bhatt/quantumtrack-ai-roi"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/quantumtrack.svg?v=2" alt="QuantumTrack — 3rd Place, McKinsey QuantumBlack finance hackathon" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/quantumtrack-ai-roi"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/quantumtrack.svg?v=2" alt="QuantumTrack: 3rd Place, McKinsey QuantumBlack finance hackathon" width="100%" /></a></td>
     <td width="50%"><a href="https://github.com/advik-bhatt/mirror-match"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/mirrormatch.svg?v=2" alt="MirrorMatch" width="100%" /></a></td>
   </tr>
   <tr>
@@ -21,7 +21,7 @@
 
 Founder of [Rolemate](https://rolemateapp.com). 5x hackathon winner. CS + Data Science at Rutgers. Jazz musician when not shipping.
 
-I got tired of watching real builders lose to AI-polished noise, so I built Rolemate to make proof the only thing that counts. NSF I-Corps fellow. Everything I build ships.
+I got tired of watching real builders lose to AI-polished noise, so I built Rolemate to make proof the only thing that counts. NSF I-Corps fellow.
 
 ## Recognition
 
@@ -29,12 +29,12 @@ First place at the JPMorganChase x Replit x Campfire finance hackathon in NYC, b
 
 ## Current Focus
 
-Founder, [`Rolemate`](https://rolemateapp.com) — the verified trust layer for technical hiring. Live and in active development. Presented at a16z Tech Week's StartupGrind. Also building [`Frenzy`](https://github.com/advik-bhatt/frenzy) and [`PublicWire`](https://github.com/advik-bhatt/public-wire).
+Founder, [`Rolemate`](https://rolemateapp.com): the verified trust layer for technical hiring. Live and in active development. Presented at a16z Tech Week's StartupGrind. Also building [`Frenzy`](https://github.com/advik-bhatt/frenzy) and [`PublicWire`](https://github.com/advik-bhatt/public-wire).
 
 ## Other Projects
 
 ### Atlas
-HackPrinceton Spring 2026, Regeneron track runner-up — `Python` `ClinicalTrials.gov API` `PubMed API` `NPI Registry` `CMS Open Payments` `FDA Warning Letters`
+HackPrinceton Spring 2026, Regeneron track runner-up. `Python` `ClinicalTrials.gov API` `PubMed API` `NPI Registry` `CMS Open Payments` `FDA Warning Letters`
 
 Cross-references ClinicalTrials.gov, PubMed, NPI Registry, CMS Open Payments, and FDA Warning Letters to surface stronger trial investigators. Fragmented public data, actually used.
 
@@ -113,7 +113,7 @@ Shows which Rutgers gym is least crowded right now. Location-aware, time-aware, 
 
 > Changing the world, one commit at a time.
 >
-> Proof as the only signal that doesn't lie — real commits, real deployments, real results.
+> Proof as the only signal that doesn't lie. Real commits, real deployments, real results.
 
 ## Links
 
