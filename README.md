@@ -19,7 +19,7 @@
   </tr>
 </table>
 
-Founder of [Rolemate](https://rolemateapp.com). 5x hackathon winner. CS + Data Science at Rutgers. Jazz saxophone when not shipping.
+Founder of [Rolemate](https://rolemateapp.com). 5x hackathon winner. CS + Data Science at Rutgers. Jazz musician when not shipping.
 
 I got tired of watching real builders lose to AI-polished noise, so I built Rolemate to make proof the only thing that counts. NSF I-Corps fellow. Everything I build ships.
 
@@ -106,9 +106,14 @@ Shows which Rutgers gym is least crowded right now. Location-aware, time-aware, 
 
 ## What I care about
 
-- Proof as the only signal that doesn't lie. Real commits, real deployments, real results.
 - Students who walk out of workshops with something shipped
-- Jazz, saxophone, drums, and voice: another medium to build and create things that both I and others can enjoy.
+- Music as another medium for building and creating: drumset, saxophone (alto, tenor, soprano), trumpet, piano, and voice, recorded and mixed in Logic Pro with a BC1500 and Shure microphones
+
+## Literature & Inspiration
+
+> Changing the world, one commit at a time.
+>
+> Proof as the only signal that doesn't lie — real commits, real deployments, real results.
 
 ## Links
 
@@ -118,8 +123,6 @@ Shows which Rutgers gym is least crowded right now. Location-aware, time-aware, 
 - `Email:` advik.bhatt.work@gmail.com
 
 <div align="center">
-
-<h3>Changing the world, one commit at a time.</h3>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/output/github-contribution-grid-snake-dark.svg" />
