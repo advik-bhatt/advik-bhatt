@@ -1,27 +1,29 @@
 <div align="center">
 
+<h3>If you're not doing something no one's ever done before then what are you doing?</h3>
+
 <a href="https://rolemateapp.com"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/rolemate.svg" alt="Rolemate — the verified trust layer for technical hiring. Live at rolemateapp.com" width="98%" /></a>
 
 </div>
 
 <table>
   <tr>
-    <td width="50%"><a href="https://github.com/advik-bhatt/frenzy"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/frenzy.svg" alt="Frenzy" width="100%" /></a></td>
-    <td width="50%"><a href="https://github.com/advik-bhatt/public-wire"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/publicwire.svg?v=2" alt="PublicWire — Top 10 Finalist, Datadog x Google DeepMind hackathon" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/frenzy"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/frenzy.svg?v=2" alt="Frenzy" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/public-wire"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/publicwire.svg?v=3" alt="PublicWire — Top 10 Finalist, Datadog x Google DeepMind hackathon" width="100%" /></a></td>
   </tr>
   <tr>
     <td width="50%"><a href="https://github.com/advik-bhatt/quantumtrack-ai-roi"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/quantumtrack.svg?v=2" alt="QuantumTrack — 3rd Place, McKinsey QuantumBlack finance hackathon" width="100%" /></a></td>
     <td width="50%"><a href="https://github.com/advik-bhatt/mirror-match"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/mirrormatch.svg?v=2" alt="MirrorMatch" width="100%" /></a></td>
   </tr>
   <tr>
-    <td width="50%"><a href="https://github.com/team-vibecheck/vibecheck"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/vibecheck.svg" alt="VibeCheck" width="100%" /></a></td>
-    <td width="50%"><a href="https://github.com/advik-bhatt/waste-zero"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/wastezero.svg" alt="WasteZero" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/team-vibecheck/vibecheck"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/vibecheck.svg?v=2" alt="VibeCheck" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/waste-zero"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/wastezero.svg?v=2" alt="WasteZero" width="100%" /></a></td>
   </tr>
 </table>
 
 Founder of [Rolemate](https://rolemateapp.com). 5x hackathon winner. CS + Data Science at Rutgers. Jazz saxophone when not shipping.
 
-I got tired of watching real builders lose to AI-polished noise, so I built Rolemate to make proof the only thing that counts. NSF I-Corps fellow. Everything I build ships.
+I got tired of watching real builders lose to AI-polished noise, so I built Rolemate to make proof the only thing that counts. One filter sorts every repo here: has it been done before, and how many people does it help? NSF I-Corps fellow. Everything I build ships.
 
 ## Recognition
 
@@ -106,9 +108,10 @@ Shows which Rutgers gym is least crowded right now. Location-aware, time-aware, 
 
 ## What I care about
 
+- Doing what's never been done before, to help as many people as possible. That's the filter for everything below and above.
 - Proof as the only signal that doesn't lie. Real commits, real deployments, real results.
-- Students who walk out of workshops with something shipped
-- Jazz, saxophone, drums, and voice: another medium to build and create things that both I and others can enjoy.
+- Students who walk out of workshops with something shipped that didn't exist that morning
+- Jazz, saxophone, drums, and voice: improvisation is playing what's never been played, and another medium to build things that both I and others can enjoy.
 
 ## Links
 
@@ -119,7 +122,7 @@ Shows which Rutgers gym is least crowded right now. Location-aware, time-aware, 
 
 <div align="center">
 
-<h3>Changing the world, one commit at a time.</h3>
+<h3>Doing what's never been done, one commit at a time.</h3>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/output/github-contribution-grid-snake-dark.svg" />
