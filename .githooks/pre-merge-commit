@@ -1,0 +1,9 @@
+#!/bin/sh
+# main-only guard: merge commits follow the same author rule as regular commits.
+case "$(git var GIT_AUTHOR_IDENT 2>/dev/null)" in
+  *"<advik.bhatt@gmail.com>"*) exit 0 ;;
+esac
+echo "main-only guard: set the repo author first:
+  git config user.name 'Advik Bhatt'
+  git config user.email advik.bhatt@gmail.com" >&2
+exit 1

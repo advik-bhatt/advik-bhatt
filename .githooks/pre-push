@@ -1,0 +1,29 @@
+#!/bin/sh
+# main-only guard: pushes may only update allowlisted branches (main, plus any
+# listed in .githooks/allowed-branches). Stray branches may only be deleted;
+# protected branches may never be deleted.
+root=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
+allowed="main"
+if [ -f "$root/.githooks/allowed-branches" ]; then
+  allowed="$allowed $(tr '\n' ' ' < "$root/.githooks/allowed-branches")"
+fi
+status=0
+while read -r local_ref local_sha remote_ref remote_sha; do
+  case "$remote_ref" in refs/heads/*) ;; *) continue ;; esac
+  branch=${remote_ref#refs/heads/}
+  ok=0
+  for a in $allowed; do [ "$branch" = "$a" ] && ok=1; done
+  case "$local_sha" in
+    *[!0]*)
+      if [ "$ok" -eq 0 ]; then
+        echo "main-only guard: refusing to push branch '$branch'. All work goes on main (CLAUDE.md branch discipline)." >&2
+        status=1
+      fi ;;
+    *)
+      if [ "$ok" -eq 1 ]; then
+        echo "main-only guard: refusing to delete protected branch '$branch'." >&2
+        status=1
+      fi ;;
+  esac
+done
+exit $status

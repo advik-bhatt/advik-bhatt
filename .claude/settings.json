@@ -9,6 +9,14 @@
             "timeout": 60
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/install-git-guard.sh\""
+          }
+        ]
       }
     ],
     "UserPromptSubmit": [
@@ -65,6 +73,17 @@
             "timeout": 120
           }
         ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/git-guard.sh\""
+          }
+        ],
+        "matcher": "Bash"
       }
     ]
   }
