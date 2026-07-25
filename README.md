@@ -12,7 +12,7 @@
     <td width="50%"><a href="https://github.com/advik-bhatt/public-wire"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/publicwire.svg?v=3" alt="PublicWire — Top 10 Finalist, Datadog x Google DeepMind hackathon" width="100%" /></a></td>
   </tr>
   <tr>
-    <td width="50%"><a href="https://github.com/advik-bhatt/quantumtrack-ai-roi"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/quantumtrack.svg?v=2" alt="QuantumTrack — 3rd Place, McKinsey QuantumBlack finance hackathon" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/quantumtrack-ai-roi"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/quantumtrack.svg?v=3" alt="QuantumTrack — 3rd Place, McKinsey QuantumBlack finance hackathon" width="100%" /></a></td>
     <td width="50%"><a href="https://github.com/advik-bhatt/mirror-match"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/mirrormatch.svg?v=2" alt="MirrorMatch" width="100%" /></a></td>
   </tr>
   <tr>
@@ -23,7 +23,7 @@
 
 Founder of [Rolemate](https://rolemateapp.com). 5x hackathon winner. CS + Data Science at Rutgers. Jazz saxophone when not shipping.
 
-I got tired of watching real builders lose to AI-polished noise, so I built Rolemate to make proof the only thing that counts. One filter sorts every repo here: has it been done before, and how many people does it help? NSF I-Corps fellow. Everything I build ships.
+I got tired of watching real builders lose to AI-polished noise, so I built Rolemate to make proof the only thing that counts — a thing nobody had built for hiring. One filter sorts every repo here: has it been done before, and how many people does it help? NSF I-Corps fellow. Everything I build ships.
 
 ## Recognition
 
