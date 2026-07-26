@@ -98,6 +98,9 @@ Shows which Rutgers gym is least crowded right now. Location-aware, time-aware, 
 - [`Grey Matter Society`](https://gms-site-ivory.vercel.app/), [`@greymatteratru`](https://www.instagram.com/greymatteratru/), Admin & Venture Lab, Board Member  
   Co-designed the curriculum and operating structure for a 4-week student-run health-tech accelerator guiding 8 teams from idea validation to functional MVP, monetization strategy, and demo readiness.
 
+- [`CGI`](https://www.cgi.com/), Software Developer Intern, Financial District, Manhattan. Summer 2026.  
+  Utilities projects for commercial-sector clients in the Northeast business area. Delivery in Jira and Confluence with Claude Code and Codex in the toolchain; took away shift-left methodology and client-based product design.
+
 - [`Voya Financial`](https://www.voya.com/), IT Intern, Manhattan. Jun–Aug 2025.  
   Python ETL automation for large-scale data migration, reducing manual workload by 30% and improving accuracy by 100%. Power BI reporting. Led internal Microsoft Copilot agentic AI integration.
 
