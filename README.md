@@ -21,7 +21,7 @@
   </tr>
 </table>
 
-Founder of [Rolemate](https://rolemateapp.com). 7x hackathon winner. CS + Data Science at Rutgers. Jazz saxophone when not shipping.
+Being the change I wish to see in the world. Building [Rolemate](https://rolemateapp.com). 7x hackathon winner. CS + Data Science at Rutgers. Jazz saxophone when not shipping.
 
 I got tired of watching real builders lose to AI-polished noise, so I built Rolemate to make proof the only thing that counts — a thing nobody had built for hiring. One filter sorts every repo here: has it been done before, and how many people does it help? NSF I-Corps fellow. Everything I build ships.
 
@@ -31,7 +31,7 @@ First place at the JPMorganChase x Replit x Campfire finance hackathon in NYC, b
 
 ## Current Focus
 
-Founder, [`Rolemate`](https://rolemateapp.com) — the verified trust layer for technical hiring. Live and in active development. Presented at a16z Tech Week's StartupGrind. Also building [`Frenzy`](https://github.com/advik-bhatt/frenzy) and [`PublicWire`](https://github.com/advik-bhatt/public-wire).
+[`Rolemate`](https://rolemateapp.com) — the verified trust layer for technical hiring. Live and in active development. Presented at a16z Tech Week's StartupGrind. Also building [`Frenzy`](https://github.com/advik-bhatt/frenzy) and [`PublicWire`](https://github.com/advik-bhatt/public-wire).
 
 ## Other Projects
 
