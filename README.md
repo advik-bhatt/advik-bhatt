@@ -21,13 +21,13 @@
   </tr>
 </table>
 
-Founder of [Rolemate](https://rolemateapp.com). 5x hackathon winner. CS + Data Science at Rutgers. Jazz saxophone when not shipping.
+Founder of [Rolemate](https://rolemateapp.com). 7x hackathon winner. CS + Data Science at Rutgers. Jazz saxophone when not shipping.
 
 I got tired of watching real builders lose to AI-polished noise, so I built Rolemate to make proof the only thing that counts — a thing nobody had built for hiring. One filter sorts every repo here: has it been done before, and how many people does it help? NSF I-Corps fellow. Everything I build ships.
 
 ## Recognition
 
-First place at the JPMorganChase x Replit x Campfire finance hackathon in NYC, building a cost estimator for micro data centers on private estates and maritime platforms. [`MirrorMatch`](https://github.com/advik-bhatt/mirror-match) took 2nd place overall at the a16z Tech Week ElevenLabs Hackathon. Atlas was runner-up in the Regeneron track at HackPrinceton Spring 2026, built on five federal databases no one had thought to connect. Plus wins at Google DeepMind, Datadog, and McKinsey QuantumBlack. Rolemate placed 3rd at ClickHouse's NYC demo night, ahead of teams from Google, Docker, and RedHat, voted by 200+ VCs, angels, and founders in the room. [`WasteZero`](https://github.com/advik-bhatt/waste-zero) pitched at the Rutgers ISE Competition.
+First place at the JPMorganChase x Replit x Campfire finance hackathon in NYC, building a cost estimator for micro data centers on private estates and maritime platforms. First place at the Emergence AI x Nebius x Tavily hackathon with [`Delivery Tracker`](https://devpost.com/software/delivery-tracker). [`MirrorMatch`](https://github.com/advik-bhatt/mirror-match) took 2nd place overall at the Emotionally Intelligent AI Hackathon with ElevenLabs x Veris x Tavus x Redis at a16z NY Tech Week. Atlas was runner-up in the Regeneron track at HackPrinceton Spring 2026, built on five federal databases no one had thought to connect. Plus wins at Google DeepMind, Datadog, and McKinsey QuantumBlack. Rolemate placed 3rd at ClickHouse's NYC demo night, ahead of teams from Google, Docker, and RedHat, voted by 200+ VCs, angels, and founders in the room. [`WasteZero`](https://github.com/advik-bhatt/waste-zero) pitched at the Rutgers ISE Competition.
 
 ## Current Focus
 
@@ -85,8 +85,6 @@ Shows which Rutgers gym is least crowded right now. Location-aware, time-aware, 
 ---
 
 ## Experience + Leadership
-
-- [`CGI`](https://www.cgi.com/), Software Developer Intern, Financial District, Manhattan. May 2026–present.
 
 - [`NSF I-Corps`](https://new.nsf.gov/funding/initiatives/i-corps), Co-Entrepreneurial Lead. May 2026–present.  
   20+ customer discovery interviews validating the broken hiring pipeline for Rolemate.
