@@ -3,7 +3,7 @@
     "scout": {
       "command": "node",
       "args": [
-        "${__dirname}/../venture-scout/mcp/server.mjs"
+        "${CLAUDE_PROJECT_DIR:-.}/../venture-scout/mcp/server.mjs"
       ]
     }
   }
