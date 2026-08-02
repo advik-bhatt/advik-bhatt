@@ -116,6 +116,7 @@ Shows which Rutgers gym is least crowded right now. Location-aware, time-aware, 
 
 ## Links
 
+- `Instagram:` [instagram.com/advikbhatt](https://www.instagram.com/advikbhatt/)
 - `LinkedIn:` [linkedin.com/in/advik-bhatt](https://www.linkedin.com/in/advik-bhatt)
 - `GitHub:` [github.com/advik-bhatt](https://github.com/advik-bhatt)
 - `GitCity:` [gitcity.io/advik-bhatt](https://gitcity.io/advik-bhatt)
