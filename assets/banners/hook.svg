@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="200" viewBox="0 0 1480 200" role="img" aria-label="If you're not doing something no one's ever done before then what are you doing?">
+  <defs><clipPath id="clip"><rect width="1480" height="200" rx="20"/></clipPath></defs>
+  <g clip-path="url(#clip)"><rect width="1480" height="200" fill="#0a0a0a"/></g>
+  <rect x="1.5" y="1.5" width="1477" height="197" rx="18.5" fill="none" stroke="#ffffff" stroke-opacity="0.18"/>
+  <rect x="58" y="54" width="10" height="92" fill="#e6b54a"/>
+  <text x="100" y="92" font-family="Georgia,'Times New Roman',serif" font-size="47" font-weight="700" fill="#fafaf7">If you're not doing something no one's ever done before</text>
+  <text x="100" y="152" font-family="Georgia,'Times New Roman',serif" font-size="47" font-weight="700" fill="#e6b54a">then what are you doing?</text>
+</svg>

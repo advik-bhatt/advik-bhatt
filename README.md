@@ -1,19 +1,23 @@
 <div align="center">
 
-<h3>If you're not doing something no one's ever done before then what are you doing?</h3>
+<a href="https://advikbhatt.com"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/banners/hook.svg" alt="If you're not doing something no one's ever done before then what are you doing?" width="98%" /></a>
 
-<a href="https://rolemateapp.com"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/rolemate.svg" alt="Rolemate — the verified trust layer for technical hiring. Live at rolemateapp.com" width="98%" /></a>
+<img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/banners/receipts.svg" alt="7 hackathon wins, at JPMorganChase, McKinsey QuantumBlack, Google DeepMind, Datadog, ElevenLabs at a16z Tech Week, and ClickHouse" width="98%" />
+
+<a href="https://rolemateapp.com"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/rolemate.svg?v=2" alt="Rolemate — the verified trust layer for technical hiring. Live at rolemateapp.com" width="98%" /></a>
 
 </div>
 
+Being the change I wish to see in the world. Building [Rolemate](https://rolemateapp.com). CS + Data Science at Rutgers, jazz saxophone when not shipping. I got tired of watching real builders lose to AI-polished noise, so I built Rolemate to make proof the only thing that counts, a thing nobody had built for hiring. One filter sorts every repo here: has it been done before, and how many people does it help? NSF I-Corps fellow. Everything I build ships.
+
 <table>
   <tr>
-    <td width="50%"><a href="https://github.com/advik-bhatt/frenzy"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/frenzy.svg?v=2" alt="Frenzy" width="100%" /></a></td>
     <td width="50%"><a href="https://github.com/advik-bhatt/public-wire"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/publicwire.svg?v=3" alt="PublicWire — Top 10 Finalist, Datadog x Google DeepMind hackathon" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/quantumtrack-ai-roi"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/quantumtrack.svg?v=3" alt="QuantumTrack — 3rd Place, McKinsey QuantumBlack finance hackathon" width="100%" /></a></td>
   </tr>
   <tr>
-    <td width="50%"><a href="https://github.com/advik-bhatt/quantumtrack-ai-roi"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/quantumtrack.svg?v=3" alt="QuantumTrack — 3rd Place, McKinsey QuantumBlack finance hackathon" width="100%" /></a></td>
     <td width="50%"><a href="https://github.com/advik-bhatt/mirror-match"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/mirrormatch.svg?v=2" alt="MirrorMatch" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/frenzy"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/frenzy.svg?v=2" alt="Frenzy" width="100%" /></a></td>
   </tr>
   <tr>
     <td width="50%"><a href="https://github.com/team-vibecheck/vibecheck"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/vibecheck.svg?v=2" alt="VibeCheck" width="100%" /></a></td>
@@ -21,68 +25,30 @@
   </tr>
 </table>
 
-Being the change I wish to see in the world. Building [Rolemate](https://rolemateapp.com). 7x hackathon winner. CS + Data Science at Rutgers. Jazz saxophone when not shipping.
+## Now
 
-I got tired of watching real builders lose to AI-polished noise, so I built Rolemate to make proof the only thing that counts — a thing nobody had built for hiring. One filter sorts every repo here: has it been done before, and how many people does it help? NSF I-Corps fellow. Everything I build ships.
+[`Rolemate`](https://rolemateapp.com) is live: the verified trust layer for technical hiring, presented at a16z Tech Week's StartupGrind. Also building [`Frenzy`](https://github.com/advik-bhatt/frenzy) and [`PublicWire`](https://github.com/advik-bhatt/public-wire).
 
-## Recognition
+## The record
 
-First place at the JPMorganChase x Replit x Campfire finance hackathon in NYC, building a cost estimator for micro data centers on private estates and maritime platforms. First place at the Emergence AI x Nebius x Tavily hackathon with [`Delivery Tracker`](https://devpost.com/software/delivery-tracker). [`MirrorMatch`](https://github.com/advik-bhatt/mirror-match) took 2nd place overall at the Emotionally Intelligent AI Hackathon with ElevenLabs x Veris x Tavus x Redis at a16z NY Tech Week. Atlas was runner-up in the Regeneron track at HackPrinceton Spring 2026, built on five federal databases no one had thought to connect. Plus wins at Google DeepMind, Datadog, and McKinsey QuantumBlack. Rolemate placed 3rd at ClickHouse's NYC demo night, ahead of teams from Google, Docker, and RedHat, voted by 200+ VCs, angels, and founders in the room. [`WasteZero`](https://github.com/advik-bhatt/waste-zero) pitched at the Rutgers ISE Competition.
+- **1st** at the JPMorganChase x Replit x Campfire finance hackathon, NYC: a cost estimator for micro data centers on private estates and maritime platforms.
+- **1st** at the Emergence AI x Nebius x Tavily hackathon with [`Delivery Tracker`](https://devpost.com/software/delivery-tracker).
+- **2nd overall** at the Emotionally Intelligent AI Hackathon with ElevenLabs x Veris x Tavus x Redis at a16z NY Tech Week, with [`MirrorMatch`](https://github.com/advik-bhatt/mirror-match).
+- **Top 10 finalist** at the Datadog x Google DeepMind hackathon with [`PublicWire`](https://github.com/advik-bhatt/public-wire).
+- **3rd** at the McKinsey QuantumBlack finance hackathon with [`QuantumTrack`](https://github.com/advik-bhatt/quantumtrack-ai-roi).
+- **Runner-up**, Regeneron track at HackPrinceton Spring 2026, with Atlas: five federal databases no one had thought to connect.
+- **3rd** at ClickHouse's NYC demo night with Rolemate, ahead of teams from Google, Docker, and RedHat, voted by 200+ VCs, angels, and founders in the room.
+- **Pitched** [`WasteZero`](https://github.com/advik-bhatt/waste-zero) at the Rutgers ISE Competition.
 
-## Current Focus
+## Also built
 
-[`Rolemate`](https://rolemateapp.com) — the verified trust layer for technical hiring. Live and in active development. Presented at a16z Tech Week's StartupGrind. Also building [`Frenzy`](https://github.com/advik-bhatt/frenzy) and [`PublicWire`](https://github.com/advik-bhatt/public-wire).
-
-## Other Projects
-
-### Atlas
-HackPrinceton Spring 2026, Regeneron track runner-up — `Python` `ClinicalTrials.gov API` `PubMed API` `NPI Registry` `CMS Open Payments` `FDA Warning Letters`
-
-Cross-references ClinicalTrials.gov, PubMed, NPI Registry, CMS Open Payments, and FDA Warning Letters to surface stronger trial investigators. Fragmented public data, actually used.
-
-### CrewCast
-`TypeScript` `React Native` `Node.js` `Express` `Supabase`
-
-Staffing coordination for event crews. Google OAuth, role-based permissions, real-time scheduling, and coordination across concurrent events. Competed at RES TechStart 2026.
-
-### RUWorkingOut
-`JavaScript` `React` `Node.js` `Google Maps API`
-
-Shows which Rutgers gym is least crowded right now. Location-aware, time-aware, pulls live data across all campus locations.
-
----
+- `Atlas` cross-references ClinicalTrials.gov, PubMed, the NPI Registry, CMS Open Payments, and FDA Warning Letters to surface stronger trial investigators. Fragmented public data, actually used.
+- `CrewCast` runs staffing coordination for event crews: Google OAuth, role-based permissions, real-time scheduling across concurrent events. React Native + Supabase. Competed at RES TechStart 2026.
+- `RUWorkingOut` shows which Rutgers gym is least crowded right now, location-aware and time-aware, live across all campus locations.
 
 ## Stack
 
-**Languages**
-
-<a href="https://www.python.org/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/python.svg" alt="Python" height="34" /></a>&nbsp;<a href="https://www.typescriptlang.org/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/typescript.svg" alt="TypeScript" height="34" /></a>&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/javascript.svg" alt="JavaScript" height="34" /></a>&nbsp;<a href="https://dev.java/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/java.svg" alt="Java" height="34" /></a>&nbsp;<a href="https://en.wikipedia.org/wiki/SQL"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/sql.svg" alt="SQL" height="34" /></a>
-
-**Web**
-
-<a href="https://react.dev/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/react.svg" alt="React" height="34" /></a>&nbsp;<a href="https://nextjs.org/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/nextjs.svg" alt="Next.js" height="34" /></a>&nbsp;<a href="https://tanstack.com/start"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/tanstack.svg" alt="TanStack Start" height="34" /></a>
-
-**Mobile**
-
-<a href="https://reactnative.dev/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/react-native.svg" alt="React Native" height="34" /></a>&nbsp;<a href="https://expo.dev/router"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/expo.svg" alt="Expo Router" height="34" /></a>
-
-**Backend**
-
-<a href="https://nodejs.org/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/nodejs.svg" alt="Node.js" height="34" /></a>&nbsp;<a href="https://fastapi.tiangolo.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/fastapi.svg" alt="FastAPI" height="34" /></a>&nbsp;<a href="https://expressjs.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/express.svg" alt="Express" height="34" /></a>
-
-**Databases**
-
-<a href="https://www.postgresql.org/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/postgresql.svg" alt="PostgreSQL" height="34" /></a>&nbsp;<a href="https://redis.io/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/redis.svg" alt="Redis" height="34" /></a>&nbsp;<a href="https://clickhouse.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/clickhouse.svg" alt="ClickHouse" height="34" /></a>&nbsp;<a href="https://supabase.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/supabase.svg" alt="Supabase" height="34" /></a>&nbsp;<a href="https://neon.tech/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/neon.svg" alt="Neon" height="34" /></a>
-
-**AI + Agents**
-
-<a href="https://www.langchain.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/langchain.svg" alt="LangChain" height="34" /></a>&nbsp;<a href="https://huggingface.co/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/huggingface.svg" alt="HuggingFace" height="34" /></a>&nbsp;<a href="https://elevenlabs.io/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/elevenlabs.svg" alt="ElevenLabs" height="34" /></a>&nbsp;<a href="https://www.tavus.io/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/tavus.svg" alt="Tavus" height="34" /></a>
-
-**Infra + Tools**
-
-<a href="https://clerk.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/clerk.svg" alt="Clerk" height="34" /></a>&nbsp;<a href="https://www.docker.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/docker.svg" alt="Docker" height="34" /></a>&nbsp;<a href="https://github.com/features/actions"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/github-actions.svg" alt="GitHub Actions" height="34" /></a>&nbsp;<a href="https://vercel.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/vercel.svg" alt="Vercel" height="34" /></a>&nbsp;<a href="https://www.postman.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/postman.svg" alt="Postman" height="34" /></a>
-
----
+<a href="https://www.python.org/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/python.svg" alt="Python" height="34" /></a>&nbsp;<a href="https://www.typescriptlang.org/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/typescript.svg" alt="TypeScript" height="34" /></a>&nbsp;<a href="https://react.dev/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/react.svg" alt="React" height="34" /></a>&nbsp;<a href="https://nextjs.org/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/nextjs.svg" alt="Next.js" height="34" /></a>&nbsp;<a href="https://reactnative.dev/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/react-native.svg" alt="React Native" height="34" /></a>&nbsp;<a href="https://nodejs.org/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/nodejs.svg" alt="Node.js" height="34" /></a>&nbsp;<a href="https://www.postgresql.org/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/postgresql.svg" alt="PostgreSQL" height="34" /></a>&nbsp;<a href="https://supabase.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/supabase.svg" alt="Supabase" height="34" /></a>&nbsp;<a href="https://clickhouse.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/clickhouse.svg" alt="ClickHouse" height="34" /></a>&nbsp;<a href="https://www.langchain.com/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/langchain.svg" alt="LangChain" height="34" /></a>&nbsp;<a href="https://huggingface.co/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/huggingface.svg" alt="HuggingFace" height="34" /></a>&nbsp;<a href="https://elevenlabs.io/"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/badges/elevenlabs.svg" alt="ElevenLabs" height="34" /></a>
 
 ## Experience + Leadership
 
