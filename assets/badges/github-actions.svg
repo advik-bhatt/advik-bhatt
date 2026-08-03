@@ -1,1 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="154" height="44" viewBox="0 0 154 44" role="img" aria-label="GitHub Actions"><rect width="154" height="44" rx="10" fill="#2088FF"/><rect x="0.75" y="0.75" width="152.5" height="42.5" rx="9.25" fill="none" stroke="#ffffff" stroke-opacity="0.18"/><text x="77" y="28" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="15.5" font-weight="700" fill="#ffffff" letter-spacing="0.02em">GitHub Actions</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="44" viewBox="0 0 170 44" role="img" aria-label="GitHub Actions">
+<title>GitHub Actions</title>
+<desc>Contrast 4.79:1 on both the light and dark GitHub canvas.</desc>
+<defs>
+<linearGradient id="bodygithubactions" x1="0" y1="3" x2="0" y2="39" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#4391eb"/><stop offset="1" stop-color="#2581eb"/>
+</linearGradient>
+<linearGradient id="rimgithubactions" x1="0" y1="3" x2="0" y2="39" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.3"/>
+<stop offset="0.3" stop-color="#ffffff" stop-opacity="0.04"/>
+<stop offset="0.76" stop-color="#ffffff" stop-opacity="0.04"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0.08"/>
+</linearGradient>
+<linearGradient id="lensgithubactions" x1="0" y1="0" x2="170" y2="0" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.07"/>
+<stop offset="0.1059" stop-color="#ffffff" stop-opacity="0"/>
+<stop offset="0.8941" stop-color="#ffffff" stop-opacity="0"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0.07"/>
+</linearGradient>
+<filter id="castgithubactions" x="-20%" y="-20%" width="140%" height="150%">
+<feDropShadow dx="0" dy="0.8" stdDeviation="1" flood-color="#0a0f16" flood-opacity="0.16"/>
+</filter>
+<clipPath id="clipgithubactions"><rect x="0" y="3" width="170" height="36" rx="18"/></clipPath>
+</defs>
+<g filter="url(#castgithubactions)"><rect x="0" y="3" width="170" height="36" rx="18" fill="url(#bodygithubactions)" fill-opacity="0.94"/></g>
+<g clip-path="url(#clipgithubactions)">
+<rect x="0" y="3" width="170" height="36" fill="url(#lensgithubactions)"/>
+<rect x="1.5" y="4.5" width="167" height="33" rx="16.5" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1.5"/>
+</g>
+<rect x="0.5" y="3.5" width="169" height="35" rx="17.5" fill="none" stroke="url(#rimgithubactions)" stroke-width="1"/>
+<rect x="0.25" y="3.25" width="169.5" height="35.5" rx="17.75" fill="none" stroke="#000000" stroke-opacity="0.09" stroke-width="0.5"/>
+<g transform="translate(16 12.5) scale(0.70833)" fill="#141210" fill-opacity="0.94"><path d="M10.984 13.836a.5.5 0 0 1-.353-.146l-.745-.743a.5.5 0 1 1 .706-.708l.392.391 1.181-1.18a.5.5 0 0 1 .708.707l-1.535 1.533a.504.504 0 0 1-.354.146zm9.353-.147l1.534-1.532a.5.5 0 0 0-.707-.707l-1.181 1.18-.392-.391a.5.5 0 1 0-.706.708l.746.743a.497.497 0 0 0 .706-.001zM4.527 7.452l2.557-1.585A1 1 0 0 0 7.09 4.17L4.533 2.56A1 1 0 0 0 3 3.406v3.196a1.001 1.001 0 0 0 1.527.85zm2.03-2.436L4 6.602V3.406l2.557 1.61zM24 12.5c0 1.93-1.57 3.5-3.5 3.5a3.503 3.503 0 0 1-3.46-3h-2.08a3.503 3.503 0 0 1-3.46 3 3.502 3.502 0 0 1-3.46-3h-.558c-.972 0-1.85-.399-2.482-1.042V17c0 1.654 1.346 3 3 3h.04c.244-1.693 1.7-3 3.46-3 1.93 0 3.5 1.57 3.5 3.5S13.43 24 11.5 24a3.502 3.502 0 0 1-3.46-3H8c-2.206 0-4-1.794-4-4V9.899A5.008 5.008 0 0 1 0 5c0-2.757 2.243-5 5-5s5 2.243 5 5a5.005 5.005 0 0 1-4.952 4.998A2.482 2.482 0 0 0 7.482 12h.558c.244-1.693 1.7-3 3.46-3a3.502 3.502 0 0 1 3.46 3h2.08a3.503 3.503 0 0 1 3.46-3c1.93 0 3.5 1.57 3.5 3.5zm-15 8c0 1.378 1.122 2.5 2.5 2.5s2.5-1.122 2.5-2.5-1.122-2.5-2.5-2.5S9 19.122 9 20.5zM5 9c2.206 0 4-1.794 4-4S7.206 1 5 1 1 2.794 1 5s1.794 4 4 4zm9 3.5c0-1.378-1.122-2.5-2.5-2.5S9 11.122 9 12.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5zm9 0c0-1.378-1.122-2.5-2.5-2.5S18 11.122 18 12.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5zm-13 8a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0zm12 0c0 1.93-1.57 3.5-3.5 3.5a3.503 3.503 0 0 1-3.46-3.002c-.007.001-.013.005-.021.005l-.506.017h-.017a.5.5 0 0 1-.016-.999l.506-.017c.018-.002.035.006.052.007A3.503 3.503 0 0 1 20.5 17c1.93 0 3.5 1.57 3.5 3.5zm-1 0c0-1.378-1.122-2.5-2.5-2.5S18 19.122 18 20.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5z"/></g>
+<text x="41" y="26.425" textLength="112.8" lengthAdjust="spacingAndGlyphs" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="15.5" font-weight="590" letter-spacing="-0.15" fill="#141210">GitHub Actions</text>
+</svg>

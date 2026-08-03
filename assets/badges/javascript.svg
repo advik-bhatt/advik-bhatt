@@ -1,1 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="154" height="44" viewBox="0 0 154 44" role="img" aria-label="JavaScript"><rect width="154" height="44" rx="10" fill="#F7DF1E"/><rect x="0.75" y="0.75" width="152.5" height="42.5" rx="9.25" fill="none" stroke="#1c1a17" stroke-opacity="0.18"/><text x="77" y="28" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="15.5" font-weight="700" fill="#1c1a17" letter-spacing="0.02em">JavaScript</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="136" height="44" viewBox="0 0 136 44" role="img" aria-label="JavaScript">
+<title>JavaScript</title>
+<desc>Contrast 11.09:1 on both the light and dark GitHub canvas.</desc>
+<defs>
+<linearGradient id="bodyjavascript" x1="0" y1="3" x2="0" y2="39" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#ead63b"/><stop offset="1" stop-color="#ead31c"/>
+</linearGradient>
+<linearGradient id="rimjavascript" x1="0" y1="3" x2="0" y2="39" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.3"/>
+<stop offset="0.3" stop-color="#ffffff" stop-opacity="0.04"/>
+<stop offset="0.76" stop-color="#ffffff" stop-opacity="0.04"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0.08"/>
+</linearGradient>
+<linearGradient id="lensjavascript" x1="0" y1="0" x2="136" y2="0" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.07"/>
+<stop offset="0.1324" stop-color="#ffffff" stop-opacity="0"/>
+<stop offset="0.8676" stop-color="#ffffff" stop-opacity="0"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0.07"/>
+</linearGradient>
+<filter id="castjavascript" x="-20%" y="-20%" width="140%" height="150%">
+<feDropShadow dx="0" dy="0.8" stdDeviation="1" flood-color="#0a0f16" flood-opacity="0.16"/>
+</filter>
+<clipPath id="clipjavascript"><rect x="0" y="3" width="136" height="36" rx="18"/></clipPath>
+</defs>
+<g filter="url(#castjavascript)"><rect x="0" y="3" width="136" height="36" rx="18" fill="url(#bodyjavascript)" fill-opacity="0.94"/></g>
+<g clip-path="url(#clipjavascript)">
+<rect x="0" y="3" width="136" height="36" fill="url(#lensjavascript)"/>
+<rect x="1.5" y="4.5" width="133" height="33" rx="16.5" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1.5"/>
+</g>
+<rect x="0.5" y="3.5" width="135" height="35" rx="17.5" fill="none" stroke="url(#rimjavascript)" stroke-width="1"/>
+<rect x="0.25" y="3.25" width="135.5" height="35.5" rx="17.75" fill="none" stroke="#000000" stroke-opacity="0.09" stroke-width="0.5"/>
+<g transform="translate(16 12.5) scale(0.70833)" fill="#141210" fill-opacity="0.94"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></g>
+<text x="41" y="26.425" textLength="78.7" lengthAdjust="spacingAndGlyphs" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="15.5" font-weight="590" letter-spacing="-0.15" fill="#141210">JavaScript</text>
+</svg>

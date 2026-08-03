@@ -1,1 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="154" height="44" viewBox="0 0 154 44" role="img" aria-label="FastAPI"><rect width="154" height="44" rx="10" fill="#009688"/><rect x="0.75" y="0.75" width="152.5" height="42.5" rx="9.25" fill="none" stroke="#ffffff" stroke-opacity="0.18"/><text x="77" y="28" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="15.5" font-weight="700" fill="#ffffff" letter-spacing="0.02em">FastAPI</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="115" height="44" viewBox="0 0 115 44" role="img" aria-label="FastAPI">
+<title>FastAPI</title>
+<desc>Contrast 4.59:1 on both the light and dark GitHub canvas.</desc>
+<defs>
+<linearGradient id="bodyfastapi" x1="0" y1="3" x2="0" y2="39" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#0e887d"/><stop offset="1" stop-color="#0a6e65"/>
+</linearGradient>
+<linearGradient id="rimfastapi" x1="0" y1="3" x2="0" y2="39" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.6"/>
+<stop offset="0.3" stop-color="#ffffff" stop-opacity="0.05"/>
+<stop offset="0.76" stop-color="#ffffff" stop-opacity="0.05"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0.14"/>
+</linearGradient>
+<linearGradient id="lensfastapi" x1="0" y1="0" x2="115" y2="0" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.09"/>
+<stop offset="0.1565" stop-color="#ffffff" stop-opacity="0"/>
+<stop offset="0.8435" stop-color="#ffffff" stop-opacity="0"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0.09"/>
+</linearGradient>
+<filter id="castfastapi" x="-20%" y="-20%" width="140%" height="150%">
+<feDropShadow dx="0" dy="0.8" stdDeviation="1" flood-color="#0a0f16" flood-opacity="0.16"/>
+</filter>
+<clipPath id="clipfastapi"><rect x="0" y="3" width="115" height="36" rx="18"/></clipPath>
+</defs>
+<g filter="url(#castfastapi)"><rect x="0" y="3" width="115" height="36" rx="18" fill="url(#bodyfastapi)" fill-opacity="0.94"/></g>
+<g clip-path="url(#clipfastapi)">
+<rect x="0" y="3" width="115" height="36" fill="url(#lensfastapi)"/>
+<rect x="1.5" y="4.5" width="112" height="33" rx="16.5" fill="none" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1.5"/>
+</g>
+<rect x="0.5" y="3.5" width="114" height="35" rx="17.5" fill="none" stroke="url(#rimfastapi)" stroke-width="1"/>
+<rect x="0.25" y="3.25" width="114.5" height="35.5" rx="17.75" fill="none" stroke="#000000" stroke-opacity="0.09" stroke-width="0.5"/>
+<g transform="translate(16 12.5) scale(0.70833)" fill="#ffffff" fill-opacity="0.94"><path d="M12 .0387C5.3729.0384.0003 5.3931 0 11.9988c-.001 6.6066 5.372 11.9628 12 11.9625 6.628.0003 12.001-5.3559 12-11.9625-.0003-6.6057-5.3729-11.9604-12-11.96m-.829 5.4153h7.55l-7.5805 5.3284h5.1828L5.279 18.5436q2.9466-6.5444 5.892-13.0896"/></g>
+<text x="41" y="26.425" textLength="57.8" lengthAdjust="spacingAndGlyphs" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="15.5" font-weight="590" letter-spacing="-0.15" fill="#ffffff">FastAPI</text>
+</svg>

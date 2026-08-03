@@ -1,1 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="154" height="44" viewBox="0 0 154 44" role="img" aria-label="TanStack"><rect width="154" height="44" rx="10" fill="#EF4444"/><rect x="0.75" y="0.75" width="152.5" height="42.5" rx="9.25" fill="none" stroke="#ffffff" stroke-opacity="0.18"/><text x="77" y="28" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="15.5" font-weight="700" fill="#ffffff" letter-spacing="0.02em">TanStack</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="126" height="44" viewBox="0 0 126 44" role="img" aria-label="TanStack">
+<title>TanStack</title>
+<desc>Contrast 10.57:1 on both the light and dark GitHub canvas.</desc>
+<defs>
+<linearGradient id="bodytanstack" x1="0" y1="3" x2="0" y2="39" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#dbd4aa"/><stop offset="1" stop-color="#d3ca92"/>
+</linearGradient>
+<linearGradient id="rimtanstack" x1="0" y1="3" x2="0" y2="39" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.3"/>
+<stop offset="0.3" stop-color="#ffffff" stop-opacity="0.04"/>
+<stop offset="0.76" stop-color="#ffffff" stop-opacity="0.04"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0.08"/>
+</linearGradient>
+<linearGradient id="lenstanstack" x1="0" y1="0" x2="126" y2="0" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.07"/>
+<stop offset="0.1429" stop-color="#ffffff" stop-opacity="0"/>
+<stop offset="0.8571" stop-color="#ffffff" stop-opacity="0"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0.07"/>
+</linearGradient>
+<filter id="casttanstack" x="-20%" y="-20%" width="140%" height="150%">
+<feDropShadow dx="0" dy="0.8" stdDeviation="1" flood-color="#0a0f16" flood-opacity="0.16"/>
+</filter>
+<clipPath id="cliptanstack"><rect x="0" y="3" width="126" height="36" rx="18"/></clipPath>
+</defs>
+<g filter="url(#casttanstack)"><rect x="0" y="3" width="126" height="36" rx="18" fill="url(#bodytanstack)" fill-opacity="0.94"/></g>
+<g clip-path="url(#cliptanstack)">
+<rect x="0" y="3" width="126" height="36" fill="url(#lenstanstack)"/>
+<rect x="1.5" y="4.5" width="123" height="33" rx="16.5" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1.5"/>
+</g>
+<rect x="0.5" y="3.5" width="125" height="35" rx="17.5" fill="none" stroke="url(#rimtanstack)" stroke-width="1"/>
+<rect x="0.25" y="3.25" width="125.5" height="35.5" rx="17.75" fill="none" stroke="#000000" stroke-opacity="0.09" stroke-width="0.5"/>
+<g transform="translate(16 12.5) scale(0.70833)" fill="#141210" fill-opacity="0.94"><path d="M12 0c6.627 0 9.166 4.102 9.166 12S18.626 24 12 24s-9.166-4.096-9.166-12c0-7.898 2.54-12 9.166-12m3.031 17.485c-.861 0-1.33.234-1.708.423-.327.164-.582.292-1.148.292-.567 0-.822-.128-1.148-.292-.378-.189-.848-.423-1.71-.423-.86 0-1.33.234-1.708.423-.327.164-.581.292-1.148.292v1.251c.862 0 1.331-.234 1.709-.423.326-.163.581-.292 1.148-.292s.821.129 1.148.292c.378.189.847.423 1.709.423.861 0 1.33-.234 1.709-.423.326-.163.58-.292 1.147-.292s.822.129 1.148.292c.378.189.848.423 1.71.423v-1.25c-.565 0-.822-.13-1.149-.293-.377-.189-.847-.423-1.709-.423m.41-12.536c.65-.586 0-1.648-.813-1.328-.45.18-.873.438-1.251.779a4.2 4.2 0 0 0-1.202 1.94 4.2 4.2 0 0 0-1.203-1.94 4.3 4.3 0 0 0-1.25-.779c-.814-.32-1.463.742-.814 1.328l2.385 2.153a4.86 4.86 0 0 0-2.731-.839c-.552 0-1.082.09-1.58.26-.836.284-.604 1.532.275 1.532h3.326a4.2 4.2 0 0 0-2.012.988 4 4 0 0 0-.9 1.165c-.403.776.588 1.529 1.237.948l2.686-2.42-.2 6.656c0 .08-.047.158-.107.223a5 5 0 0 1-.257-.123c-.378-.189-.848-.423-1.71-.423-.861 0-1.33.234-1.708.423-.327.164-.581.292-1.148.292v1.251c.861 0 1.33-.234 1.709-.423.326-.164.58-.292 1.148-.292.566 0 .821.128 1.148.292.377.189.847.423 1.708.423.862 0 1.332-.234 1.71-.423.326-.164.58-.292 1.147-.292s.822.128 1.148.292c.378.189.848.423 1.71.423v-1.25c-.565 0-.822-.13-1.149-.293v-.005c-.378-.19-.847-.424-1.709-.424-.861 0-1.33.235-1.709.424-.097.045-.189.094-.283.131a.34.34 0 0 1-.12-.232l-.2-6.69 2.722 2.457c.65.587 1.64-.166 1.236-.948a4.11 4.11 0 0 0-2.911-2.153h3.326c.882 0 1.108-1.245.275-1.531a4.88 4.88 0 0 0-4.311.578l2.385-2.152z"/></g>
+<text x="41" y="26.425" textLength="69.1" lengthAdjust="spacingAndGlyphs" font-family="-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif" font-size="15.5" font-weight="590" letter-spacing="-0.15" fill="#141210">TanStack</text>
+</svg>
