@@ -83,7 +83,10 @@ Being the change I wish to see in the world. Building [Rolemate](https://rolemat
 ## Links
 
 - `Instagram:` [instagram.com/advikbhatt](https://www.instagram.com/advikbhatt/)
+- `Website:` [advikbhatt.com](https://advikbhatt.com)
+- `Rolemate:` [rolemateapp.com](https://rolemateapp.com)
 - `LinkedIn:` [linkedin.com/in/advik-bhatt](https://www.linkedin.com/in/advik-bhatt)
+- `X:` [x.com/advik_bhatt](https://x.com/advik_bhatt)
 - `GitHub:` [github.com/advik-bhatt](https://github.com/advik-bhatt)
 - `GitCity:` [gitcity.io/advik-bhatt](https://gitcity.io/advik-bhatt)
 - `Email:` advik.bhatt.work@gmail.com
