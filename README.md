@@ -21,7 +21,7 @@ Being the change I wish to see in the world. Building [Rolemate](https://rolemat
   </tr>
   <tr>
     <td width="50%"><a href="https://github.com/team-vibecheck/vibecheck"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/vibecheck.svg?v=2" alt="VibeCheck" width="100%" /></a></td>
-    <td width="50%"><a href="https://github.com/advik-bhatt/waste-zero"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/wastezero.svg?v=2" alt="WasteZero" width="100%" /></a></td>
+    <td width="50%"><a href="https://github.com/advik-bhatt/shortcuts"><img src="https://raw.githubusercontent.com/advik-bhatt/advik-bhatt/main/assets/cards/anythingengine.svg" alt="Anything Engine" width="100%" /></a></td>
   </tr>
 </table>
 
